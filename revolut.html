@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DATDmisc1mzwau");whop.track("page");</script>
+<script>whop.track('view_content', { title: 'Claim Your $100', url: location.href });</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Claim Your $100 | Winning Streak</title>
+<meta name="description" content="Set up your business account with us live on a call, and we'll send you $100.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#2FD166;--accent-soft:#2FD16622;--bg:#0a0a0c;--card:#141417;--card-border:#232329;--text:#e9eaec;--text-dim:#9a9ba1;--gold:#FFC93C;--warn:#E4602A}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{overflow-x:hidden}
+  body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .container{max-width:640px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+  .glow{position:relative}
+  .glow::before{content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,var(--accent-soft) 0%,transparent 65%);pointer-events:none}
+  .hero{padding:44px 0 8px;text-align:center}
+  .wordmark{display:block;margin-bottom:20px;font-size:18px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#fff}
+  .pill{display:inline-block;padding:6px 15px;border-radius:999px;background:var(--accent-soft);border:1px solid #2FD16644;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:18px}
+  h1{font-size:38px;line-height:1.15;font-weight:800;letter-spacing:-.025em;margin-bottom:14px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .sub{color:var(--text-dim);font-size:17px;max-width:520px;margin:0 auto 26px}
+  .card{background:var(--card);border:1px solid var(--card-border);border-radius:20px;padding:26px;margin-bottom:16px}
+  .step{display:none}.step.on{display:block}
+  label{display:block;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px}
+  input,select{width:100%;padding:14px 15px;background:#0e0e11;border:1px solid var(--card-border);border-radius:12px;color:var(--text);font-family:inherit;font-size:16px;margin-bottom:16px}
+  input:focus,select:focus{outline:none;border-color:var(--accent)}
+  .btn{display:block;width:100%;padding:16px;background:var(--accent);color:#06210f;border:none;border-radius:999px;font-family:inherit;font-size:17px;font-weight:700;cursor:pointer;transition:.15s}
+  .btn:hover{background:#3fe077;transform:translateY(-1px)}
+  .btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+  .btn.ghost{background:transparent;color:var(--text-dim);border:1px solid var(--card-border);margin-top:10px}
+  .choice{display:block;width:100%;text-align:left;padding:16px 18px;background:#0e0e11;border:1px solid var(--card-border);border-radius:14px;color:var(--text);font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;margin-bottom:10px;transition:.15s}
+  .choice:hover{border-color:var(--accent);background:#12130f}
+  .choice small{display:block;font-weight:400;font-size:13px;color:var(--text-dim);margin-top:2px}
+  .bullets{list-style:none;margin:18px 0}
+  .bullets li{padding-left:28px;position:relative;margin-bottom:10px;color:var(--text-dim);font-size:15px}
+  .bullets li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+  .note{font-size:13px;color:var(--text-dim);margin-top:14px}
+  .kv{background:#0e0e11;border:1px solid var(--card-border);border-radius:12px;padding:14px 16px;margin:14px 0}
+  .kv b{color:var(--accent);display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+  .kv span{font-size:16px;font-weight:600}
+  .progress{height:3px;background:var(--card-border);border-radius:9px;margin-bottom:24px;overflow:hidden}
+  .progress i{display:block;height:100%;background:var(--accent);width:25%;transition:width .3s}
+  .err{color:var(--warn);font-size:14px;margin-bottom:12px;display:none}
+  footer{text-align:center;padding:36px 0;color:var(--text-dim);font-size:13px}
+  a{color:var(--accent)}
+  @media(max-width:520px){h1{font-size:29px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="container">
+
+  <div class="hero">
+    <span class="wordmark">Winning Streak</span>
+    <span class="pill">One last step</span>
+    <h1>Claim your <em>$<span id="amt">100</span></em></h1>
+    <p class="sub">Your store needs somewhere to get paid. Jump on a short call, we'll open your business account with you live, and we'll send you $<span class="amt2">100</span> for doing it.</p>
+  </div>
+
+  <div class="progress"><i id="bar"></i></div>
+  <div class="card">
+
+    <!-- 1: country -->
+    <div class="step on" id="s1">
+      <label for="country">Where is your business based?</label>
+      <select id="country"><option value="">Loading…</option></select>
+      <p class="err" id="e1">Pick a country to continue.</p>
+      <button class="btn" onclick="step1()">Continue</button>
+      <p class="note">We ask first because the account works differently in every country - this makes sure we send you the right instructions.</p>
+    </div>
+
+    <!-- 2a: eligible -> registered? -->
+    <div class="step" id="s2">
+      <label>Do you have your <span id="regLabel">business number</span> yet?</label>
+      <button class="choice" onclick="step2('yes')">Yes, I've got one<small id="regHint"></small></button>
+      <button class="choice" onclick="step2('no')">Not yet<small id="noHint">No problem - we'll sort it with you.</small></button>
+      <button class="choice" onclick="step2('unsure')">I'm not sure<small>We'll check it together.</small></button>
+    </div>
+
+    <!-- 2b: blocked -> company? -->
+    <div class="step" id="s2b">
+      <p style="margin-bottom:6px;font-weight:700">Quick check.</p>
+      <p style="color:var(--text-dim);font-size:15px;margin-bottom:18px">In <b id="bcName">your country</b>, this account can't be opened as a sole trader - only as a registered company (<span id="bcInc">Ltd</span>).</p>
+      <label>Do you have a registered company?</label>
+      <button class="choice" onclick="step2b('yes')">Yes, I have one<small>Then you're good to go - let's get it open.</small></button>
+      <button class="choice" onclick="step2b('no')">No, it's just me<small>That's completely fine. Nothing else changes about your store.</small></button>
+    </div>
+
+    <!-- 3: details -->
+    <div class="step" id="s3">
+      <label for="name">Your name</label>
+      <input id="name" autocomplete="name" placeholder="Jane Smith">
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" placeholder="you@email.com">
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" autocomplete="tel" placeholder="+61 400 000 000">
+      <div id="regWrap" style="display:none">
+        <label for="regNumber">Your <span id="regLabel2">business number</span> <span style="text-transform:none;letter-spacing:0">(optional - saves time on the call)</span></label>
+        <input id="regNumber" placeholder="">
+      </div>
+      <p class="err" id="e3">We need a name and an email to book you in.</p>
+      <button class="btn" id="go" onclick="submit()">Get my instructions</button>
+    </div>
+
+    <!-- 4: outcome -->
+    <div class="step" id="s4"><div id="out"></div></div>
+
+  </div>
+
+  <footer>Questions? <a href="mailto:support@winningstreakecom.com">support@winningstreakecom.com</a></footer>
+</div>
+
+<script>
+var S = { country:'', registered:'', hasCompany:'', eligible:null, meta:null };
+var COUNTRIES = [];
+
+function show(id, pct){
+  ['s1','s2','s2b','s3','s4'].forEach(function(s){ document.getElementById(s).classList.remove('on'); });
+  document.getElementById(id).classList.add('on');
+  document.getElementById('bar').style.width = pct + '%';
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+// A few country names read wrong without "the" - "in United Kingdom" is the giveaway of a template.
+function theName(n){ return /^(United |Netherlands$|Czechia$)/.test(n||'') ? 'the ' + n : (n || 'your country'); }
+
+// Country list and the verdict come from the same table on the server, so the dropdown can never
+// offer something the classifier doesn't know about.
+fetch('/api/revolut-claim').then(function(r){ return r.json(); }).then(function(d){
+  COUNTRIES = d.countries || [];
+  if (d.incentive) {
+    document.getElementById('amt').textContent = d.incentive;
+    Array.prototype.forEach.call(document.querySelectorAll('.amt2'), function(el){ el.textContent = d.incentive; });
+  }
+  var sel = document.getElementById('country');
+  sel.innerHTML = '<option value="">Select your country…</option>'
+    + COUNTRIES.map(function(c){ return '<option value="'+c.code+'">'+esc(c.name)+'</option>'; }).join('')
+    + '<option value="OTHER">Somewhere else</option>';
+  // Pre-select where they actually are - one less thing to think about.
+  fetch('/api/geo').then(function(r){ return r.json(); }).then(function(g){
+    if (g.country && sel.querySelector('option[value="'+g.country+'"]')) sel.value = g.country;
+  }).catch(function(){});
+}).catch(function(){
+  document.getElementById('country').innerHTML = '<option value="">Could not load - refresh</option>';
+});
+
+// Prefill from the onboarding link, e.g. /revolut.html?email=...&name=...
+(function(){
+  var q = new URLSearchParams(location.search);
+  ['name','email','phone'].forEach(function(k){ if (q.get(k)) document.getElementById(k).value = q.get(k); });
+})();
+
+function step1(){
+  var cc = document.getElementById('country').value;
+  if (!cc){ document.getElementById('e1').style.display='block'; return; }
+  document.getElementById('e1').style.display='none';
+  S.country = cc;
+  var meta = COUNTRIES.filter(function(c){ return c.code === cc; })[0];
+  S.eligible = meta ? meta.eligible : false;
+  S.meta = meta;
+  if (S.eligible){
+    // Ask in the local wording. "Do you have an ABN?" lands; "a business number" makes an
+    // Australian stop and think about whether we mean something else.
+    var reg = (meta && meta.registry) || 'business number';
+    document.getElementById('regLabel').textContent = reg;
+    document.getElementById('regLabel2').textContent = reg;
+    document.getElementById('regNumber').placeholder = reg;
+    document.getElementById('regHint').textContent =
+      meta && meta.registryName ? 'Registered with ' + meta.registryName + '.' : '';
+    document.getElementById('noHint').textContent = meta && meta.instant
+      ? "No problem - it's free and takes about 10 minutes. We'll do it with you on the call."
+      : 'That\'s fine - we\'ll show you exactly how to get one.';
+    show('s2', 50);
+  } else {
+    document.getElementById('bcName').textContent = theName(meta && meta.name);
+    document.getElementById('bcInc').textContent = (meta && meta.incorp) || 'a limited company';
+    show('s2b', 50);
+  }
+}
+function step2(v){ S.registered = v; show('s3', 75); prepDetails(); }
+function step2b(v){
+  S.hasCompany = v;
+  if (v === 'no'){ blockedExit(); return; }   // no company in a blocked market = no call to book
+  show('s3', 75); prepDetails();
+}
+function prepDetails(){
+  // Only ask for the number if they said they already have one.
+  document.getElementById('regWrap').style.display = (S.registered === 'yes' || S.hasCompany === 'yes') ? 'block' : 'none';
+}
+
+function blockedExit(){
+  var n = theName(S.meta && S.meta.name);
+  document.getElementById('out').innerHTML =
+    '<p class="pill" style="background:#FFC93C22;border-color:#FFC93C44;color:var(--gold)">Nothing to do here</p>'
+    + '<h2 style="font-size:25px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px">You\'re all set without it</h2>'
+    + '<p style="color:var(--text-dim);font-size:16px">This particular account can\'t be opened by an individual in ' + esc(n)
+    + ' - the provider only allows registered companies there. That\'s their rule, not ours.</p>'
+    + '<p style="color:var(--text-dim);font-size:16px;margin-top:12px"><b style="color:var(--text)">Your store is unaffected.</b> Everything you\'ve already set up works exactly the same. Head back in and keep going.</p>'
+    + '<p class="note">If you do register a company later, come back to this page and we\'ll open it with you then - the $<span class="amt2">100</span> offer stands.</p>';
+  show('s4', 100);
+}
+
+function submit(){
+  var name = document.getElementById('name').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var phone = document.getElementById('phone').value.trim();
+  if (!name || !email){ document.getElementById('e3').style.display='block'; return; }
+  document.getElementById('e3').style.display='none';
+  var btn = document.getElementById('go');
+  btn.disabled = true; btn.textContent = 'One moment…';
+
+  fetch('/api/revolut-claim', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      name:name, email:email, phone:phone, country:S.country,
+      registered:S.registered, hasCompany:S.hasCompany,
+      regNumber: document.getElementById('regNumber').value.trim()
+    })
+  }).then(function(r){ return r.json(); }).then(function(d){
+    btn.disabled = false; btn.textContent = 'Get my instructions';
+    if (!d || d.ok !== true) throw new Error('bad response');
+    render(d, name, email);
+  }).catch(function(){
+    btn.disabled = false; btn.textContent = 'Try again';
+    document.getElementById('e3').textContent = 'Something went wrong. Try again, or email support@winningstreakecom.com.';
+    document.getElementById('e3').style.display = 'block';
+  });
+}
+
+function render(d, name, email){
+  if (d.outcome === 'blocked'){ blockedExit(); return; }
+
+  // Eligible country, but their registry is slow or paid - there is nothing a call can do today.
+  // Better to send them away with the exact steps than to book a Meet that cannot end in a signup.
+  // Eligible country, but no business number in hand. The call is for opening Revolut and nothing
+  // else, so they cannot be booked yet. Send them off with the real cost and the real wait rather
+  // than a vague "sort it out and let us know".
+  if (d.outcome === 'register_first'){
+    var fast = !!d.instant;
+    document.getElementById('out').innerHTML =
+      '<p class="pill"' + (fast ? '' : ' style="background:#FFC93C22;border-color:#FFC93C44;color:var(--gold)"') + '>'
+      + (fast ? 'Ten minutes away' : 'One step first') + '</p>'
+      + '<h2 style="font-size:25px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px">'
+      + (fast ? 'Grab your ' + esc(d.registry) + ' now, then come straight back'
+              : 'Get your ' + esc(d.registry) + ' first') + '</h2>'
+      + '<p style="color:var(--text-dim);font-size:16px">You qualify - ' + esc(theName(d.countryName))
+      + ' is supported. You just need your ' + esc(d.registry) + ' in hand before we can book you, '
+      + 'because the call is for setting up Revolut and nothing else.</p>'
+      + '<div class="kv"><b>What it costs</b><span>' + esc(d.regCost || 'varies by region') + '</span></div>'
+      + '<div class="kv"><b>How long it takes</b><span>' + esc(d.regTime || 'varies') + '</span></div>'
+      + (d.apply ? '<p style="margin-top:18px"><a class="btn" style="text-decoration:none;text-align:center;display:block" href="'
+          + esc(d.apply) + '" target="_blank" rel="noopener">'
+          + (fast ? 'Get my ' + esc(d.registry) + ' now' : 'Register with ' + esc(d.registryName || 'the registry'))
+          + '</a></p>' : '')
+      + '<p class="note">'
+      + (fast ? 'Do it now while you are here - it is ' + esc(d.regTime) + '. Then come '
+              : 'As soon as it comes through, come ')
+      + 'back to this page, put your number in, and we will book you straight in. The $<span class="amt2">'
+      + esc(d.incentive) + '</span> still stands.</p>';
+    show('s4', 100);
+    return;
+  }
+
+  // Only 'ready' gets this far: eligible country, number in hand, book the Meet.
+  var h = '<p class="pill">You qualify</p>'
+    + '<h2 style="font-size:25px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px">Book your setup call</h2>'
+    + '<p style="color:var(--text-dim);font-size:16px">Pick a time below. A member of the team joins you '
+    + 'on a Google Meet and opens the account with you, screen to screen. It takes about 20 minutes.</p>';
+
+  // The country pack: what they'll be asked for, in their country's own wording. Sending this
+  // BEFORE the call is what stops the 20-minute call turning into a 50-minute one.
+  h += '<div class="kv"><b>Your country</b><span>' + esc(d.countryName) + '</span></div>';
+  if (d.entity) h += '<div class="kv"><b>Business type you\'ll select</b><span>' + esc(d.entity) + '</span></div>';
+  if (d.registry) h += '<div class="kv"><b>Number you\'ll need</b><span>' + esc(d.registry)
+    + (d.registryName ? ' <span style="font-weight:400;color:var(--text-dim);font-size:14px">(' + esc(d.registryName) + ')</span>' : '') + '</span></div>';
+
+  h += '<p style="font-weight:700;margin:20px 0 4px">Have these ready before the call</p><ul class="bullets">'
+    + (d.registry ? '<li><b>Your ' + esc(d.registry) + '</b> - have it in front of you</li>' : '')
+    + '<li>Photo ID - driver\'s licence or passport</li>'
+    + '<li>Your phone and email nearby, for the verification codes</li>'
+    + '<li>A laptop or desktop, not your phone</li>'
+    + '</ul>';
+
+  h += '<p class="note">Don\'t sign up on your own beforehand - we have to start it together on the call for your $<span class="amt2">' + esc(d.incentive) + '</span> to be tracked.</p>';
+
+  if (d.calendly){
+    var url = d.calendly + (d.calendly.indexOf('?') > -1 ? '&' : '?')
+      + 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email)
+      + '&hide_gdpr_banner=1&background_color=141417&text_color=e9eaec&primary_color=2FD166';
+    h += '<div id="cal" style="margin-top:22px;min-width:320px;height:660px"></div>';
+    setTimeout(function(){
+      var s = document.createElement('script');
+      s.src = 'https://assets.calendly.com/assets/external/widget.js';
+      s.onload = function(){ Calendly.initInlineWidget({ url:url, parentElement:document.getElementById('cal') }); };
+      document.head.appendChild(s);
+    }, 0);
+  } else {
+    h += '<p style="margin-top:18px;font-weight:600">You\'re on the list - someone from the team will message you shortly to lock in a time.</p>';
+  }
+
+  document.getElementById('out').innerHTML = h;
+  show('s4', 100);
+}
+</script>
+</body>
+</html>

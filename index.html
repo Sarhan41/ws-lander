@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DATDmisc1mzwau");whop.track("page");</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Winning Streak - Get My $5,000 E-Com Course Free</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<!-- Vercel Web Analytics (sessions/pageviews) + custom funnel events, and Speed Insights -->
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<script>
+/* Attribution capture. Runs on landing, stored for the session.
+   The ad parameters (fbclid, utm_*) only exist on the FIRST url someone arrives at - navigate,
+   refresh or scroll to the form via an anchor and they are gone. Reading them at submit time
+   would have attributed a chunk of paid traffic as "Direct". */
+(function () {
+  try {
+    var KEY = 'ws_attr';
+    if (sessionStorage.getItem(KEY)) return;      // first touch wins
+    var q = new URLSearchParams(location.search);
+    var get = function (k) { return (q.get(k) || '').slice(0, 120); };
+    var a = {
+      fbclid: get('fbclid'),
+      utm_source: get('utm_source'),
+      utm_medium: get('utm_medium'),
+      utm_campaign: get('utm_campaign'),
+      utm_content: get('utm_content'),
+      utm_term: get('utm_term'),
+      ref: (document.referrer || '').slice(0, 200),
+      landing: (location.origin + location.pathname).slice(0, 200)
+    };
+    sessionStorage.setItem(KEY, JSON.stringify(a));
+  } catch (e) {}
+})();
+</script>
+<!-- A/B split test: opt-in form variant. A = current modal (control). B = checkout-style card.
+     Runs before anything else touches the modal, so window.WS_VARIANT is set before the form
+     script needs it. Applies on every path that rewrites to this file (/, /ads, /free, /cold). -->
+<script>
+(function () {
+  var KEY = 'ws_form_variant';
+  var params = new URLSearchParams(location.search);
+  var qv = (params.get('v') || '').toLowerCase();
+  var forced = qv === 'a' ? 'A' : (qv === 'b' ? 'B' : null);
+  var variant;
+  try {
+    if (forced) {
+      localStorage.setItem(KEY, forced);   // QA override always overwrites storage
+      variant = forced;
+    } else {
+      var stored = localStorage.getItem(KEY);
+      if (stored === 'A' || stored === 'B') {
+        variant = stored;                  // sticky: same visitor keeps their variant
+      } else {
+        variant = Math.random() < 0.5 ? 'A' : 'B';
+        localStorage.setItem(KEY, variant);
+      }
+    }
+  } catch (e) {
+    // localStorage unavailable (private mode, blocked, etc.) - assign per pageview instead of
+    // failing closed. A forced ?v= still wins even without persistence.
+    variant = forced || (Math.random() < 0.5 ? 'A' : 'B');
+  }
+  window.WS_VARIANT = variant;
+})();
+</script>
+<!-- Meta Pixel. Base code + PageView. The Lead event is fired from the form handler on a
+     successful submit, NOT from a thank-you pageview - a pageview event double-counts every
+     time someone refreshes or navigates back to that page. -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','4361349117527871');   // primary
+fbq('init','1744455720092654');   // restored 27 Aug - both pixels receive every event
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4361349117527871&ev=PageView&noscript=1"><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1744455720092654&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel -->
+<!-- Cortana ad-attribution pixel -->
+<script async src="https://cdn.winningstreakecom.com/api/hub/v1/cmu7u6i7s00hkgm0asi32mj5h"></script>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="start">
+  <div class="wrap hero-in">
+
+    <!-- 1. headline -->
+    <h1>Get the $5,000 e-com course that made me $25M - <span class="g-u">for free.</span></h1>
+
+    <!-- 3. button - above the video, straight under the headline -->
+    <button class="btn btn-lg btn-glow hero-cta" data-open>Get Your Free Course <span class="btn-arrow">→</span></button>
+
+    <!-- 4. video - Vidalytics VSL, landscape (16:9). Swapped 28 Aug 2026. The wrapper gets
+         .vsl-wide because the 380px column was built for the old vertical cut and would
+         render a 16:9 video about 214px tall. -->
+    <div class="vsl-wrap vsl-wide">
+      <div id="vidalytics_embed_jkiol1FheozZ11he" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
+      <script type="text/javascript">
+      (function (v, i, d, a, l, y, t, c, s) {
+          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+          if (!vsl){vsl=function(u,cb){
+              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+              i.getElementsByTagName("head")[0].appendChild(s);
+          };}
+          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+      })(window, document, 'Vidalytics', 'vidalytics_embed_jkiol1FheozZ11he', 'https://fast.vidalytics.com/embeds/jV0yyyR6/jkiol1FheozZ11he/');
+      </script>
+    </div>
+
+    <!-- 5. numbers -->
+    <div class="props">
+      <div class="prop">
+        <div class="prop-num">$25M</div>
+        <div class="prop-label">Made from ecom</div>
+      </div>
+      <div class="prop">
+        <div class="prop-num">$5,000</div>
+        <div class="prop-label">Course included</div>
+      </div>
+      <div class="prop">
+        <div class="prop-num">$0</div>
+        <div class="prop-label">To learn</div>
+      </div>
+      <div class="prop">
+        <div class="prop-num">$50 - $250</div>
+        <div class="prop-label">Business cost</div>
+      </div>
+    </div>
+
+    <!-- important -->
+    <p class="important"><b>IMPORTANT:</b> This is the first time I've done this, and maybe the last. Close this page and you may never see it again.</p>
+
+    <!-- second CTA, below the important line -->
+    <button class="btn btn-lg btn-glow hero-cta hero-cta-2" data-open>Get Your Free Course <span class="btn-arrow">→</span></button>
+
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<section class="marquee-sec">
+  <div class="marquee-label">As featured in · Sponsored by</div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="mlogo forbes">Forbes 30 Under 30</span>
+      <span class="mlogo">Base44</span>
+      <span class="mlogo">Revolut</span>
+      <span class="mlogo forbes">Forbes 30 Under 30</span>
+      <span class="mlogo">Base44</span>
+      <span class="mlogo">Revolut</span>
+      <span class="mlogo forbes">Forbes 30 Under 30</span>
+      <span class="mlogo">Base44</span>
+      <span class="mlogo">Revolut</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="center">
+      <div class="tag">How it works</div>
+      <h2>Three steps to your <span class="g">first sale.</span></h2>
+      <p class="lede">No experience, no inventory, no $5,000 tuition. Just the exact framework that made me $25 million - and a real person to walk you through it.</p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-meta"><span class="step-badge">Step one</span><span class="step-badge">30 seconds</span></div>
+        <h3>Apply <span class="g">below.</span></h3>
+        <p>Name, email, phone. That's the whole application. It takes 30 seconds and it costs you nothing.</p>
+        <div class="pills">
+          <span class="pill"><span class="pill-check">✓</span> No credit card</span>
+          <span class="pill"><span class="pill-check">✓</span> 30-second form</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-meta"><span class="step-badge">Step two</span><span class="step-badge">Within 24 hours</span></div>
+        <h3>My team <span class="g">calls you.</span></h3>
+        <p>This is what makes it different from every other free course you've seen. We don't just hand you a login link. My team walks you through exactly how to get started based on your situation - what to do first, second, third. That's the difference between someone who gets results and someone who watches a few videos and quits.</p>
+        <div class="pills">
+          <span class="pill"><span class="pill-check">✓</span> Real human, not a bot</span>
+          <span class="pill"><span class="pill-check">✓</span> Built around your situation</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-meta"><span class="step-badge">Step three</span><span class="step-badge">Follow the steps</span></div>
+        <h3>Start <span class="g">making money.</span></h3>
+        <p>No ad spend. No inventory costs. No expensive tools. You follow the steps, you start generating revenue, and you reinvest from your profits - not from your savings. You can see a return straight away without putting any money at risk.</p>
+        <div class="pills">
+          <span class="pill"><span class="pill-check">✓</span> $0 ad spend to start</span>
+          <span class="pill"><span class="pill-check">✓</span> Reinvest from profit</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="center" style="margin-top:44px">
+      <button class="btn btn-lg" data-open>Get Your Free Course <span class="btn-arrow">→</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE STACK ============ -->
+<section id="included">
+  <div class="wrap">
+    <div class="center">
+      <div class="tag">Everything that's included</div>
+      <h2>The full stack. <span class="g">Zero to start.</span></h2>
+      <p class="lede">Not a gated preview. Everything I'd give someone starting from $250 today - which is exactly where I started.</p>
+    </div>
+
+    <div class="stack">
+      <div class="stack-head"><b>Your package</b><span>4 items</span></div>
+
+      <div class="item">
+        <div class="item-ico">▤</div>
+        <div class="item-txt">
+          <h4>The $25M E-Com Course</h4>
+          <p>Every strategy, framework and system that made me $25 million over 7 years. Step by step, start to finish.</p>
+        </div>
+        <div class="val">$5,000</div>
+      </div>
+
+      <div class="item">
+        <div class="item-ico">☎</div>
+        <div class="item-txt">
+          <h4>Personal Onboarding Call</h4>
+          <p>One on one with my team. They map out exactly what you do first - not a login link and good luck.</p>
+        </div>
+        <div class="val">$2,000</div>
+      </div>
+
+      <div class="item">
+        <div class="item-ico">◇</div>
+        <div class="item-txt">
+          <h4>Private Community</h4>
+          <p>Everyone else running the same playbook. Wins, product leads, and answers when you're stuck.</p>
+        </div>
+        <div class="val">$3,000</div>
+      </div>
+
+      <div class="totals">
+        <div class="trow"><span>Total value</span><span class="strike">$10,000</span></div>
+        <div class="trow final"><span>Your price today</span><b>Free</b></div>
+      </div>
+
+      <div class="stack-foot">
+        <p class="scarcity">⚡ This won't be free forever. Base44 and Revolut cover the cost right now - but that could change at any time.</p>
+        <button class="btn btn-lg" data-open>Get Your Free Course <span class="btn-arrow">→</span></button>
+        <p class="sub-note"><b>No card</b> · <b>No strings</b> · <b>100% free</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDER NOTE ============ -->
+<section class="founder">
+  <div class="wrap founder-grid">
+    <div class="founder-img"><img src="assets/jake-lambo.jpg" alt="Jake Bass" loading="lazy"></div>
+
+    <div>
+      <div class="tag">A note from me</div>
+      <div class="quote">"</div>
+      <h2>Wait - what's the catch? <span class="g">How is all of this free?</span></h2>
+
+      <div class="founder-body" style="margin-top:22px">
+        <p>Look. I know what you're thinking. There has to be a catch. Nobody gives away <b>$10,050 of stuff</b> for free.</p>
+        <p>So let me spill it all here.</p>
+        <p>We're partnered with <span class="hl">Base44 and Revolut.</span> They foot the bill. They pay us to bring people in and actually help them succeed, because when you win, you stay a long-term user of their platforms, and everyone wins.</p>
+        <p>That's the whole deal. <b>They cover the course. You sign up as a user of their platforms.</b> That's what they're paying for, and it's the only thing I ask of you.</p>
+        <p>The only thing you actually pay for is your Base44 plan, the AI builder you build your store with. That money doesn't even come to me - it goes straight to Base44, because you'd need a builder no matter where you built a store. It's not something I charge for.</p>
+        <p>So for the price of your Base44 plan, you get:</p>
+        <ul>
+          <li>The full $5,000 course</li>
+          <li>A personal onboarding call with my team</li>
+          <li>The private community</li>
+        </ul>
+        <p>And here's the honest reason I'm doing it. <b>I've already made my money. I don't need yours.</b></p>
+        <p>When I was starting out I had $250 in my bank account and I was lost. All I needed was someone to show me what to do - step by step, without charging me thousands of dollars I didn't have. That person didn't exist for me. I had to spend years figuring it out the hard way.</p>
+        <p><b>I don't want that to be you.</b></p>
+
+        <div class="sig">
+          <b>Jake</b>
+          <span>Co-Founder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIFESTYLE ============ -->
+<section>
+  <div class="wrap">
+    <div class="center">
+      <div class="tag">Where this leads</div>
+      <h2>Seven years ago I had <span class="g">$250.</span></h2>
+      <p class="lede">I'm not showing you this to flex. I'm showing you what's on the other side of actually starting. Same guy, same country, no degree, no connections. Just the framework that's in this course.</p>
+    </div>
+
+    <div class="life-grid">
+      <figure class="life-item">
+        <img src="assets/jake-lambo-delivery.jpg" alt="Lamborghini being delivered" loading="lazy">
+        <figcaption class="life-cap">Delivery day</figcaption>
+      </figure>
+      <figure class="life-item">
+        <img src="assets/jake-washing-lambo.jpg" alt="Jake washing the Lamborghini" loading="lazy">
+        <figcaption class="life-cap">Still wash it myself</figcaption>
+      </figure>
+      <figure class="life-item">
+        <img src="assets/lambo-interior-pov.jpg" alt="Driving the Lamborghini" loading="lazy">
+        <figcaption class="life-cap">The daily drive</figcaption>
+      </figure>
+      <figure class="life-item">
+        <img src="assets/gc-lambos-bskt.jpg" alt="Lamborghinis on the Gold Coast" loading="lazy">
+        <figcaption class="life-cap">Gold Coast</figcaption>
+      </figure>
+      <figure class="life-item">
+        <img src="assets/jake-lake.jpg" alt="Jake travelling" loading="lazy">
+        <figcaption class="life-cap">Complete freedom</figcaption>
+      </figure>
+      <figure class="life-item">
+        <img src="assets/jake-velar-cabin.jpg" alt="Jake away with work" loading="lazy">
+        <figcaption class="life-cap">Wherever I want</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTS (PLACEHOLDER) ============ -->
+<section>
+  <div class="wrap">
+    <div class="center">
+      <div class="tag">Student wins · live &amp; verified</div>
+      <h2>Recent <span class="g">student results.</span></h2>
+      <p class="lede">Screenshots posted by students in the community. No curated testimonials, no paid placements. Just wins, timestamped.</p>
+    </div>
+
+    <!-- STAT TILES - HIDDEN until Liam confirms real aggregate numbers he can stand behind.
+         Do not fabricate revenue/headcount. Restore by removing this comment wrapper.
+    <div class="stats">
+      <div class="stat ph"><span class="stat-tag">Verified</span><b>$0M+</b><span>Student revenue</span></div>
+      <div class="stat ph"><span class="stat-tag">Community</span><b>000+</b><span>People helped</span></div>
+      <div class="stat ph"><span class="stat-tag">This month</span><b>00</b><span>First sales this month</span></div>
+      <div class="stat ph"><span class="stat-tag">Average</span><b>00 days</b><span>Avg. to first $1k</span></div>
+    </div>
+    -->
+
+    <div class="wins-marquee">
+      <div class="wins-row">
+      <div class="wins-track ltr">
+        <div class="win-tile"><img src="assets/wins/dan-27orders.jpg" alt="Student result - 27 orders and 300 EUR in 48 hours" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/luke-151k.jpg" alt="Student result - 151k views overnight on first post" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/japan-first.jpg" alt="Student result - first sales and first international customer" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/dan-20orders.jpg" alt="Student win - 20 orders" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/jesse.jpg" alt="Student win - built the whole business in one day" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/cooper-rogers.jpg" alt="Student win - in-depth training feedback" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/dan-27orders.jpg" alt="Student result - 27 orders and 300 EUR in 48 hours" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/luke-151k.jpg" alt="Student result - 151k views overnight on first post" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/japan-first.jpg" alt="Student result - first sales and first international customer" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/dan-20orders.jpg" alt="Student win - 20 orders" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/jesse.jpg" alt="Student win - built the whole business in one day" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/cooper-rogers.jpg" alt="Student win - in-depth training feedback" loading="lazy"></div>
+      </div>
+      </div>
+      <div class="wins-row">
+      <div class="wins-track rtl">
+        <div class="win-tile"><img src="assets/wins/seajay.jpg" alt="Student win - easy to follow training" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/quality-quote.jpg" alt="Student feedback - straightforward and easy to follow" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/dan-760k.jpg" alt="Student result - 760k views" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/dan-origin.jpg" alt="Student win - store launched" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/seajay.jpg" alt="Student win - easy to follow training" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/quality-quote.jpg" alt="Student feedback - straightforward and easy to follow" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/dan-760k.jpg" alt="Student result - 760k views" loading="lazy"></div>
+        <div class="win-tile"><img src="assets/wins/dan-origin.jpg" alt="Student win - store launched" loading="lazy"></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top:44px">
+      <button class="btn btn-lg btn-glow" data-open>I Want Results Like These <span class="btn-arrow">→</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COURSE PREVIEW ============ -->
+<!-- Video testimonials (same 5 as /go). Added 25 Sep 2026 - delete this whole section to remove. -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="center">
+      <div class="tag">Testimonials</div>
+      <h2>Real students, <span class="g">real results.</span></h2>
+      <p class="lede">Five people who started with nothing extra - just the course and the AI.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-row1">
+    <div class="testi-tile" style="aspect-ratio: 3 / 4;">
+      <div id="vidalytics_embed_mdR2zIx711Fpu2hM"></div>
+      <script type="text/javascript">
+      (function (v, i, d, a, l, y, t, c, s) {
+          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+          if (!vsl){vsl=function(u,cb){
+              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+              i.getElementsByTagName("head")[0].appendChild(s);
+          };}
+          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+      })(window, document, 'Vidalytics', 'vidalytics_embed_mdR2zIx711Fpu2hM', 'https://fast.vidalytics.com/embeds/jV0yyyR6/mdR2zIx711Fpu2hM/');
+      </script>
+    </div>
+    <div class="testi-tile" style="aspect-ratio: 3 / 4;">
+      <div id="vidalytics_embed_koaL6fxLhyl1kQeS"></div>
+      <script type="text/javascript">
+      (function (v, i, d, a, l, y, t, c, s) {
+          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+          if (!vsl){vsl=function(u,cb){
+              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+              i.getElementsByTagName("head")[0].appendChild(s);
+          };}
+          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+      })(window, document, 'Vidalytics', 'vidalytics_embed_koaL6fxLhyl1kQeS', 'https://fast.vidalytics.com/embeds/jV0yyyR6/koaL6fxLhyl1kQeS/');
+      </script>
+    </div>
+    <div class="testi-tile" style="aspect-ratio: 9 / 16;">
+      <div id="vidalytics_embed_trcoeWifaraTa2hQ"></div>
+      <script type="text/javascript">
+      (function (v, i, d, a, l, y, t, c, s) {
+          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+          if (!vsl){vsl=function(u,cb){
+              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+              i.getElementsByTagName("head")[0].appendChild(s);
+          };}
+          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+      })(window, document, 'Vidalytics', 'vidalytics_embed_trcoeWifaraTa2hQ', 'https://fast.vidalytics.com/embeds/jV0yyyR6/trcoeWifaraTa2hQ/');
+      </script>
+    </div>
+      </div>
+      <div class="testi-row2">
+    <div class="testi-tile" style="aspect-ratio: 1.3 / 1;">
+      <div id="vidalytics_embed_4CTERLmU7kclipCW"></div>
+      <script type="text/javascript">
+      (function (v, i, d, a, l, y, t, c, s) {
+          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+          if (!vsl){vsl=function(u,cb){
+              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+              i.getElementsByTagName("head")[0].appendChild(s);
+          };}
+          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+      })(window, document, 'Vidalytics', 'vidalytics_embed_4CTERLmU7kclipCW', 'https://fast.vidalytics.com/embeds/jV0yyyR6/4CTERLmU7kclipCW/');
+      </script>
+    </div>
+    <div class="testi-tile" style="aspect-ratio: 1.71 / 1;">
+      <div id="vidalytics_embed_12BbHGRWdWBXfH40"></div>
+      <script type="text/javascript">
+      (function (v, i, d, a, l, y, t, c, s) {
+          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+          if (!vsl){vsl=function(u,cb){
+              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+              i.getElementsByTagName("head")[0].appendChild(s);
+          };}
+          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+      })(window, document, 'Vidalytics', 'vidalytics_embed_12BbHGRWdWBXfH40', 'https://fast.vidalytics.com/embeds/jV0yyyR6/12BbHGRWdWBXfH40/');
+      </script>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center">
+      <div class="tag">Inside the course</div>
+      <h2>What you're <span class="g">getting access to.</span></h2>
+      <p class="lede">The whole thing, start to finish. Nothing held back for a paid tier - because there isn't one.</p>
+    </div>
+
+    <div class="modules">
+      <div class="mod-head"><b>The $25M E-Com Course</b><span>7 MODULES</span></div>
+      <div class="mod"><div class="mod-n">1</div><div class="mod-t">Introduction - start here</div><div class="mod-d"></div></div>
+      <div class="mod"><div class="mod-n">2</div><div class="mod-t">Foundations</div><div class="mod-d"></div></div>
+      <div class="mod"><div class="mod-n">3</div><div class="mod-t">AI store build groundwork</div><div class="mod-d"></div></div>
+      <div class="mod"><div class="mod-n">4</div><div class="mod-t">Build your high-converting store</div><div class="mod-d"></div></div>
+      <div class="mod"><div class="mod-n">5</div><div class="mod-t">Fulfilment</div><div class="mod-d"></div></div>
+      <div class="mod"><div class="mod-n">6</div><div class="mod-t">Going live to market</div><div class="mod-d"></div></div>
+      <div class="mod"><div class="mod-n">7</div><div class="mod-t">Final takeaway</div><div class="mod-d"></div></div>
+    </div>
+
+    <div class="center" style="margin-top:44px">
+      <button class="btn btn-lg" data-open>Get Your Free Course <span class="btn-arrow">→</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="center">
+      <div class="tag">Questions, answered</div>
+      <h2>Frequently asked <span class="g">questions.</span></h2>
+      <p class="lede">The stuff you're already wondering.</p>
+    </div>
+
+    <div class="faq">
+      <details class="q" open>
+        <summary>How much does it actually cost to get started? <span class="chev">▾</span></summary>
+        <div class="q-body">
+          <p>The course, the onboarding call and the community are on us - Base44 and Revolut cover it. You don't pay a cent for any of that.</p>
+          <p>The only thing you cover is your Base44 plan, the AI builder you build the store with, and it goes straight to Base44 rather than to me.</p>
+          <p>No ad spend required. The whole model is built to work without putting your own money at risk.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>How is this different from every other free course? <span class="chev">▾</span></summary>
+        <div class="q-body">
+          <p>Most free courses hand you a login link and disappear. You get dropped into a portal with no direction and no clarity, you watch a few videos, and you quit.</p>
+          <p>That's why my team personally calls you after you apply. They walk you through exactly what to do first, second and third based on your specific situation. We want to make sure you actually know what you're doing before you start - because that's the difference between someone who gets results and someone who watches a few videos and quits.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Do I need money or experience to start? <span class="chev">▾</span></summary>
+        <div class="q-body">
+          <p>No to both. No ad spend, no inventory costs, no expensive tools.</p>
+          <p>That's the whole point. When I was 19 with $250 in my account, I couldn't afford to risk anything - so this is the system I wish existed back then. You follow the steps, you start generating revenue, and you reinvest from your profits instead of your savings.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>What results can you realistically expect? <span class="chev">▾</span></summary>
+        <div class="q-body">
+          <p>The process is built to take someone to $10K a month or more from ecom in a few months or less, if they follow it.</p>
+          <p>Some people won't get there - usually because they signed up and never actually launched. I can't promise you specific numbers. What I can tell you is this is the exact framework I've used to build 8 businesses and $25 million in revenue, and I'm handing you all of it.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Can I do this with a full-time job? <span class="chev">▾</span></summary>
+        <div class="q-body">
+          <p>Yeah. Most people starting this are working or studying - that's exactly who I built it for. I was 19 and lost when I started.</p>
+          <p>One focused hour a day is enough to get going. It's not a get-rich-quick thing, it's a follow-the-steps thing.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Why are you giving this away? <span class="chev">▾</span></summary>
+        <div class="q-body">
+          <p>Because I've already made my money. I don't need yours.</p>
+          <p>People have been messaging me for years asking how I did it, and the honest answer is that when I was starting out, all I needed was someone to show me what to do without charging me thousands I didn't have. That person didn't exist for me. Base44 and Revolut are willing to cover the cost so it can exist for you.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section>
+  <div class="wrap">
+    <div class="final-panel">
+      <h2>Claim your free <span class="g">$5,000 course</span> now.</h2>
+      <button class="btn btn-lg" data-open>Get Your Free Course <span class="btn-arrow">→</span></button>
+      <p class="sub-note"><b>No card</b> · <b>No hidden fees</b> · <b>No catch</b></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-disc">Winning Streak provides education and tools only. We do not guarantee any specific income, sales, or results. Your outcomes depend on your own effort, decisions, and factors outside our control. Nothing here is financial or business advice. Results shown are individual testimonials and are not typical or guaranteed.</p>
+    <p class="foot-disc">Not affiliated with or endorsed by Meta Platforms, Inc. Facebook and Instagram are trademarks of Meta Platforms, Inc. Base44 and Revolut are trademarks of their respective owners.</p>
+    <p class="foot-disc">Winning Streak is a trading name of Australian Online Ventures Pty Ltd (ABN 12 675 882 952).</p>
+
+    <p class="foot-block">© 2026 Winning Streak. All rights reserved. · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="mailto:support@winningstreakecom.com">Contact</a></p>
+  </div>
+</footer>
+
+<!-- ============ OPT-IN MODAL ============ -->
+<div class="modal-backdrop" id="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" data-close aria-label="Close">✕</button>
+    <h3 id="modal-title">Get Your Free Course</h3>
+
+    <!-- VARIANT B ONLY: checkout-style order summary. Reuses the same colour tokens as the
+         value-stack section (.totals/.trow/.strike elsewhere in this file) rather than the
+         literal classes, because those carry page-section margins that don't fit inside a
+         500px-wide modal. Structure only is copied from the reference screenshot - no new
+         colours anywhere; every value below is an existing --green/--muted-2/--cream token or
+         an rgba() already used elsewhere in styles.css (.totals, .stack-head, .mod-head all use
+         rgba(99,194,74,.05) the same way). -->
+    <div class="mck-card" data-variant="b" style="display:none">
+      <div class="mck-item">
+        <div class="mck-item-txt">
+          <h4>The $25M E-Com Course</h4>
+        </div>
+        <div class="mck-strike">$5,000.00</div>
+      </div>
+      <div class="mck-code-row">
+        <span class="mck-code-ico">🏷</span>
+        <span class="mck-code">SPONSORED100</span>
+        <span class="mck-applied">Applied</span>
+        <span class="mck-code-amt">-$5,000.00</span>
+      </div>
+      <div class="mck-totals">
+        <div class="mck-trow mck-final"><b class="mck-final-label">Total Due</b><b class="mck-final-amt">$0.00</b></div>
+      </div>
+    </div>
+
+    <form id="lead-form" action="thank-you.html" method="get">
+      <!-- VARIANT A: single full-name field (control, unchanged). -->
+      <div class="m-field" data-variant="a"><span class="m-ico">◍</span><input type="text" name="name" placeholder="Full name" autocomplete="name" required></div>
+
+      <!-- VARIANT B: first + last name side by side. Joined into "name" at submit time so
+           api/lead.js keeps working unmodified for the field it already reads, and first_name/
+           last_name are sent alongside it for the new per-name handling. -->
+      <div class="mck-name-row" data-variant="b" style="display:none">
+        <div class="m-field"><span class="m-ico">◍</span><input type="text" name="first_name" placeholder="First name" autocomplete="given-name"></div>
+        <div class="m-field"><span class="m-ico">◍</span><input type="text" name="last_name" placeholder="Last name" autocomplete="family-name"></div>
+      </div>
+
+      <div class="m-field"><span class="m-ico">✉</span><input type="email" name="email" placeholder="Email address" autocomplete="email" required></div>
+
+      <!-- phone with country code picker, default Australia -->
+      <div class="phone-row">
+        <div class="cc-wrap">
+          <select name="country_code" aria-label="Country code">
+            <optgroup label="Most common">
+            <option value="+61" selected>🇦🇺 +61 Australia</option>
+            <option value="+1">🇺🇸 +1 United States</option>
+            </optgroup>
+            <optgroup label="Europe">
+            <option value="+355">🇦🇱 +355 Albania</option>
+            <option value="+376">🇦🇩 +376 Andorra</option>
+            <option value="+43">🇦🇹 +43 Austria</option>
+            <option value="+375">🇧🇾 +375 Belarus</option>
+            <option value="+32">🇧🇪 +32 Belgium</option>
+            <option value="+387">🇧🇦 +387 Bosnia & Herzegovina</option>
+            <option value="+359">🇧🇬 +359 Bulgaria</option>
+            <option value="+385">🇭🇷 +385 Croatia</option>
+            <option value="+357">🇨🇾 +357 Cyprus</option>
+            <option value="+420">🇨🇿 +420 Czechia</option>
+            <option value="+45">🇩🇰 +45 Denmark</option>
+            <option value="+372">🇪🇪 +372 Estonia</option>
+            <option value="+358">🇫🇮 +358 Finland</option>
+            <option value="+33">🇫🇷 +33 France</option>
+            <option value="+49">🇩🇪 +49 Germany</option>
+            <option value="+350">🇬🇮 +350 Gibraltar</option>
+            <option value="+30">🇬🇷 +30 Greece</option>
+            <option value="+299">🇬🇱 +299 Greenland</option>
+            <option value="+36">🇭🇺 +36 Hungary</option>
+            <option value="+354">🇮🇸 +354 Iceland</option>
+            <option value="+353">🇮🇪 +353 Ireland</option>
+            <option value="+39">🇮🇹 +39 Italy</option>
+            <option value="+371">🇱🇻 +371 Latvia</option>
+            <option value="+423">🇱🇮 +423 Liechtenstein</option>
+            <option value="+370">🇱🇹 +370 Lithuania</option>
+            <option value="+352">🇱🇺 +352 Luxembourg</option>
+            <option value="+356">🇲🇹 +356 Malta</option>
+            <option value="+373">🇲🇩 +373 Moldova</option>
+            <option value="+377">🇲🇨 +377 Monaco</option>
+            <option value="+382">🇲🇪 +382 Montenegro</option>
+            <option value="+31">🇳🇱 +31 Netherlands</option>
+            <option value="+389">🇲🇰 +389 North Macedonia</option>
+            <option value="+47">🇳🇴 +47 Norway</option>
+            <option value="+48">🇵🇱 +48 Poland</option>
+            <option value="+351">🇵🇹 +351 Portugal</option>
+            <option value="+40">🇷🇴 +40 Romania</option>
+            <option value="+7">🇷🇺 +7 Russia</option>
+            <option value="+381">🇷🇸 +381 Serbia</option>
+            <option value="+421">🇸🇰 +421 Slovakia</option>
+            <option value="+386">🇸🇮 +386 Slovenia</option>
+            <option value="+34">🇪🇸 +34 Spain</option>
+            <option value="+46">🇸🇪 +46 Sweden</option>
+            <option value="+41">🇨🇭 +41 Switzerland</option>
+            <option value="+90">🇹🇷 +90 Turkey</option>
+            <option value="+380">🇺🇦 +380 Ukraine</option>
+            <option value="+44">🇬🇧 +44 United Kingdom</option>
+            </optgroup>
+            <optgroup label="Rest of world">
+            <option value="+93">🇦🇫 +93 Afghanistan</option>
+            <option value="+213">🇩🇿 +213 Algeria</option>
+            <option value="+244">🇦🇴 +244 Angola</option>
+            <option value="+54">🇦🇷 +54 Argentina</option>
+            <option value="+374">🇦🇲 +374 Armenia</option>
+            <option value="+297">🇦🇼 +297 Aruba</option>
+            <option value="+994">🇦🇿 +994 Azerbaijan</option>
+            <option value="+1">🇧🇸 +1 Bahamas</option>
+            <option value="+973">🇧🇭 +973 Bahrain</option>
+            <option value="+880">🇧🇩 +880 Bangladesh</option>
+            <option value="+1">🇧🇧 +1 Barbados</option>
+            <option value="+501">🇧🇿 +501 Belize</option>
+            <option value="+229">🇧🇯 +229 Benin</option>
+            <option value="+1">🇧🇲 +1 Bermuda</option>
+            <option value="+975">🇧🇹 +975 Bhutan</option>
+            <option value="+591">🇧🇴 +591 Bolivia</option>
+            <option value="+267">🇧🇼 +267 Botswana</option>
+            <option value="+55">🇧🇷 +55 Brazil</option>
+            <option value="+673">🇧🇳 +673 Brunei</option>
+            <option value="+226">🇧🇫 +226 Burkina Faso</option>
+            <option value="+257">🇧🇮 +257 Burundi</option>
+            <option value="+855">🇰🇭 +855 Cambodia</option>
+            <option value="+237">🇨🇲 +237 Cameroon</option>
+            <option value="+1">🇨🇦 +1 Canada</option>
+            <option value="+238">🇨🇻 +238 Cape Verde</option>
+            <option value="+1">🇰🇾 +1 Cayman Islands</option>
+            <option value="+235">🇹🇩 +235 Chad</option>
+            <option value="+56">🇨🇱 +56 Chile</option>
+            <option value="+86">🇨🇳 +86 China</option>
+            <option value="+57">🇨🇴 +57 Colombia</option>
+            <option value="+242">🇨🇬 +242 Congo</option>
+            <option value="+243">🇨🇩 +243 Congo (DRC)</option>
+            <option value="+506">🇨🇷 +506 Costa Rica</option>
+            <option value="+225">🇨🇮 +225 Cote d'Ivoire</option>
+            <option value="+53">🇨🇺 +53 Cuba</option>
+            <option value="+253">🇩🇯 +253 Djibouti</option>
+            <option value="+1">🇩🇴 +1 Dominican Republic</option>
+            <option value="+593">🇪🇨 +593 Ecuador</option>
+            <option value="+20">🇪🇬 +20 Egypt</option>
+            <option value="+503">🇸🇻 +503 El Salvador</option>
+            <option value="+251">🇪🇹 +251 Ethiopia</option>
+            <option value="+679">🇫🇯 +679 Fiji</option>
+            <option value="+241">🇬🇦 +241 Gabon</option>
+            <option value="+220">🇬🇲 +220 Gambia</option>
+            <option value="+995">🇬🇪 +995 Georgia</option>
+            <option value="+233">🇬🇭 +233 Ghana</option>
+            <option value="+1">🇬🇩 +1 Grenada</option>
+            <option value="+502">🇬🇹 +502 Guatemala</option>
+            <option value="+224">🇬🇳 +224 Guinea</option>
+            <option value="+592">🇬🇾 +592 Guyana</option>
+            <option value="+509">🇭🇹 +509 Haiti</option>
+            <option value="+504">🇭🇳 +504 Honduras</option>
+            <option value="+852">🇭🇰 +852 Hong Kong</option>
+            <option value="+91">🇮🇳 +91 India</option>
+            <option value="+62">🇮🇩 +62 Indonesia</option>
+            <option value="+98">🇮🇷 +98 Iran</option>
+            <option value="+964">🇮🇶 +964 Iraq</option>
+            <option value="+972">🇮🇱 +972 Israel</option>
+            <option value="+1">🇯🇲 +1 Jamaica</option>
+            <option value="+81">🇯🇵 +81 Japan</option>
+            <option value="+962">🇯🇴 +962 Jordan</option>
+            <option value="+7">🇰🇿 +7 Kazakhstan</option>
+            <option value="+254">🇰🇪 +254 Kenya</option>
+            <option value="+965">🇰🇼 +965 Kuwait</option>
+            <option value="+996">🇰🇬 +996 Kyrgyzstan</option>
+            <option value="+856">🇱🇦 +856 Laos</option>
+            <option value="+961">🇱🇧 +961 Lebanon</option>
+            <option value="+266">🇱🇸 +266 Lesotho</option>
+            <option value="+231">🇱🇷 +231 Liberia</option>
+            <option value="+218">🇱🇾 +218 Libya</option>
+            <option value="+853">🇲🇴 +853 Macau</option>
+            <option value="+261">🇲🇬 +261 Madagascar</option>
+            <option value="+265">🇲🇼 +265 Malawi</option>
+            <option value="+60">🇲🇾 +60 Malaysia</option>
+            <option value="+960">🇲🇻 +960 Maldives</option>
+            <option value="+223">🇲🇱 +223 Mali</option>
+            <option value="+230">🇲🇺 +230 Mauritius</option>
+            <option value="+52">🇲🇽 +52 Mexico</option>
+            <option value="+976">🇲🇳 +976 Mongolia</option>
+            <option value="+212">🇲🇦 +212 Morocco</option>
+            <option value="+258">🇲🇿 +258 Mozambique</option>
+            <option value="+95">🇲🇲 +95 Myanmar</option>
+            <option value="+264">🇳🇦 +264 Namibia</option>
+            <option value="+977">🇳🇵 +977 Nepal</option>
+            <option value="+687">🇳🇨 +687 New Caledonia</option>
+            <option value="+64">🇳🇿 +64 New Zealand</option>
+            <option value="+505">🇳🇮 +505 Nicaragua</option>
+            <option value="+227">🇳🇪 +227 Niger</option>
+            <option value="+234">🇳🇬 +234 Nigeria</option>
+            <option value="+968">🇴🇲 +968 Oman</option>
+            <option value="+92">🇵🇰 +92 Pakistan</option>
+            <option value="+970">🇵🇸 +970 Palestine</option>
+            <option value="+507">🇵🇦 +507 Panama</option>
+            <option value="+675">🇵🇬 +675 Papua New Guinea</option>
+            <option value="+595">🇵🇾 +595 Paraguay</option>
+            <option value="+51">🇵🇪 +51 Peru</option>
+            <option value="+63">🇵🇭 +63 Philippines</option>
+            <option value="+1">🇵🇷 +1 Puerto Rico</option>
+            <option value="+974">🇶🇦 +974 Qatar</option>
+            <option value="+250">🇷🇼 +250 Rwanda</option>
+            <option value="+966">🇸🇦 +966 Saudi Arabia</option>
+            <option value="+221">🇸🇳 +221 Senegal</option>
+            <option value="+248">🇸🇨 +248 Seychelles</option>
+            <option value="+232">🇸🇱 +232 Sierra Leone</option>
+            <option value="+65">🇸🇬 +65 Singapore</option>
+            <option value="+677">🇸🇧 +677 Solomon Islands</option>
+            <option value="+252">🇸🇴 +252 Somalia</option>
+            <option value="+27">🇿🇦 +27 South Africa</option>
+            <option value="+82">🇰🇷 +82 South Korea</option>
+            <option value="+211">🇸🇸 +211 South Sudan</option>
+            <option value="+94">🇱🇰 +94 Sri Lanka</option>
+            <option value="+249">🇸🇩 +249 Sudan</option>
+            <option value="+597">🇸🇷 +597 Suriname</option>
+            <option value="+963">🇸🇾 +963 Syria</option>
+            <option value="+886">🇹🇼 +886 Taiwan</option>
+            <option value="+992">🇹🇯 +992 Tajikistan</option>
+            <option value="+255">🇹🇿 +255 Tanzania</option>
+            <option value="+66">🇹🇭 +66 Thailand</option>
+            <option value="+228">🇹🇬 +228 Togo</option>
+            <option value="+676">🇹🇴 +676 Tonga</option>
+            <option value="+1">🇹🇹 +1 Trinidad & Tobago</option>
+            <option value="+216">🇹🇳 +216 Tunisia</option>
+            <option value="+993">🇹🇲 +993 Turkmenistan</option>
+            <option value="+256">🇺🇬 +256 Uganda</option>
+            <option value="+971">🇦🇪 +971 United Arab Emirates</option>
+            <option value="+598">🇺🇾 +598 Uruguay</option>
+            <option value="+998">🇺🇿 +998 Uzbekistan</option>
+            <option value="+678">🇻🇺 +678 Vanuatu</option>
+            <option value="+58">🇻🇪 +58 Venezuela</option>
+            <option value="+84">🇻🇳 +84 Vietnam</option>
+            <option value="+967">🇾🇪 +967 Yemen</option>
+            <option value="+260">🇿🇲 +260 Zambia</option>
+            <option value="+263">🇿🇼 +263 Zimbabwe</option>
+            </optgroup>
+          </select>
+          <span class="cc-caret">▾</span>
+        </div>
+        <div class="m-field">
+          <span class="m-ico">☎</span>
+          <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" inputmode="tel" required>
+        </div>
+      </div>
+      <p id="phone-error" class="field-error" role="alert" aria-live="polite"></p>
+
+      <!-- SMS opt-in: separate + explicit, unchecked by default, and OPTIONAL (no `required`,
+           so the form still submits when it's left unticked). A2P/SMS compliance. -->
+      <label class="m-sms">
+        <input type="checkbox" name="sms_consent" value="Yes">
+        <span>I agree to receive transactional SMS messages from Winning Streak (Australian Online Ventures Pty Ltd). Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.</span>
+      </label>
+
+      <!-- $50 investment acknowledgment - REQUIRED. Makes the Base44 subscription
+           expectation explicit up front and qualifies out anyone who won't invest,
+           cutting the "I didn't know it cost anything" objection on the setup call. -->
+      <label class="m-invest">
+        <input type="checkbox" name="has_50" value="Yes" required>
+        <!-- mck-50 only turns bold under .modal.variant-b (see styles.css) - same wording,
+             font-weight:inherit by default so variant A renders byte-for-byte as before. -->
+        <span>By checking this box you understand that it is a requirement to have at least <b class="mck-50">$50</b> to start this business. If that's not possible for you, please LEAVE this page now.</span>
+      </label>
+
+      <button type="submit" class="btn" id="lead-submit">Get Your Free Course →</button>
+    </form>
+    <p class="m-secure" data-variant="a">🔒 Your information is 100% secure.</p>
+    <!-- VARIANT B trust row - deliberately just these two lines. No "Instant access" (the team
+         calls within 24h, so that claim would be false) and no star rating (no verified source
+         for one). -->
+    <p class="mck-trust" data-variant="b" style="display:none">🔒 Secure form &nbsp;&middot;&nbsp; No card required</p>
+    <p class="m-legal">By submitting, you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy Policy</a>. SMS is optional — you'll only receive texts if you tick the box above, and it's not required to submit this form.</p>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  const open = () => { window.va && va('event', { name: 'Form Opened', variant: window.WS_VARIANT || 'A' }); modal.classList.add('open'); document.body.style.overflow = 'hidden';
+    setTimeout(() => modal.querySelector('input')?.focus(), 60); };
+  const close = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
+  document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', open));
+  document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', close));
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+  // Lead capture: post to our own server, which forwards to Discord.
+  // The webhook is never exposed to the browser.
+  const form = document.getElementById('lead-form');
+  const submit = document.getElementById('lead-submit');
+
+  // --- A/B variant toggle ---------------------------------------------------------------
+  // window.WS_VARIANT was decided at the very top of the page (see the assignment script in
+  // <head>), before this modal markup even existed. Both variants' fields already sit in the
+  // DOM (see the opt-in modal HTML above) - this just shows one set and hides the other, and
+  // critically, drops `required` off whichever name field(s) are hidden. Leaving `required` on
+  // a display:none input silently blocks native form submission with no visible error, which
+  // is exactly the kind of bug that looks like "the button just doesn't work."
+  const VARIANT = window.WS_VARIANT === 'B' ? 'B' : 'A';
+  // Scopes the compact-mobile CSS below to variant B only, so variant A's spacing/sizing is
+  // untouched byte-for-byte - see the .modal.variant-b rules in styles.css.
+  modal.querySelector('.modal').classList.add(VARIANT === 'B' ? 'variant-b' : 'variant-a');
+  document.querySelectorAll('[data-variant]').forEach((el) => {
+    const show = el.getAttribute('data-variant').toUpperCase() === VARIANT;
+    el.style.display = show ? '' : 'none';
+    el.querySelectorAll('input').forEach((inp) => { inp.disabled = !show; });
+    if (el.matches('input')) el.disabled = !show;
+  });
+  submit.textContent = VARIANT === 'B' ? 'Claim Free Course →' : 'Get Your Free Course →';
+  // The full-name input (variant A) and first/last inputs (variant B) all still carry
+  // `required` from their HTML - disabling the hidden ones above is what stops the browser
+  // validating a field nobody can see or fill in.
+  const firstNameInput = form.querySelector('input[name="first_name"]');
+  const lastNameInput = form.querySelector('input[name="last_name"]');
+  if (VARIANT === 'B') { firstNameInput.required = true; lastNameInput.required = true; }
+  else { firstNameInput.required = false; lastNameInput.required = false; }
+
+  // --- phone validation ---------------------------------------------------------------
+  //
+  // A lead we cannot ring is not a lead. The rule here is simple: nothing leaves this page
+  // unless the number is valid FOR THE SELECTED COUNTRY, so every record lands with both a
+  // working number and a country we are sure about.
+  //
+  // What went wrong before: the picker defaulted to Australia, most of our traffic is not
+  // Australian, and people who never touched it typed their own full number. "+61" and
+  // "1 980 443 8363" got glued into +6119804438363. Roughly 12% of leads from 13 Aug 2026
+  // were undiallable. Three things stop it now:
+  //   1. the picker starts on the visitor's own country (/api/geo), so it is right by default
+  //   2. typing a number that begins with a different country's code switches the picker
+  //      instead of failing - people who type "+1 415..." get what they meant
+  //   3. length AND leading digits are checked, live, against the selected country
+  // api/lead.js repeats the check server-side. This copy is the good experience; that one is
+  // the guarantee, because a cached page can always be running older rules than these.
+  //
+  // dial code -> [min, max] national digits, leading-digit pattern (null = length only),
+  //              example number to show
+  const PHONE_RULES = {
+    // Rules tight enough to catch a wrong-country number, in the markets we actually sell to.
+    '+61':[9,9,/^[23478]/,'412 345 678'],
+    // NANP: area code and exchange both start 2-9, and neither is a reserved N11 code.
+    '+1':[10,10,/^[2-9]\d\d[2-9]/,'415 555 0123'],
+    '+44':[9,10,/^[1235789]/,'7700 900123'],
+    '+64':[8,10,/^[234679]/,'21 123 4567'],
+    '+353':[7,9,/^[1-9]/,'85 123 4567'],
+    '+49':[10,11,null,'151 23456789'], '+33':[9,9,/^[1-9]/,'6 12 34 56 78'],
+    '+31':[9,9,/^[1-9]/,'6 12345678'],  '+46':[7,9,null,'70 123 45 67'],
+    '+45':[8,8,null,'20 12 34 56'],     '+47':[8,8,/^[2-9]/,'406 12 345'],
+    '+358':[9,10,null,'50 123 4567'],   '+43':[10,11,null,'664 1234567'],
+    '+41':[9,9,null,'78 123 45 67'],    '+32':[9,9,null,'470 12 34 56'],
+    '+34':[9,9,/^[6-9]/,'612 34 56 78'],'+39':[9,10,null,'312 345 6789'],
+    '+351':[9,9,/^[29]/,'912 345 678'], '+48':[9,9,/^[1-9]/,'512 345 678'],
+    '+420':[9,9,/^[1-9]/,'601 123 456'],'+30':[10,10,/^[26]/,'691 234 5678'],
+    '+36':[9,9,null,'20 123 4567'],     '+40':[9,9,null,'712 345 678'],
+    '+372':[7,8,null,'5123 4567'],      '+380':[9,9,null,'50 123 4567'],
+    '+65':[8,8,/^[3689]/,'8123 4567'],  '+972':[9,9,/^[2-9]/,'50 123 4567'],
+    '+81':[10,10,null,'90 1234 5678'],  '+82':[9,10,null,'10 1234 5678'],
+    // Everything else: length only. A rule we are not sure of would cost real leads.
+    '+27':[9,9,null,'71 123 4567'],  '+91':[10,10,/^[6-9]/,'98450 12345'],
+    '+63':[10,10,null,'917 123 4567'], '+971':[8,9,null,'50 123 4567'],
+    '+60':[9,10,null,'12 345 6789'], '+234':[10,10,null,'802 123 4567'],
+    '+92':[10,10,null,'301 2345678'],'+62':[9,12,null,'812 3456 789'],
+    '+90':[10,10,null,'532 123 45 67'], '+7':[10,10,null,'912 345 6789'],
+    '+86':[11,11,null,'131 2345 6789'], '+55':[10,11,null,'11 91234 5678'],
+    '+52':[10,10,null,'55 1234 5678'],  '+254':[9,9,null,'712 123456'],
+    '+256':[9,9,null,'712 345678'],  '+233':[9,9,null,'24 123 4567'],
+    '+20':[10,10,null,'100 123 4567'],  '+212':[9,9,null,'650 123456'],
+    '+966':[9,9,null,'50 123 4567'],
+  };
+  // Fallback for a country we have no rule for. Length only - a rule we are not sure of costs
+  // real leads. It is NOT used when the picker has no value at all; see phoneError.
+  const DEFAULT_RULE = [6, 13, null, ''];
+  const ruleFor = (cc) => PHONE_RULES[cc] || DEFAULT_RULE;
+
+  const phoneInput = form.querySelector('input[name="phone"]');
+  const ccSelect = form.querySelector('select[name="country_code"]');
+  const phoneErr = document.getElementById('phone-error');
+
+  // The option label is "🇦🇺 +61 Australia": flag, dial code, then the name.
+  const labelOf = (opt) => (opt?.text || '').trim().split(/\s+/);
+  const countryName = (opt) => { const p = labelOf(opt); return p.length > 2 ? p.slice(2).join(' ') : ''; };
+  const countryFlag = (opt) => { const p = labelOf(opt); return p.length > 2 ? p[0] : ''; };
+  const selected = () => ccSelect.options[ccSelect.selectedIndex];
+
+  // Strip the country code off the front and drop the local trunk 0, leaving the national part.
+  function national(cc, raw) {
+    let d = String(raw || '').replace(/\D/g, '');
+    const ccd = String(cc || '').replace(/\D/g, '');
+    if (ccd && d.startsWith(ccd) && d.length > ccd.length) d = d.slice(ccd.length);
+    return d.replace(/^0+/, '');
+  }
+
+  // Obvious junk - "+61123456789" and "1111111111" both got through the old check. Only the two
+  // unambiguous shapes: every digit the same, or a straight count up. A descending run was in
+  // here too and it rejected a real Indian mobile, which is the wrong way to be wrong: a fake
+  // number costs one wasted dial, a rejected real one costs the lead.
+  const isFake = (d) => /^(\d)\1+$/.test(d) || '01234567890123'.includes(d);
+
+  function phoneError(cc, raw) {
+    const d = national(cc, raw);
+    if (!d) return 'Please enter your phone number.';
+    // An empty picker is a broken state, not an unknown country, and it must never fall through
+    // to the permissive default rule. That is how "8584329379" left here with no country code at
+    // all: a US number, accepted because 10 digits fits 6-13, then stamped +61 by Close's own
+    // default further down the line. Make them choose instead.
+    if (!cc) return 'Please choose your country from the dropdown.';
+    const [min, max, start] = ruleFor(cc);
+    if (d.length < min || d.length > max) {
+      return min === max
+        ? `A ${cc} number is ${min} digits - you've entered ${d.length}.`
+        : `A ${cc} number is ${min}-${max} digits - you've entered ${d.length}.`;
+    }
+    if (start && !start.test(d)) return `That isn't a valid ${cc} number - check the country is right.`;
+    if (isFake(d)) return 'Please enter your real phone number - we call you on it.';
+    return null;
+  }
+
+  // If someone types a number starting with a country code that is not the one selected, move
+  // the picker to match rather than rejecting them. Somebody typing "+1 415 555 0123" has told
+  // us exactly where they are; making them hunt through the dropdown to be allowed to say it is
+  // how you lose a lead. Longest code first so +1 never shadows +1-something.
+  const DIAL_CODES = [...new Set(Object.keys(PHONE_RULES))].sort((a, b) => b.length - a.length);
+  function adoptTypedCode(raw) {
+    if (!/^\s*\+/.test(raw)) return false;             // only when they actually typed a "+"
+    const d = raw.replace(/\D/g, '');
+    for (const cc of DIAL_CODES) {
+      const ccd = cc.slice(1);
+      if (!d.startsWith(ccd)) continue;
+      const rest = d.slice(ccd.length).replace(/^0+/, '');
+      const [min, max, start] = ruleFor(cc);
+      if (rest.length < min || rest.length > max) continue;
+      if (start && !start.test(rest)) continue;
+      if (cc === ccSelect.value) return false;
+      // Keep the country they typed; if several share the code (+1 is US, Canada, Jamaica...)
+      // the first is the one we sell to most.
+      const opt = [...ccSelect.options].find((o) => o.value === cc);
+      if (!opt) return false;
+      ccSelect.value = cc;
+      phoneInput.value = rest;
+      return true;
+    }
+    return false;
+  }
+
+  // Live feedback. The hint tells them the format up front so they get it right first time;
+  // the error only appears once they have stopped typing, because correcting someone
+  // mid-keystroke reads as the form arguing with them.
+  let touched = false;
+  function paint() {
+    const cc = ccSelect.value;
+    const opt = selected();
+    const [, , , example] = ruleFor(cc);
+    phoneInput.placeholder = example ? `Phone number - e.g. ${example}` : 'Phone number';
+    const err = phoneError(cc, phoneInput.value);
+    const filled = national(cc, phoneInput.value).length > 0;
+    phoneInput.classList.toggle('bad', !!err && touched && filled);
+    phoneInput.classList.toggle('good', !err && filled);
+    if (err && touched && filled) {
+      phoneErr.className = 'field-error';
+      phoneErr.textContent = err;
+    } else if (!err && filled) {
+      phoneErr.className = 'field-error field-ok';
+      phoneErr.textContent = `✓ ${countryFlag(opt)} ${countryName(opt)} - we'll call you on ${cc} ${national(cc, phoneInput.value)}`;
+    } else {
+      phoneErr.className = 'field-error';
+      phoneErr.textContent = '';
+    }
+  }
+  phoneInput.addEventListener('input', () => { if (adoptTypedCode(phoneInput.value)) touched = true; paint(); });
+  phoneInput.addEventListener('blur', () => { touched = true; paint(); });
+  ccSelect.addEventListener('change', () => { touched = true; paint(); });
+
+  // Start the picker on the visitor's own country instead of Australia. Their flag is already
+  // in the option label - a flag emoji is just its two-letter country code in disguise - so the
+  // match needs no extra table. Fails silently: a blocked or slow lookup leaves the form exactly
+  // as it renders, so this can never stop someone applying.
+  const isoFromFlag = (s) => {
+    const cp = [...String(s || '')];
+    if (cp.length < 2) return '';
+    const a = cp[0].codePointAt(0) - 0x1F1E6, b = cp[1].codePointAt(0) - 0x1F1E6;
+    if (a < 0 || a > 25 || b < 0 || b > 25) return '';
+    return String.fromCharCode(65 + a, 65 + b);
+  };
+  fetch('/api/geo').then(r => r.json()).then(({ country }) => {
+    if (!country || phoneInput.value) return;   // never override something already typed
+    const opt = [...ccSelect.options].find(o => isoFromFlag(countryFlag(o)) === country);
+    if (opt) { ccSelect.value = opt.value; paint(); }
+  }).catch(() => {});
+  paint();
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (submit.disabled) return;
+
+    // Hard gate. Nothing reaches the CRM without a number that is valid for its country.
+    touched = true;
+    const err = phoneError(ccSelect.value, phoneInput.value);
+    if (err) {
+      paint();
+      phoneErr.textContent = err;
+      phoneInput.classList.add('bad');
+      phoneInput.focus();
+      // Blocking a submit is the one change here that could cost a real lead: if a rule above is
+      // too tight for some country, that person simply cannot apply and we would never find out.
+      // Count the blocks so it shows up instead. Dial code and digit count only - no number.
+      window.va && va('event', {
+        name: 'Phone Rejected',
+        cc: ccSelect.value,
+        digits: national(ccSelect.value, phoneInput.value).length,
+        variant: VARIANT,
+      });
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.phone = national(ccSelect.value, phoneInput.value); // send it clean
+    data.form_variant = VARIANT;
+    // Variant B collects first/last separately; api/lead.js and Close both still key off a
+    // single "name" field, so join it here rather than touching that logic. first_name/
+    // last_name travel too, unchanged, for the per-name handling further down.
+    if (VARIANT === 'B') data.name = `${data.first_name || ''} ${data.last_name || ''}`.trim();
+
+    // Send the country the way they picked it. Reading it from the selection beats guessing
+    // from the dial code, which is ambiguous (+1 is US, Canada and a dozen others).
+    const opt = selected();
+    if (countryName(opt)) {
+      data.country_flag = countryFlag(opt);
+      data.country = countryName(opt);
+    }
+    submit.disabled = true;
+    submit.textContent = 'Sending...';
+
+    // ---- Meta de-duplication ----
+    // The SAME event_id has to reach Meta from the browser AND from the server, or the
+    // Conversions API doubles every lead instead of backfilling the ones the browser loses to
+    // ad blockers and iOS. So it is minted BEFORE the POST and travels with it.
+    // _fbp / _fbc are the pixel's own cookies: _fbc carries the click id from the ad. Without
+    // them a server event has almost nothing to match on and the whole exercise is wasted.
+    const cookie = (k) => (document.cookie.match('(^|;)\\s*' + k + '=([^;]*)') || [])[2] || '';
+    data.event_id = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+    data.fbp = cookie('_fbp');
+    data.fbc = cookie('_fbc');
+    data.event_source_url = window.location.href;
+
+    // Attach whatever we captured on landing so the server can classify the lead.
+    try {
+      var attr = JSON.parse(sessionStorage.getItem('ws_attr') || '{}');
+      Object.keys(attr).forEach(function (k) { if (attr[k]) data['attr_' + k] = attr[k]; });
+    } catch (e) {}
+
+    try {
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+        keepalive: true,
+      });
+    } catch (err) {
+      // Swallow it. A failed notification must never cost us the lead -
+      // they still land on the thank-you page and the server logs the miss.
+      console.error('lead post failed', err);
+    }
+
+    window.va && va('event', { name: 'Application Submitted', variant: VARIANT });
+
+    // Meta Lead event. Fired HERE on a confirmed submit rather than from a thank-you pageview,
+    // which would re-count on every refresh or back-navigation.
+    // Advanced matching: fbq hashes em/ph in the browser (SHA-256) before anything leaves the
+    // page, so no raw email or phone is sent to Meta. It lifts match rate a long way on a
+    // low-ticket offer where attribution is otherwise thin.
+    // eventID matches the one the server sends, so Meta counts ONE lead, not two.
+    try {
+      if (window.fbq) {
+        const eventID = data.event_id;
+        // Variant B already has first/last split; variant A only has one "name" field, so
+        // split it on the first space the same way api/lead.js does for the CAPI fix below -
+        // keeping ln populated (it used to be sent as fn only) lifts advanced-match quality.
+        const fn = VARIANT === 'B' ? (data.first_name || '') : (data.name || '').split(' ')[0];
+        const ln = VARIANT === 'B' ? (data.last_name || '') : (data.name || '').split(' ').slice(1).join(' ');
+        const match = {
+          em: (data.email || '').trim().toLowerCase(),
+          ph: (data.phone || '').replace(/[^0-9]/g, ''),
+          fn: fn.trim().toLowerCase(),
+          ln: ln.trim().toLowerCase(),
+        };
+        fbq('init', '4361349117527871', match);
+        fbq('init', '1744455720092654', match);
+        fbq('track', 'Lead', { content_name: 'Free Course Application', form_variant: VARIANT }, { eventID });
+      }
+      // Whop pixel - same event, same event_id, plain values (Whop's own API takes them
+      // unhashed, it isn't CAPI). Computed independently of the fbq block above rather than
+      // reusing its fn/ln - those are scoped inside `if (window.fbq)` and out of reach here, and
+      // this call must still fire even if fbq is ever blocked. event_id is the same per-submission
+      // id the Meta Lead event uses, never a constant, so Whop can dedupe correctly. 23 Sep 2026.
+      if (window.whop) {
+        const wFirst = VARIANT === 'B' ? (data.first_name || '') : (data.name || '').split(' ')[0];
+        const wLast = VARIANT === 'B' ? (data.last_name || '') : (data.name || '').split(' ').slice(1).join(' ');
+        whop.track('lead', {
+          event_id: data.event_id,
+          email: (data.email || '').trim().toLowerCase(),
+          first_name: wFirst,
+          last_name: wLast,
+          phone: data.phone || '',
+        });
+      }
+    } catch (err) {
+      // Never let a tracking failure block the redirect - the lead matters, the pixel does not.
+      console.error('pixel lead failed', err);
+    }
+
+    window.location.href = 'thank-you.html';
+  });
+</script>
+
+<!-- Motion: brand spec §5. Entrances fade+rise, numbers scale-pop + count up,
+     staggered, reduced-motion honoured. Progressive - no JS still shows everything. -->
+<script>
+(function () {
+  const root = document.documentElement;
+  root.classList.add('js');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // headline underline grows once the hero is in
+  document.querySelector('.g-u')?.classList.add('reveal');
+
+  // tag section blocks as reveal targets, staggering siblings within a group
+  const groups = ['.steps', '.stats', '.wins-marquee', '.life-grid', '.faq', '.vidgrid', '.ty-steps'];
+  groups.forEach(sel => document.querySelectorAll(sel).forEach(g => {
+    [...g.children].forEach((el, i) => {
+      el.classList.add('reveal');
+      if (i % 3 === 1) el.classList.add('s1');
+      else if (i % 3 === 2) el.classList.add('s2');
+    });
+  }));
+  document.querySelectorAll('h1, h2, .lede, .stack, .founder-img, .founder-body, .final-panel, .modules, .remember')
+    .forEach(el => el.classList.add('reveal'));
+
+  // big numbers scale-pop
+  document.querySelectorAll('.prop-num, .stat b, .trow.final b').forEach(el => el.classList.add('pop'));
+
+  if (reduce) {
+    // reduced-motion: reveal everything immediately, no transforms, no count-up
+    document.querySelectorAll('.reveal, .pop').forEach(el => el.classList.add('in'));
+    return;
+  }
+
+  // count a numeral up to its final value over ~1.1s, preserving prefix/suffix
+  function countUp(el) {
+    const raw = el.textContent.trim();
+    const m = raw.match(/^([^\d]*)([\d,]+)(.*)$/);
+    if (!m) return;
+    const pre = m[1], suf = m[3], target = parseInt(m[2].replace(/,/g, ''), 10);
+    if (!target) return;
+    const dur = 1100, t0 = performance.now();
+    (function tick(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(target * eased).toLocaleString('en-US');
+      el.textContent = pre + val + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      if (e.target.classList.contains('pop') && !e.target.dataset.counted) {
+        e.target.dataset.counted = '1';
+        countUp(e.target);
+      }
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+  document.querySelectorAll('.reveal, .pop').forEach(el => io.observe(el));
+})();
+</script>
+
+<!-- Vidalytics VSL -> Meta watch milestones.
+     Vidalytics' own Facebook integration fires from the browser only. On cold traffic that is the
+     half we most want and most often lose, so every milestone is ALSO sent from the server
+     (/api/video-event) carrying the same event_id. Meta dedupes and keeps one.
+     Player API pattern is Vidalytics' own: getVidalyticsPlayer(id) resolves once the embed is up. -->
+<script>
+(function(){
+  var EMBED_ID = 'vidalytics_embed_jkiol1FheozZ11he';
+  var LABEL    = 'VSL - Free Course';
+
+  !function(v,a,p,i){
+    v.getVidalyticsPlayer=function(n){v[a]=v[a]||{},v[a][p]=v[a][p]||{};var d=v[a][p][n]=v[a][p][n]||{};
+    return new Promise(function(e){if(d[i])return void e(d[i]);var t;
+    Object.defineProperty(d,i,{get:function(){return t},set:function(x){t=x,e(x)}})})}
+  }(window,'_vidalytics','embeds','player');
+
+  var cookie = function(n){
+    var m = document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)');
+    return m ? m.pop() : '';
+  };
+  // fbc is only in the cookie once Meta has seen an fbclid. On the first paid pageview it may not
+  // exist yet, so fall back to building it from the URL - that is the single strongest match key.
+  var fbc = function(){
+    var c = cookie('_fbc');
+    if (c) return c;
+    var id = new URLSearchParams(location.search).get('fbclid');
+    return id ? 'fb.1.' + Date.now() + '.' + id : '';
+  };
+
+  var sent = {};
+  function fire(name, percent){
+    if (sent[name]) return;            // once per pageview, so a rewind cannot double-count
+    sent[name] = 1;
+    var eventID = name + '-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+    var payload = {
+      event_name: name, event_id: eventID, source_url: location.href,
+      fbp: cookie('_fbp'), fbc: fbc(), content_name: LABEL, video_id: EMBED_ID, percent: percent
+    };
+    try {
+      if (window.fbq) fbq('trackCustom', name, { content_name: LABEL, video_id: EMBED_ID, percent: percent }, { eventID: eventID });
+    } catch (e) {}
+    try {
+      // keepalive so the send survives the viewer navigating away mid-video.
+      fetch('/api/video-event', { method:'POST', headers:{'Content-Type':'application/json'},
+                                  body: JSON.stringify(payload), keepalive: true }).catch(function(){});
+    } catch (e) {}
+  }
+
+  getVidalyticsPlayer(EMBED_ID).then(function(player){
+    if (!player) return;
+    player.on('play', function(){ fire('VideoPlay', 0); });
+    // Vidalytics has no percent-watched event, so milestones come off timeupdate. Tracking the
+    // furthest point REACHED (not the current position) means scrubbing backwards cannot un-fire a
+    // milestone, and scrubbing forward past one still counts it as seen.
+    var furthest = 0;
+    player.on('timeupdate', function(){
+      var d = player.duration, t = player.currentTime;
+      if (!d || !isFinite(d) || d <= 0) return;
+      var pct = (t / d) * 100;
+      if (pct > furthest) furthest = pct;
+      if (furthest >= 25) fire('VideoWatched25', 25);
+      if (furthest >= 50) fire('VideoWatched50', 50);
+      if (furthest >= 75) fire('VideoWatched75', 75);
+      if (furthest >= 95) fire('VideoWatched95', 95);
+    });
+    player.on('ended', function(){ fire('VideoComplete', 100); });
+  }).catch(function(){});
+})();
+</script>
+
+</body>
+</html>

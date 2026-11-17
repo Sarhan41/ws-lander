@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DATDmisc1mzwau");whop.track("page");</script>
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Signup Links - Winning Streak</title>
+<style>
+ :root{--bg:#0b0d10;--card:#14171c;--line:#232830;--txt:#e8eaed;--mut:#8b93a1;--grn:#22c55e;--acc:#3b82f6}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:24px 16px}
+ .wrap{max-width:780px;margin:0 auto}
+ h1{font-size:22px;margin:0 0 4px}
+ .sub{color:var(--mut);font-size:13px;margin-bottom:20px}
+ .note{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.25);border-radius:10px;padding:12px 14px;font-size:13px;margin-bottom:20px}
+ .note b{color:#93c5fd}
+ .tabs{display:flex;gap:8px;margin-bottom:16px}
+ .tab{padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--mut);cursor:pointer;font-size:13px;font-weight:600}
+ .tab.on{background:var(--acc);border-color:var(--acc);color:#fff}
+ .row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin-bottom:8px}
+ .nm{font-weight:700;width:88px;flex:none}
+ .lk{flex:1;color:var(--mut);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+ .cp{flex:none;padding:6px 12px;border-radius:7px;border:1px solid var(--line);background:#1b1f26;color:var(--txt);cursor:pointer;font-size:12px;font-weight:600}
+ .cp:hover{border-color:var(--acc)}
+ .cp.ok{background:var(--grn);border-color:var(--grn);color:#05210f}
+ @media(max-width:560px){.row{flex-wrap:wrap}.nm{width:100%}.lk{width:100%;flex:auto}}
+</style></head><body><div class="wrap">
+<h1>Signup Links</h1>
+<div class="sub">Your own tracked link. Every signup through it is credited to you automatically.</div>
+<div class="note">
+ <b>Two rules.</b> Use YOUR link, not someone else's, or the sale is credited to them.
+ The lead must open it in an <b>incognito window</b> or the signup will fail.
+ <br><br>
+ <b>Access page</b> links are yours: <b>/access/</b> plus your 3-letter code. The lead sees the steps and a Copy button; your code is on the link they copy so the sale is credited to you. This replaces the old raw Base44 link (27 Sep 2026) - send this one, always.
+ <b>Raw</b> Revolut still jumps straight to signup - fine on a screen share where you can walk them into incognito yourself.
+</div>
+<div class="tabs">
+ <div class="tab on" data-p="a">Base44 (access page)</div>
+ <div class="tab" data-p="r">Revolut</div>
+ <!-- Base44 raw tab removed 27 Sep 2026 - the access page replaces it, always carries the setter's
+      code as sharedid so attribution works the same way. Old /s/<slug> links already sent/shared
+      keep resolving (see api/go.js), this just stops it being offered here going forward.
+      Revolut access tab hidden 25 Sep 2026 (Base44 only). Uncomment to restore:
+      <div class="tab" data-p="ar">Revolut (access page)</div> -->
+</div>
+<div id="list"></div>
+</div>
+<script>
+let P='a', SETTERS=[];
+const HOST='https://winningstreakecom.com';
+function render(){
+  // The access page is one shared link for everyone (25 Sep 2026) - no per-setter names.
+  if(P==='a'){
+    // Per-setter access links: /access/<code>. The code (not the name) goes on the customer's link.
+    const rows=SETTERS.filter(s=>s.code).map(s=>({name:s.name,url:`${HOST}/access/${s.code}`})); // no untagged row (27 Oct 2026)
+    document.getElementById('list').innerHTML = rows.map(r=>
+      `<div class="row"><div class="nm">${r.name}</div><div class="lk">${r.url}</div><button class="cp" data-u="${r.url}">Copy</button></div>`).join('');
+    return;
+  }
+  document.getElementById('list').innerHTML = SETTERS.map(s=>{
+    const url=`${HOST}/${P}/${P==='r'&&s.code?s.code:s.slug}`; // Revolut = same 3-letter code (27 Oct 2026)
+    return `<div class="row"><div class="nm">${s.name}</div>`
+         + `<div class="lk">${url}</div>`
+         + `<button class="cp" data-u="${url}">Copy</button></div>`;
+  }).join('') || '<div class="sub">No setters found.</div>';
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('.tab');
+  if(t){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');P=t.dataset.p;render();return;}
+  const b=e.target.closest('.cp');
+  if(b){navigator.clipboard.writeText(b.dataset.u).then(()=>{
+    b.textContent='Copied';b.classList.add('ok');
+    setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1400);
+  });}
+});
+fetch('/api/pay?action=me',{credentials:'same-origin'}).then(r=>r.json()).then(d=>{
+  if(!d.user){document.getElementById('list').innerHTML='<div class="sub">Sign in to the <a href="/payments.html">Commission Centre</a> first, then come back to this page.</div>';return;}
+  SETTERS=d.setterLinks||[];render();})
+  .catch(()=>{document.getElementById('list').innerHTML='<div class="sub">Could not load. Refresh.</div>';});
+</script></body></html>

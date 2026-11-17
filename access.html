@@ -1,0 +1,165 @@
+<!doctype html><html lang="en"><head>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DATDmisc1mzwau");whop.track("page");</script>
+<script>whop.track('view_content', { title: 'Get Your Access', url: location.href });</script>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="robots" content="noindex,nofollow"/><title>Winning Streak - Get Your Access</title><link rel="icon" href="/assets/favicon-512.png"/>
+<style>
+  :root{
+    --ground:#0a0912; --panel:#15151f; --panel2:#1b1c27; --line:#2a2b38;
+    --text:#e9e9f1; --cream:#f4ecd6; --muted:#9a9aad; --accent:#63c24a; --accent2:#4ea63c;
+    --gold:#7fd167; --cool:#8f9bd6; --amber:#f0b160; --red:#ff9a86;
+    --radius:16px; --shadow:0 14px 44px rgba(0,0,0,.55);
+    --font:"Helvetica Neue",Helvetica,-apple-system,"Segoe UI",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground)}
+  .wsroot{color:var(--text);font-family:var(--font);min-height:100vh;position:relative;-webkit-font-smoothing:antialiased}
+  .wsroot:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
+    radial-gradient(1000px 620px at 76% 26%,rgba(126,92,224,.42),transparent 62%),
+    radial-gradient(820px 520px at 10% 64%,rgba(104,72,204,.30),transparent 62%),
+    linear-gradient(115deg,transparent 30%,rgba(122,88,222,.16) 48%,transparent 66%),var(--ground)}
+  .wsroot:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.32)}
+  .main{position:relative;z-index:1;padding:52px 20px calc(90px + env(safe-area-inset-bottom));max-width:560px;margin:0 auto}
+  .wsroot ::selection{background:rgba(99,194,74,.28)}
+  .brandrow{display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+  .logo{width:72px;height:72px;border-radius:18px;box-shadow:var(--shadow);display:block}
+  .hero{text-align:center}
+  h1{font-size:clamp(30px,5vw,36px);margin:0 0 10px;line-height:1.08;letter-spacing:-.02em;font-weight:800;
+     color:var(--cream);text-shadow:0 0 34px rgba(244,236,214,.13);text-wrap:balance}
+  .sub{color:var(--muted);font-size:15.5px;max-width:46ch;line-height:1.6;margin:0 auto}
+  .card{margin-top:34px;border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0) 46%),var(--panel);
+    border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .alert{display:none;margin-bottom:20px;padding:13px 16px;border-radius:10px;font-size:13.5px;line-height:1.55}
+  .alert.show{display:block}
+  .alert.err{background:rgba(224,86,86,.1);border:1px solid rgba(224,86,86,.5);color:var(--red)}
+  .alert.amber{background:rgba(240,177,96,.09);border:1px solid rgba(240,177,96,.45);color:var(--amber)}
+  .alert b{font-weight:700}
+  .steps{display:flex;flex-direction:column;gap:16px}
+  .step{display:flex;align-items:flex-start;gap:14px}
+  .num{flex:none;width:30px;height:30px;border-radius:9px;background:var(--panel2);border:1px solid var(--line);
+    display:grid;place-items:center;font-weight:800;font-size:14px;color:var(--accent);
+    font-variant-numeric:tabular-nums;box-shadow:0 0 10px rgba(99,194,74,.18)}
+  .step p{margin:0;padding-top:4px;font-size:15.5px;line-height:1.5;color:var(--text)}
+  .step b{color:var(--cream)}
+  .prompt{display:block;margin-top:22px;background:#0c0c14;border:1px solid var(--line);border-radius:12px;padding:14px 16px;
+    word-break:break-all;overflow-wrap:anywhere;font-family:var(--mono);font-size:13px;color:var(--cool);
+    line-height:1.5;user-select:all;-webkit-user-select:all;text-decoration:none}
+  .fallback{margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
+  .fallback .lbl{font-size:12px;color:var(--muted);margin-bottom:10px}
+  .copybtn{margin-top:16px;width:100%;background:linear-gradient(180deg,#7cd964,var(--accent2));color:#07130a;
+    border:none;border-radius:12px;padding:16px;font:inherit;font-weight:800;font-size:16px;cursor:pointer;
+    transition:transform .1s,box-shadow .2s;box-shadow:0 4px 20px rgba(99,194,74,.32),inset 0 1px 0 rgba(255,255,255,.35);
+    -webkit-tap-highlight-color:transparent}
+  .copybtn:hover{box-shadow:0 4px 26px rgba(99,194,74,.5),inset 0 1px 0 rgba(255,255,255,.35)}
+  .copybtn:active{transform:scale(.97)}
+  .copybtn.copied{background:var(--gold)}
+  .copybtn:disabled{opacity:.55;cursor:default;box-shadow:none}
+  .copybtn:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+  .warn{margin-top:22px;font-size:13px;color:#f0c9a0;background:rgba(240,177,96,.06);
+    border:1px dashed rgba(240,177,96,.4);border-radius:10px;padding:13px 16px;line-height:1.6;text-align:center}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  /* Easy-to-read layout modelled on the Base44 access page (25 Sep 2026) */
+  .steps{gap:20px}
+  .num{border-radius:4px;width:30px;height:30px;font-family:var(--mono);background:transparent;border:1.5px solid var(--accent);box-shadow:none}
+  .step h3{margin:0 0 4px;font-size:16.5px;color:var(--cream);font-weight:800;line-height:1.3}
+  .step p{padding-top:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .step p b{color:var(--cream)}
+  .lk{margin-top:30px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);overflow:hidden}
+  .lk-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+  .lk-h b{color:var(--cream);font-size:15px}
+  .lk-h small{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:right}
+  .lk-b{display:flex;gap:10px;padding:14px;align-items:stretch}
+  .lk-b .prompt{margin:0;flex:1;min-width:0;padding:12px 13px;font-size:12px;white-space:normal;word-break:break-all;line-height:1.45;display:flex;align-items:center}
+  .lk-b .copybtn{margin:0;width:auto;flex:none;padding:0 20px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;min-height:46px}
+  @media (max-width:520px){.lk-b{flex-direction:column}.lk-b .copybtn{width:100%}.lk-h small{font-size:9.5px;letter-spacing:.1em}}
+
+  /* Phones: link first, above the fold (25 Sep 2026). The steps follow underneath. */
+  .lk{margin-top:0;margin-bottom:26px}
+  .hero .sub{margin-bottom:0}
+  @media (max-width:640px){
+    .main{padding-top:20px}
+    .brandrow{margin-bottom:12px}
+    .logo{width:46px;height:46px;border-radius:12px}
+    h1{font-size:23px;margin-bottom:8px}
+    .sub{font-size:13.5px;line-height:1.45}
+    .card{margin-top:18px;padding:16px}
+    .alert{margin-bottom:14px}
+  }
+
+  /* link card sits between step 1 and steps 2-3 */
+  .steps + .lk{margin-top:22px;margin-bottom:0}
+</style>
+<!-- LIGHT "Tomer-style" SKIN (25 Sep 2026) is saved as access.html.bak-light-20260925 - this is the original dark Winning Streak look. -->
+<div class="wsroot"><div class="main">
+  <div class="brandrow"><img class="logo" src="/assets/favicon-512.png" alt="Winning Streak"/></div>
+
+  <div class="hero">
+    <h1>Get Your Access To Your Free Course &amp; Resources</h1>
+    <p class="sub">Follow the four steps below. Copy the link and paste it into a private browser window &mdash; this makes sure your tracking is recorded and unlocks the full content.</p>
+  </div>
+
+  <div class="card" id="card">
+    <div class="alert amber" id="inapp">
+      <b>You're in an in-app browser.</b> Tap the <b>&#183;&#183;&#183;</b> menu and choose
+      <b>Open in browser</b> before you start.
+    </div>
+
+    <!-- Same step order as the AI Store Builder access page (proven): 1 open private window, 2 copy, 3 paste.
+         Link card sits UNDER step 3, inside the same container (25 Sep 2026). Previous layout (card under
+         step 2) saved as access.html.bak-linkunder2-20260925. -->
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div><h3>Open a private window</h3><p>Launch an Incognito (Chrome) or Private (Safari) window so tracking is clean and accurate.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>Copy the link</h3><p>Tap Copy below. Don't click the link itself &mdash; it only works pasted into your private window.</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>Paste &amp; unlock</h3><p>Paste it into your private window's address bar and hit Enter. Sign up with an <b>email you have never used before</b>.</p></div></div>
+    </div>
+
+    <!-- One shared link, NOT per setter (25 Sep 2026). Per-setter version: access.html.bak-persetter-20260925 -->
+    <div class="lk"><div class="lk-h"><b>Base44</b><small>Copy only &mdash; do not click</small></div>
+      <div class="lk-b"><div class="prompt" id="u-base44">Loading your link&hellip;</div><button class="copybtn" id="copybtn" data-t="u-base44" disabled>Copy link</button></div></div>
+    <!-- REVOLUT LINK HIDDEN (25 Sep 2026) - Base44 only for now. -->
+
+    <!-- Step 4 added 12 Oct 2026 (Liam): Base44 has an iOS/Android app that sells the same plans through
+         Apple/Google in-app purchase. Those carry no affiliate click, so the sale is never credited.
+         Pre-change copy: access.html.bak-preapp-20261012 -->
+    <div class="steps" style="margin-top:14px">
+      <div class="step"><div class="num">4</div><div><h3>Upgrade in that same window</h3><p>Choose your plan and pay right there in the private window. <b>Don't download the Base44 app or pay inside it</b> &mdash; upgrades made in the app aren't linked to your offer.</p></div></div>
+    </div>
+
+  </div>
+
+  <div class="warn">The most important part: make sure the page opens in a <b>Private / Incognito</b> window, with a
+  <b>brand new email</b>, and pay in that same window, not in the Base44 app. Skip any of these and you might not get everything included with your offer.</div>
+</div></div>
+<script>
+(function(){
+  if (/FBAN|FBAV|Instagram|TikTok|Line\/|Snapchat|Twitter|Pinterest|LinkedInApp/i.test(navigator.userAgent||'')) document.getElementById('inapp').classList.add('show');
+  var btn = document.getElementById('copybtn');
+  // Per-setter link: /access/<2-3 letter code> (or the older /a/<name>). The page never contains a raw
+  // link: it only shows one /api/go returns as tracked. No code, unknown code or a failed fetch = no link,
+  // just "ask for your personal link" (Kai, 26 Oct 2026: setters must never find an untagged link).
+  var linkEl = document.getElementById('u-base44');
+  var none = function(){ linkEl.textContent = 'This page is missing your personal link. Message the person who sent it to you and ask for your full link.'; btn.disabled = true; };
+  var cm = location.pathname.match(/^\/access\/([A-Za-z0-9]{2,3})\/?$/), nm = location.pathname.match(/^\/ar?\/([A-Za-z0-9._-]+)\/?$/);
+  var q = cm ? 'code=' + encodeURIComponent(cm[1]) : nm ? 'name=' + encodeURIComponent(nm[1]) : null;
+  if (!q) none();
+  else {
+    var ctl = ('AbortController' in window) ? new AbortController() : null;
+    if (ctl) setTimeout(function(){ ctl.abort(); }, 6000);
+    fetch('/api/go?p=base44&' + q + '&format=json', ctl ? {signal: ctl.signal} : {})
+      .then(function(r){ return r.json(); })
+      .then(function(d){ if (d && d.url && d.tracked) { linkEl.textContent = d.url; btn.disabled = false; } else none(); })
+      .catch(function(){ linkEl.textContent = 'Could not load your link. Refresh the page to try again.'; btn.disabled = true; });
+  }
+  btn.onclick = function(){
+    var el = document.getElementById(btn.getAttribute('data-t')), link = el.textContent.trim();
+    var ok = function(){ btn.textContent='Copied \u2713'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent='Copy link'; btn.classList.remove('copied'); },1600); };
+    var sel = function(){ var r=document.createRange(); r.selectNodeContents(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Tap & hold to copy'; setTimeout(function(){ btn.textContent='Copy link'; },2800); };
+    var legacy = function(){ var ta=document.createElement('textarea'); ta.value=link; ta.setAttribute('readonly',''); ta.style.cssText='position:fixed;top:0;left:0;opacity:0'; document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0,99999); var d=false; try{ d=document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); return d; };
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) navigator.clipboard.writeText(link).then(ok).catch(function(){ legacy()?ok():sel(); });
+    else legacy()?ok():sel();
+  };
+})();
+</script>
+</body></html>

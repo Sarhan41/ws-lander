@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DATDmisc1mzwau");whop.track("page");</script>
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Revolut Country Hotsheet - Winning Streak</title>
+<style>
+ :root{--bg:#0b0d10;--card:#14171c;--line:#232830;--txt:#e8eaed;--mut:#8b93a1;
+       --grn:#22c55e;--amb:#f59e0b;--red:#ef4444;--acc:#3b82f6}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:22px 14px}
+ .wrap{max-width:920px;margin:0 auto}
+ h1{font-size:21px;margin:0 0 4px}
+ .sub{color:var(--mut);font-size:13px;margin-bottom:16px}
+ .note{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.25);border-radius:10px;padding:11px 13px;font-size:13px;margin-bottom:16px}
+ input{width:100%;padding:11px 13px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:15px;margin-bottom:14px}
+ .tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+ .tab{padding:7px 13px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--mut);cursor:pointer;font-size:13px;font-weight:600}
+ .tab.on{background:var(--acc);border-color:var(--acc);color:#fff}
+ .c{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:12px 14px;margin-bottom:9px}
+ .c.no{opacity:.62}
+ .hd{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+ .nm{font-weight:700;font-size:15px}
+ .pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.03em}
+ .ok{background:rgba(34,197,94,.15);color:var(--grn)}
+ .fast{background:rgba(59,130,246,.15);color:#60a5fa}
+ .bad{background:rgba(239,68,68,.15);color:var(--red)}
+ .rows{margin-top:9px;display:grid;grid-template-columns:118px 1fr;gap:5px 12px;font-size:13.5px}
+ .k{color:var(--mut)}
+ a{color:#60a5fa}
+ .empty{color:var(--mut);text-align:center;padding:26px}
+</style></head><body><div class="wrap">
+<h1>Revolut Country Hotsheet</h1>
+<div class="sub">Which countries can open a Revolut Business account as a sole trader, and what business number they need first.</div>
+<div class="note"><b>They need a business number before the call.</b> Revolut opens a <i>business</i> account, so it requires one. No number, no booking. Find their country below and send them to the registry link.</div>
+<input id="q" placeholder="Search a country..." autocomplete="off">
+<div class="tabs">
+ <div class="tab on" data-f="all">All</div>
+ <div class="tab" data-f="yes">Can sign up</div>
+ <div class="tab" data-f="fast">Instant / free</div>
+ <div class="tab" data-f="no">Blocked</div>
+</div>
+<div id="list"></div>
+</div>
+<script>
+let ALL=[],F='all';
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function card(c){
+  if(!c.eligible) return `<div class="c no"><div class="hd"><span class="nm">${esc(c.name)}</span>`
+    +`<span class="pill bad">Cannot sign up</span></div>`
+    +`<div class="rows"><span class="k">Why</span><span>Sole trader is not an accepted entity type. They would need a ${esc(c.incorp||'registered company')}.</span>`
+    +`<span class="k">What to do</span><span>Not a loss. They stay a Base44 customer, just no Revolut.</span></div></div>`;
+  const rows=[['They pick',c.entity],['Number needed',c.registry],['Issued by',c.registryName],
+              ['Cost',c.regCost],['How long',c.regTime]]
+    .filter(r=>r[1]).map(r=>`<span class="k">${r[0]}</span><span>${esc(r[1])}</span>`).join('');
+  const link=c.apply?`<span class="k">Apply at</span><span><a href="${esc(c.apply)}" target="_blank" rel="noopener">${esc(c.apply)}</a></span>`:'';
+  return `<div class="c"><div class="hd"><span class="nm">${esc(c.name)}</span>`
+    +`<span class="pill ok">Can sign up</span>`
+    +(c.instant?'<span class="pill fast">Number is instant</span>':'')
+    +`</div><div class="rows">${rows}${link}</div></div>`;
+}
+function render(){
+  const q=(document.getElementById('q').value||'').toLowerCase().trim();
+  let list=ALL.filter(c=>!q||c.name.toLowerCase().includes(q)||String(c.registry||'').toLowerCase().includes(q));
+  if(F==='yes') list=list.filter(c=>c.eligible);
+  if(F==='no')  list=list.filter(c=>!c.eligible);
+  if(F==='fast')list=list.filter(c=>c.eligible&&c.instant);
+  document.getElementById('list').innerHTML=list.length?list.map(card).join(''):'<div class="empty">No match.</div>';
+}
+document.getElementById('q').addEventListener('input',render);
+document.addEventListener('click',e=>{const t=e.target.closest('.tab');if(!t)return;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');F=t.dataset.f;render();});
+fetch('/api/revolut-claim').then(r=>r.json()).then(d=>{ALL=d.countries||[];render();})
+  .catch(()=>{document.getElementById('list').innerHTML='<div class="empty">Could not load. Refresh.</div>';});
+</script></body></html>

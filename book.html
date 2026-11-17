@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DATDmisc1mzwau");whop.track("page");</script>
+<script>whop.track('view_content', { title: 'Book Your Setup Call', url: location.href });</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Book Your Setup Call | Winning Streak</title>
+<meta name="description" content="Your account is live. Book the call where we finish your store setup with you, live on the phone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent: #2FD166;
+    --accent-soft: #2FD16622;
+    --bg: #0a0a0c;
+    --card: #141417;
+    --card-border: #232329;
+    --text: #e9eaec;
+    --text-dim: #9a9ba1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Poppins',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  .glow{position:relative}
+  .glow::before{
+    content:"";
+    position:absolute;
+    top:-200px;left:50%;
+    transform:translateX(-50%);
+    width:900px;height:600px;
+    background:radial-gradient(ellipse at center, var(--accent-soft) 0%, transparent 65%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .container{
+    max-width:860px;
+    margin:0 auto;
+    padding:0 20px;
+    position:relative;
+    z-index:1;
+  }
+  /* ---------- Hero ---------- */
+  .hero{padding:36px 0 10px;text-align:center}
+  .hero .logo{height:56px;width:auto;margin-bottom:22px}
+  .wordmark{
+    display:block;
+    margin-bottom:22px;
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#fff;
+  }
+  .wordmark span{color:var(--accent)}
+  .chip{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--accent-soft);
+    border:1px solid var(--accent);
+    color:var(--accent);
+    font-size:13px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;
+    padding:8px 18px;
+    border-radius:100px;
+    margin-bottom:22px;
+  }
+  .chip::before{
+    content:"";
+    width:8px;height:8px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 10px var(--accent);
+  }
+  h1{
+    color:#fff;
+    font-size:clamp(33px,5.8vw,52px);
+    font-weight:800;
+    line-height:1.12;
+    margin-bottom:18px;
+  }
+  h1 .hl{color:var(--accent)}
+  .sub{
+    max-width:660px;margin:0 auto;
+    color:var(--text-dim);
+    font-weight:500;
+    font-size:18px;
+  }
+  .sub strong{color:var(--text);font-weight:700}
+  /* ---------- Sections ---------- */
+  .step{padding:52px 0 0;text-align:center}
+  h2{
+    font-size:clamp(25px,4.4vw,36px);
+    font-weight:800;
+    color:#fff;
+    line-height:1.2;
+  }
+  h2 .hl{color:var(--accent)}
+  .step-sub{
+    color:var(--text-dim);
+    max-width:660px;margin:12px auto 0;
+    font-style:italic;
+  }
+  /* ---------- Cards ---------- */
+  .card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:18px;
+    padding:28px 28px 30px;
+    margin-top:26px;
+    text-align:left;
+  }
+  .card.accent{border-color:var(--accent)}
+  .card p{color:var(--text-dim)}
+  .card p + p{margin-top:12px}
+  .card strong{color:var(--text)}
+  .card h3{color:#fff;font-size:21px;font-weight:700;margin:8px 0 14px}
+  .eyebrow{
+    color:var(--accent);
+    font-size:13px;font-weight:700;
+    letter-spacing:.18em;text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);display:inline-block}
+  /* ---------- Checklist ---------- */
+  .checklist{list-style:none;margin-top:6px}
+  .checklist li{
+    position:relative;padding-left:34px;margin-top:14px;color:var(--text-dim);
+  }
+  .checklist li strong{color:var(--text)}
+  .checklist li::before{
+    content:"";
+    position:absolute;left:0;top:9px;
+    width:18px;height:18px;border-radius:5px;
+    border:2px solid var(--accent);
+  }
+  /* ---------- Calendar embed ---------- */
+  .calendar-block{
+    margin-top:28px;
+    background:var(--card);
+    border:1px solid var(--accent);
+    border-radius:20px;
+    padding:16px;
+    box-shadow:0 0 70px -14px var(--accent-soft);
+  }
+  .calendly-inline-widget{
+    width:100%;
+    min-height:760px;
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .embed-placeholder{
+    min-height:560px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:30px;
+    color:var(--text-dim);font-size:14px;font-weight:600;letter-spacing:.06em;
+    border:1px dashed var(--card-border);
+    border-radius:12px;
+    background:#0d0d10;
+  }
+  .embed-placeholder span{margin-top:10px;font-size:13px;font-weight:500;letter-spacing:0;color:#636469;max-width:420px}
+  .under-cal{margin-top:16px;color:var(--text-dim);font-size:15px;text-align:center}
+  .under-cal strong{color:var(--text)}
+  /* ---------- Founder row ---------- */
+  .founder{
+    display:flex;gap:22px;align-items:flex-start;
+    text-align:left;
+  }
+  .founder .who{flex:1}
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:90px;
+    border-top:1px solid var(--card-border);
+    padding:50px 0 70px;
+    text-align:center;
+  }
+  footer .logo{height:44px;margin-bottom:18px}
+  footer .wordmark{margin-bottom:18px;font-size:16px}
+  footer p{color:var(--text-dim);font-size:15px;font-weight:600}
+  footer a{color:var(--accent);text-decoration:none;font-weight:600}
+  /* ---------- Responsive ---------- */
+  @media(max-width:768px){
+    .card{padding:22px 18px 26px}
+    .calendar-block{padding:10px}
+    .calendly-inline-widget{min-height:900px}
+  }
+</style>
+<!-- Meta Pixel. Base code + PageView. The Lead event is fired from the form handler on a
+     successful submit, NOT from a thank-you pageview - a pageview event double-counts every
+     time someone refreshes or navigates back to that page. -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','4361349117527871');   // primary
+fbq('init','1744455720092654');   // restored 27 Aug - both pixels receive every event
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4361349117527871&ev=PageView&noscript=1"><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1744455720092654&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel -->
+<!-- Cortana ad-attribution pixel -->
+<script async src="https://cdn.winningstreakecom.com/api/hub/v1/cmu7u6i7s00hkgm0asi32mj5h"></script>
+</head>
+<body>
+
+<div class="glow">
+<div class="container">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <!-- SWAP: replace this wordmark with <img class="logo" src="YOUR-LOGO-URL" alt="Winning Streak"> once the logo is in the GHL media library -->
+    <div class="wordmark">Winning <span>Streak</span></div>
+    <div class="chip">Account Created</div>
+    <h1>Your Account Is Live.<br>Now Let's <span class="hl">Finish Your Store</span>.</h1>
+    <p class="sub">Signing up was the easy part. The store still needs to be built, connected, and set up to take payments — and that's what this call is for. <strong>Pick a time below and a specialist will do it with you, live on the phone.</strong></p>
+  </section>
+
+  <!-- ============ CALENDAR ============ -->
+  <section class="step">
+    <h2>Pick Your <span class="hl">Time</span></h2>
+    <p class="step-sub">Slots move fast and we only run a set number a day. Book the earliest one you can actually sit at a computer for.</p>
+
+    <div class="calendar-block">
+      <!-- GHL EMBED SLOT: paste the Calendly inline embed here.
+           Replace the placeholder div below with your Calendly snippet, e.g.:
+
+           <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-LINK?hide_gdpr_banner=1&background_color=141417&text_color=e9eaec&primary_color=2FD166" style="min-width:320px;height:760px;"></div>
+           <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+           Keep the background_color / text_color / primary_color params so the widget matches this page. -->
+      <div class="embed-placeholder">
+        CALENDLY INLINE EMBED GOES HERE
+        <span>Paste your Calendly snippet here and delete this placeholder. Use the colour params in the comment above so the widget matches the dark theme.</span>
+      </div>
+    </div>
+
+    <p class="under-cal"><strong>Book from a computer if you can.</strong> You'll need one for the call itself — the setup can't be done from a phone.</p>
+  </section>
+
+  <!-- ============ WHAT HAPPENS ON THE CALL ============ -->
+  <section class="step">
+    <h2>What Actually <span class="hl">Happens</span> On The Call</h2>
+    <p class="step-sub">It's not a webinar and it's not a pitch. It's a working session.</p>
+    <div class="card accent">
+      <ul class="checklist">
+        <li><strong>A specialist gets on the phone with you and shares the steps.</strong> You click the buttons, they tell you what to click.</li>
+        <li><strong>Your store gets built while you're on the call</strong> — not after, not "when you get around to it".</li>
+        <li><strong>The payment side gets connected</strong> so the store can actually take money instead of just looking pretty.</li>
+        <li><strong>You leave with a real store that exists on the internet</strong> and a clear next step.</li>
+      </ul>
+      <p style="margin-top:20px"><strong>Block out 45 minutes and be somewhere you can talk.</strong> People who take the call in the car or between meetings are the people who don't finish.</p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT TO HAVE READY ============ -->
+  <section class="step">
+    <h2>Have These <span class="hl">Ready</span></h2>
+    <div class="card">
+      <ul class="checklist">
+        <li><strong>A laptop or desktop.</strong> Non-negotiable.</li>
+        <li><strong>Your email inbox open</strong> — there are confirmation links to click during the setup.</li>
+        <li><strong>45 quiet minutes.</strong></li>
+        <li><strong>Your business number.</strong> In Australia that's an ABN. Don't worry about it yet — the page after you book walks you through getting one free, in about ten minutes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ WHO YOU'RE DEALING WITH ============ -->
+  <section class="step">
+    <h2>Who's <span class="hl">Behind This</span></h2>
+    <div class="card">
+      <span class="eyebrow">Jake Bass</span>
+      <h3>Australian e-commerce entrepreneur, Forbes 30 Under 30</h3>
+      <p>Jake has spent roughly seven years building online stores and says he's done around $25M in sales across them.</p>
+      <p>He built this because the thing that stops most people isn't the knowledge — it's the setup. Everyone gets stuck on the boring technical part and quits before they ever have a store. So instead of handing people a course and wishing them luck, his team does the setup with them on a call.</p>
+    </div>
+  </section>
+
+  <!-- ============ SHORT FAQ ============ -->
+  <section class="step">
+    <h2>Quick <span class="hl">Questions</span></h2>
+
+    <div class="card">
+      <span class="eyebrow">Question 1</span>
+      <h3>Do I Need Any Experience?</h3>
+      <p>No. Most people who book this call have never sold anything online. That's exactly why the setup happens on a call instead of in a course.</p>
+      <p>If you can open a browser and follow along, you can do this.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 2</span>
+      <h3>Can I Do This With A Full-Time Job Or While I'm Studying?</h3>
+      <p>Yes. The setup happens on one call. What you do after that runs on your schedule — some people work on it an hour a night, some only on weekends.</p>
+      <p>You just need to be at a computer for the call itself.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 3</span>
+      <h3>Is This A Sales Call?</h3>
+      <p>No. Your specialist is there to get your store built and working. That's the job.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 4</span>
+      <h3>What If I Need To Reschedule?</h3>
+      <p>Reply to your confirmation email and tell us — we'll move you. What we can't do is hold a slot for someone who doesn't show and doesn't say anything. Those get released the same day.</p>
+    </div>
+
+  </section>
+
+</div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <!-- SWAP: replace with <img class="logo" src="YOUR-LOGO-URL" alt="Winning Streak"> -->
+    <div class="wordmark">Winning <span>Streak</span></div>
+    <p>Winning Streak – Copyright © 2026.<br>All rights reserved.<br>
+    <a href="https://winningstreakecom.com/terms.html">Terms of Service</a> <span style="color:var(--text-dim)">|</span> <a href="https://winningstreakecom.com/privacy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

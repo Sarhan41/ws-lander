@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DATDmisc1mzwau");whop.track("page");</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Your Call Is Booked — One Last Step | Winning Streak</title>
+<meta name="description" content="Your call is booked. Confirm it and get your ABN before we speak so we can finish your setup live on the call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent: #2FD166;
+    --accent-soft: #2FD16622;
+    --bg: #0a0a0c;
+    --card: #141417;
+    --card-border: #232329;
+    --text: #e9eaec;
+    --text-dim: #9a9ba1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Poppins',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  .glow{position:relative}
+  .glow::before{
+    content:"";
+    position:absolute;
+    top:-200px;left:50%;
+    transform:translateX(-50%);
+    width:900px;height:600px;
+    background:radial-gradient(ellipse at center, var(--accent-soft) 0%, transparent 65%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .container{
+    max-width:820px;
+    margin:0 auto;
+    padding:0 20px;
+    position:relative;
+    z-index:1;
+  }
+  /* ---------- Hero ---------- */
+  .hero{padding:36px 0 10px;text-align:center}
+  .hero .logo{height:56px;width:auto;margin-bottom:22px}
+  .wordmark{
+    display:inline-block;
+    margin-bottom:22px;
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#fff;
+  }
+  .wordmark span{color:var(--accent)}
+  h1{
+    color:var(--accent);
+    font-size:clamp(34px,6vw,52px);
+    font-weight:800;
+    line-height:1.15;
+    margin-bottom:18px;
+  }
+  .warning{
+    max-width:660px;margin:0 auto;
+    color:var(--text-dim);
+    font-weight:500;
+  }
+  .warning strong{color:var(--text);font-weight:700}
+  /* ---------- Step headings ---------- */
+  .step{padding:56px 0 0;text-align:center}
+  h2{
+    font-size:clamp(26px,4.5vw,38px);
+    font-weight:800;
+    color:#fff;
+    line-height:1.2;
+  }
+  h2 .hl{color:var(--accent)}
+  h4{
+    font-size:20px;font-weight:800;color:#fff;
+    margin-top:38px;text-align:center;
+  }
+  h4 .hl{color:var(--accent)}
+  .step-sub{
+    color:var(--text-dim);
+    max-width:660px;margin:12px auto 0;
+    font-style:italic;
+  }
+  /* ---------- Video frame ---------- */
+  .video-frame{
+    margin-top:28px;
+    border-radius:14px;
+    overflow:hidden;
+    background:#000;
+    box-shadow:0 0 60px -10px var(--accent-soft), 0 20px 50px rgba(0,0,0,.5);
+    position:relative;
+    aspect-ratio:16/9;
+  }
+  .video-frame iframe, .video-frame video{
+    position:absolute;inset:0;width:100%;height:100%;border:0;
+  }
+  .embed-placeholder{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:20px;
+    color:var(--text-dim);font-size:14px;font-weight:600;letter-spacing:.06em;
+    border:1px dashed var(--card-border);
+    border-radius:14px;
+  }
+  /* ---------- Calendar confirm ---------- */
+  .confirm-copy{margin-top:18px;color:var(--text-dim)}
+  .confirm-copy strong{color:var(--text)}
+  .confirm-steps{margin-top:14px;color:var(--text);font-weight:500}
+  .calendar-shot{
+    margin-top:24px;
+    width:100%;max-width:720px;
+    border-radius:10px;
+    display:block;
+    margin-left:auto;margin-right:auto;
+  }
+  /* ---------- Cards ---------- */
+  .card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:18px;
+    padding:28px 28px 30px;
+    margin-top:26px;
+    text-align:left;
+  }
+  .card.accent{border-color:var(--accent)}
+  .card p{color:var(--text-dim);font-size:16.5px}
+  .card p + p{margin-top:12px}
+  .card strong{color:var(--text)}
+  .card h3{color:#fff;font-size:21px;font-weight:700;margin:8px 0 14px}
+  .eyebrow{
+    color:var(--accent);
+    font-size:13px;font-weight:700;
+    letter-spacing:.18em;text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);display:inline-block}
+  /* ---------- Checklist ---------- */
+  .checklist{list-style:none;margin-top:6px}
+  .checklist li{position:relative;padding-left:34px;margin-top:14px;color:var(--text-dim)}
+  .checklist li strong{color:var(--text)}
+  .checklist li::before{
+    content:"";
+    position:absolute;left:0;top:9px;
+    width:18px;height:18px;border-radius:5px;
+    border:2px solid var(--accent);
+  }
+  /* ---------- Numbered steps ---------- */
+  .numbered{list-style:none;counter-reset:n;margin-top:6px}
+  .numbered li{position:relative;padding-left:52px;margin-top:20px;color:var(--text-dim)}
+  .numbered li strong{color:var(--text)}
+  .numbered li::before{
+    counter-increment:n;
+    content:counter(n);
+    position:absolute;left:0;top:2px;
+    width:34px;height:34px;border-radius:50%;
+    background:var(--accent);
+    color:#06180d;font-weight:800;font-size:16px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  /* ---------- CTA ---------- */
+  .cta-wrap{text-align:center;margin-top:32px}
+  .cta{
+    display:inline-block;
+    background:var(--accent);
+    color:#06180d;
+    font-weight:800;font-size:18px;letter-spacing:.02em;
+    padding:20px 44px;
+    border-radius:12px;
+    text-decoration:none;
+    box-shadow:0 0 60px -8px var(--accent-soft);
+    transition:transform .15s ease, filter .15s ease;
+  }
+  .cta:hover{transform:translateY(-2px);filter:brightness(1.06)}
+  .cta-note{margin-top:14px;color:var(--text-dim);font-size:15px}
+  .cta-note strong{color:var(--text)}
+  /* ---------- Disclaimer ---------- */
+  .disclaimer{
+    margin-top:34px;
+    color:#6e6f75;font-size:14px;
+    max-width:680px;
+    margin-left:auto;margin-right:auto;
+    text-align:center;
+  }
+  /* ---------- Testimonials ---------- */
+  .rating{margin-top:14px;color:var(--accent);font-weight:700;letter-spacing:.05em}
+  .rating .count{color:var(--text-dim);font-weight:500}
+  .testi-wall{margin-top:30px;columns:3;column-gap:16px}
+  .testi-wall img{
+    width:100%;border-radius:12px;margin-bottom:16px;display:block;
+    border:1px solid var(--card-border);break-inside:avoid;
+  }
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:90px;
+    border-top:1px solid var(--card-border);
+    padding:50px 0 70px;
+    text-align:center;
+  }
+  footer .logo{height:44px;margin-bottom:18px}
+  footer .wordmark{margin-bottom:18px;font-size:16px}
+  footer p{color:var(--text-dim);font-size:15px;font-weight:600}
+  footer a{color:var(--accent);text-decoration:none;font-weight:600}
+  /* ---------- Responsive ---------- */
+  @media(max-width:768px){
+    .testi-wall{columns:2}
+    .card{padding:22px 18px 26px}
+  }
+  @media(max-width:480px){
+    .testi-wall{columns:1}
+    .cta{width:100%;padding:18px 20px;font-size:17px}
+  }
+</style>
+<!-- Meta Pixel. Base code + PageView. The Lead event is fired from the form handler on a
+     successful submit, NOT from a thank-you pageview - a pageview event double-counts every
+     time someone refreshes or navigates back to that page. -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','4361349117527871');   // primary
+fbq('init','1744455720092654');   // restored 27 Aug - both pixels receive every event
+fbq('track','PageView');
+// They have actually booked a call by the time this page renders.
+fbq('track','Schedule',{content_name:'Setup Call Booked'});
+</script>
+<!-- Whop pixel event: no identity to attach here (this page carries no form/URL param with it),
+     matching the Meta call above which is equally identity-less. 22 Sep 2026. -->
+<script>if (window.whop) { whop.track('schedule'); }</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4361349117527871&ev=PageView&noscript=1"><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1744455720092654&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel -->
+<!-- Cortana ad-attribution pixel -->
+<script async src="https://cdn.winningstreakecom.com/api/hub/v1/cmu7u6i7s00hkgm0asi32mj5h"></script>
+</head>
+<body>
+
+<div class="glow">
+<div class="container">
+
+  <!-- ============ HERO / CLICK CONFIRMATION ============ -->
+  <section class="hero">
+    <!-- SWAP: replace this wordmark with <img class="logo" src="YOUR-LOGO-URL" alt="Winning Streak"> once the logo is in the GHL media library -->
+    <div class="wordmark">Winning <span>Streak</span></div>
+    <h1>Congrats – Your Call Is Booked!</h1>
+    <p class="warning"><strong>IMPORTANT:</strong> You are not done yet. Complete every step on this page now. If your call isn't confirmed and you haven't sorted your business number before we speak, we'll be forced to cancel your slot and give it to the next person on the list.</p>
+  </section>
+
+  <!-- ============ STEP 1: WATCH SHORT VIDEO ============ -->
+  <section class="step">
+    <h2>Step 1: <span class="hl">Watch This Short Video</span></h2>
+    <p class="step-sub">A quick message from Jake on exactly what happens on your call.</p>
+    <div class="video-frame">
+      <!-- GHL EMBED SLOT: paste Jake's short confirmation video embed (Wistia/Vimeo/YouTube iframe) here -->
+      <div class="embed-placeholder">JAKE'S SHORT VIDEO EMBED GOES HERE</div>
+    </div>
+  </section>
+
+  <!-- ============ STEP 2: CONFIRM / ADD TO CALENDAR ============ -->
+  <section class="step">
+    <h2>Step 2: <span class="hl">Confirm Your Call</span></h2>
+    <p class="confirm-copy">We've just emailed you a calendar invitation. <strong>Open it, click "Add to calendar", then click "Yes".</strong> If you don't confirm, the system treats your slot as unclaimed and releases it. Can't find the email? Check your spam and promotions tabs.</p>
+    <p class="confirm-steps">
+      Search your inbox for "Winning Streak"<br>
+      Click "add to calendar" and "yes" for the calendar invitation
+    </p>
+    <!-- SWAP: replace this src with a real screenshot of the invite email, arrows pointing at "Add to calendar" and "Yes" -->
+    <img class="calendar-shot" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 380'%3E%3Crect width='720' height='380' rx='10' fill='%23141417' stroke='%23232329'/%3E%3Ctext x='360' y='180' font-family='Poppins,Arial,sans-serif' font-size='20' font-weight='700' fill='%239a9ba1' text-anchor='middle'%3ECALENDAR CONFIRMATION SCREENSHOT%3C/text%3E%3Ctext x='360' y='212' font-family='Poppins,Arial,sans-serif' font-size='15' fill='%23636469' text-anchor='middle'%3ESwap this for a real invite email with arrows on %22Add to calendar%22 and %22Yes%22%3C/text%3E%3C/svg%3E" alt="Add to calendar and confirm yes in the email invitation">
+  </section>
+
+  <!-- ============ STEP 3: ABN ============ -->
+  <section class="step">
+    <h2>Step 3: <span class="hl">Get Your ABN Before We Speak</span></h2>
+    <p class="step-sub">This is the one step people skip — and it's the one that wastes the call.</p>
+
+    <div class="card accent">
+      <p>Your call is a working session. Your specialist builds your store with you, live, while you're on the phone.</p>
+      <p>To finish that setup in Australia you need an <strong>ABN</strong> — an Australian Business Number. Think of it like a numberplate for your business: a car needs a plate before it can legally drive, and a business needs an ABN before it can properly take money.</p>
+      <p>It's an 11-digit number from the Australian Government. <strong>It's free.</strong> It doesn't make you a company, it costs nothing to hold, and you keep it whether you build the store or not.</p>
+      <p><strong>Show up without one and we can't finish. Show up with one and you walk away done.</strong></p>
+    </div>
+
+    <h4>Have These <span class="hl">Ready</span></h4>
+    <div class="card">
+      <ul class="checklist">
+        <li><strong>Your Tax File Number (TFN).</strong> Not strictly required, but including it is what gets your ABN issued on the spot instead of sent to review.</li>
+        <li><strong>Your full legal name and date of birth</strong> — exactly as the ATO has them.</li>
+        <li><strong>Your address.</strong> Home address is fine.</li>
+        <li><strong>Your email and phone number.</strong></li>
+        <li><strong>A start date.</strong> Use today's date.</li>
+        <li><strong>What your business will do.</strong> See point 4 below for the exact wording.</li>
+      </ul>
+    </div>
+
+    <h4>How To <span class="hl">Apply</span> — About 10 Minutes</h4>
+    <div class="card">
+      <ol class="numbered">
+        <li><strong>Go to the Australian Business Register</strong> using the button below and start a new ABN application.</li>
+        <li><strong>Choose "Individual / Sole trader"</strong> as your business structure. That's what you are — you don't need a company to start.</li>
+        <li><strong>Enter your details</strong> — name, date of birth, TFN, address. Match them to your ATO records or the system won't be able to identify you.</li>
+        <li><strong>For your business activity, put online retail / e-commerce.</strong> That's what you're doing: selling physical products through an online store.</li>
+        <li><strong>Set your start date to today.</strong> Don't post-date it — you need it active for the call.</li>
+        <li><strong>Submit.</strong> If the system can identify you, your 11-digit ABN appears on screen straight away. Screenshot it.</li>
+      </ol>
+      <div class="cta-wrap">
+        <a class="cta" href="https://www.abr.gov.au/business-super-funds-charities/applying-abn" target="_blank" rel="noopener">Apply For My Free ABN →</a>
+        <p class="cta-note">Opens the official Australian Business Register. <strong>Applying is free — never pay a site that charges you for this.</strong></p>
+      </div>
+    </div>
+
+    <h4>Got Your Number? <span class="hl">Do This</span></h4>
+    <div class="card">
+      <p><strong>Screenshot your ABN and keep it somewhere you can find it in five seconds.</strong> Your specialist will ask for it on the call, and hunting through emails while they wait burns your session time.</p>
+      <p>If your application went to review instead of issuing instantly, that's normal — the ABR reviews some applications and it can take up to 20 business days, though most come back much faster. <strong>Still turn up to your call.</strong> Tell your specialist it's pending and they'll work around it.</p>
+    </div>
+  </section>
+
+  <!-- ============ STEP 4: FAQ ============ -->
+  <section class="step">
+    <h2>Step 4: <span class="hl">Get Your Questions Answered</span></h2>
+    <p class="step-sub">The questions almost everybody asks — read these before your call.</p>
+
+    <div class="card">
+      <span class="eyebrow">Question 1</span>
+      <h3>What Actually Happens On This Call?</h3>
+      <p>You get on the phone with a specialist and you build your online store together, live. They share the steps, you click the buttons, and by the end you have a real store that exists on the internet.</p>
+      <p>It's not a webinar and it's not a pitch. It's someone on the phone doing the setup with you so you don't get stuck.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 2</span>
+      <h3>Can I Do This With No Experience?</h3>
+      <p>Yes. Most people who book this call have never sold anything online. That's the point of doing it on a call instead of handing you a course and wishing you luck.</p>
+      <p>If you can open a browser and follow along, you can do this.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 3</span>
+      <h3>Can I Do This With A Full-Time Job Or While I'm Studying?</h3>
+      <p>Yes. The setup happens on one call. What you do after that is on your own schedule — some people work on it an hour a night, some on weekends.</p>
+      <p>Just make sure you're at a computer for the call itself. You can't do the setup from your phone while you're driving.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 4</span>
+      <h3>What Do I Need Ready For The Call?</h3>
+      <p>A laptop or desktop, a quiet 45 minutes, your email inbox open, and your ABN sorted.</p>
+      <p>That's it. Turn up with those four things and the call runs start to finish.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 5</span>
+      <h3>Does The ABN Cost Anything?</h3>
+      <p>No. Applying through the Australian Business Register is free. There are sites that charge $50 to $100 to fill in the same form for you — you don't need them. Use the button in Step 3.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 6</span>
+      <h3>Will An ABN Make Me Pay More Tax?</h3>
+      <p>An ABN is a registration, not a tax. It identifies your business. You pay tax on what you actually earn, the same as always — and if you earn nothing, there's nothing to pay tax on.</p>
+      <p>We're not accountants and this isn't tax advice. If your situation is complicated, ask one.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 7</span>
+      <h3>Do I Need A Business Name Or GST Registration Too?</h3>
+      <p>Not to get started. As a sole trader you can trade under your own name with just the ABN. GST registration is generally only required once your turnover reaches the threshold — you're nowhere near that on day one.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 8</span>
+      <h3>I'm Under 18 Or I Don't Have A TFN</h3>
+      <p>You can still start the application without a TFN — it just goes to manual review instead of issuing instantly. Start it anyway, then bring it up on your call so your specialist knows where you're at.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 9</span>
+      <h3>I'm Not In Australia — What Do I Do?</h3>
+      <p>Every country has its own version of this: a business or tax registration number that lets your store take payments. The name changes, the idea doesn't.</p>
+      <p><strong>Don't apply for anything yet.</strong> Requirements vary a lot country to country and getting the wrong one wastes your time. Turn up to your call and your specialist will tell you exactly which one you need and walk you through it.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 10</span>
+      <h3>Who Is Jake Bass?</h3>
+      <p>Jake is an Australian e-commerce entrepreneur and a Forbes 30 Under 30 lister. He's spent roughly seven years building online stores and says he's done around $25M in sales across them.</p>
+      <p>He put this together because the part that stops most people isn't the knowledge — it's the setup. So he had his team do the setup with people instead.</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Question 11</span>
+      <h3>What If I Need To Reschedule?</h3>
+      <p>Reply to your confirmation email and tell us. We'll move you.</p>
+      <p>What we can't do is hold a slot for someone who doesn't show and doesn't say anything — those get released to the next person the same day.</p>
+    </div>
+
+    <p class="disclaimer">Winning Streak is not an accountant, tax agent, or legal adviser. The ABN information on this page is general information about a free government registration, not tax or legal advice. If you're unsure how any of it applies to you, speak to a registered professional.</p>
+  </section>
+
+  <!-- ============ SCREENSHOT TESTIMONIALS ============
+       UNCOMMENT this whole block once the screenshots are uploaded to the GHL media library
+       and the src values below are swapped for real URLs. Leaving it commented keeps the
+       live page free of broken images.
+
+  <section class="step">
+    <h2>Step 5: <span class="hl">Scroll Through These Student Results</span></h2>
+    <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="count">SWAP FOR REAL RATING LINE</span></p>
+
+    <div class="testi-wall">
+      <img src="TESTIMONIAL-SCREENSHOT-URL-1" alt="Winning Streak student win" loading="lazy">
+      <img src="TESTIMONIAL-SCREENSHOT-URL-2" alt="Winning Streak student win" loading="lazy">
+      <img src="TESTIMONIAL-SCREENSHOT-URL-3" alt="Winning Streak student win" loading="lazy">
+      <img src="TESTIMONIAL-SCREENSHOT-URL-4" alt="Winning Streak student win" loading="lazy">
+      <img src="TESTIMONIAL-SCREENSHOT-URL-5" alt="Winning Streak student win" loading="lazy">
+      <img src="TESTIMONIAL-SCREENSHOT-URL-6" alt="Winning Streak student win" loading="lazy">
+    </div>
+  </section>
+
+  ============ END TESTIMONIALS ============ -->
+
+</div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <!-- SWAP: replace with <img class="logo" src="YOUR-LOGO-URL" alt="Winning Streak"> -->
+    <div class="wordmark">Winning <span>Streak</span></div>
+    <p>Winning Streak – Copyright © 2026.<br>All rights reserved.<br>
+    <a href="https://winningstreakecom.com/terms.html">Terms of Service</a> <span style="color:var(--text-dim)">|</span> <a href="https://winningstreakecom.com/privacy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
