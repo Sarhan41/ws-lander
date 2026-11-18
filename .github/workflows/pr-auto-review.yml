@@ -114,14 +114,9 @@ jobs:
           REASON: ${{ steps.review.outputs.reason }}
         run: |
           if [ "$OUTCOME" = "merged" ]; then
-            TEXT="ws-lander: auto-merged
-Title: ${PR_TITLE}
-Files: ${FILES}
-Live: https://winningstreakecom.com/"
+            TEXT=$(printf 'ws-lander: auto-merged\nTitle: %s\nFiles: %s\nLive: https://winningstreakecom.com/' "$PR_TITLE" "$FILES")
           else
-            TEXT="ws-lander: PR flagged, needs review
-${PR_URL}
-Reason: ${REASON}"
+            TEXT=$(printf 'ws-lander: PR flagged, needs review\n%s\nReason: %s' "$PR_URL" "$REASON")
           fi
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=-1003921363540" \
