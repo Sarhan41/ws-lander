@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+/* Tracking runs on the live site only (added 17 Nov 2026).
+   On Vercel preview copies and local tests, Meta, Whop and Cortana are switched off,
+   so test visits and test form fills never land in the real ad data.
+   To test tracking on a preview (e.g. Meta Test Events), add ?ws_track=1 to the URL. */
+(function () {
+  var host = location.hostname.replace(/^www\./, '');
+  window.WS_TRACK = host === 'winningstreakecom.com' || /[?&]ws_track=1(&|$)/.test(location.search);
+  if (window.WS_TRACK) return;
+  var noop = function () {};
+  // Meta: the base code skips loading when fbq already exists, so every fbq() call does nothing.
+  var f = window.fbq = function () {}; f.loaded = true; f.version = '2.0'; f.queue = []; f.push = noop; window._fbq = f;
+  // Whop: same pattern, the loader skips when window.whop already exists.
+  window.whop = { q: [], track: noop, setScope: noop, scope: function () { return { track: noop }; } };
+})();
+</script>
 <script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DATDmisc1mzwau");whop.track("page");</script>
 
 <meta charset="utf-8">
@@ -89,7 +105,7 @@ src="https://www.facebook.com/tr?id=4361349117527871&ev=PageView&noscript=1"><im
 src="https://www.facebook.com/tr?id=1744455720092654&ev=PageView&noscript=1"></noscript>
 <!-- End Meta Pixel -->
 <!-- Cortana ad-attribution pixel -->
-<script async src="https://cdn.winningstreakecom.com/api/hub/v1/cmu7u6i7s00hkgm0asi32mj5h"></script>
+<script>if (window.WS_TRACK) { var cs = document.createElement('script'); cs.async = true; cs.src = 'https://cdn.winningstreakecom.com/api/hub/v1/cmu7u6i7s00hkgm0asi32mj5h'; document.head.appendChild(cs); }</script>
 <!-- AI-led messaging, matched to /go (13 Nov 2026): same hero label, headline and button wording.
      The headline is longer than the old one, so it gets /go's smaller scale on every screen. -->
 <style>
@@ -1326,7 +1342,7 @@ src="https://www.facebook.com/tr?id=1744455720092654&ev=PageView&noscript=1"></n
     } catch (e) {}
     try {
       // keepalive so the send survives the viewer navigating away mid-video.
-      fetch('/api/video-event', { method:'POST', headers:{'Content-Type':'application/json'},
+      if (window.WS_TRACK) fetch('/api/video-event', { method:'POST', headers:{'Content-Type':'application/json'},
                                   body: JSON.stringify(payload), keepalive: true }).catch(function(){});
     } catch (e) {}
   }
