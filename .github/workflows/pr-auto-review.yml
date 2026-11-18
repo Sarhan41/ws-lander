@@ -23,6 +23,13 @@ jobs:
         id: review
         uses: actions/github-script@v7
         with:
+          # The auto-provisioned GITHUB_TOKEN can approve/comment on a fork PR under
+          # pull_request_target, but GitHub blocks it from actually merging one (403
+          # "Resource not accessible by integration") even with contents:write granted -
+          # confirmed by testing, not a guess. Sarhan's own PAT isn't subject to that
+          # fork-safety downgrade, so it's used here instead, only for this scripted,
+          # narrowly-gated action - never exposed to the PR's own code or diff content.
+          github-token: ${{ secrets.MERGE_PAT }}
           script: |
             const pr = context.payload.pull_request;
             const owner = context.repo.owner;
