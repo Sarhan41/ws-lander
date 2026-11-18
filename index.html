@@ -131,17 +131,52 @@ src="https://www.facebook.com/tr?id=1744455720092654&ev=PageView&noscript=1"></n
          .vsl-wide because the 380px column was built for the old vertical cut and would
          render a 16:9 video about 214px tall. -->
     <div class="vsl-wrap vsl-wide">
-      <div id="vidalytics_embed_jkiol1FheozZ11he" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
-      <script type="text/javascript">
-      (function (v, i, d, a, l, y, t, c, s) {
-          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-          if (!vsl){vsl=function(u,cb){
-              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-              i.getElementsByTagName("head")[0].appendChild(s);
-          };}
-          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-      })(window, document, 'Vidalytics', 'vidalytics_embed_jkiol1FheozZ11he', 'https://fast.vidalytics.com/embeds/jV0yyyR6/jkiol1FheozZ11he/');
+      <!-- Vidonomics player test, HOMEPAGE ONLY (13 Nov 2026).
+           This file also serves /ads, /free and /cold. Those paths keep the original Vidalytics
+           VSL (jkiol1FheozZ11he) exactly as before. Only "/" runs the test:
+           10% of homepage visitors get Vidonomics; the other 90% get the Vidalytics copy made for
+           the homepage (NczvERplPrJObEGH), so homepage stats are kept apart. The split and the kill
+           switch live in the Vidonomics dashboard: no site change needed to turn it off.
+           Failsafe: if the Vidonomics script can't load (error, or not here in 8s), the homepage
+           shows the Vidalytics copy instead. -->
+      <div id="ws-vsl-box" style="aspect-ratio:16/9;background:#000"></div>
+      <script>
+      (function () {
+        var p = location.pathname.replace(/\/+$/, '');
+        var home = window.wsVslHome = (p === '' || p === '/index.html');
+        function vidalytics(embed) {
+          var box = document.getElementById('ws-vsl-box');
+          if (!box) return;
+          var d = document.createElement('div');
+          d.id = 'vidalytics_embed_' + embed;
+          d.style.cssText = 'width:100%;position:relative;padding-top:56.25%;';
+          box.parentNode.replaceChild(d, box);
+          (function (v, i, d, a, l, y, t, c, s) {
+              y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+              if (!vsl){vsl=function(u,cb){
+                  if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+                  if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+                  i.getElementsByTagName("head")[0].appendChild(s);
+              };}
+              vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+          })(window, document, 'Vidalytics', 'vidalytics_embed_' + embed, 'https://fast.vidalytics.com/embeds/jV0yyyR6/' + embed + '/');
+        }
+        if (!home) { vidalytics('jkiol1FheozZ11he'); return; }      // /ads /free /cold: unchanged
+        window.wsVslFallback = function () {
+          if (window.VslPlayer || window.wsVslFellBack) return;
+          window.wsVslFellBack = true;
+          vidalytics('NczvERplPrJObEGH');
+        };
+        document.getElementById('ws-vsl-box').setAttribute('data-vsl', 'v_c16527ti0nkf');
+        setTimeout(window.wsVslFallback, 8000);
+        var s = document.createElement('script');
+        s.src = 'https://app.vidonomics.com/dist/vsl-player.js';
+        s.async = true;
+        s.setAttribute('data-collect', 'https://app.vidonomics.com/collect');
+        s.setAttribute('data-site', 'ws_heslvlp8eee8aiv9');
+        s.onerror = window.wsVslFallback;
+        document.head.appendChild(s);
+      })();
       </script>
     </div>
 
@@ -1303,10 +1338,15 @@ src="https://www.facebook.com/tr?id=1744455720092654&ev=PageView&noscript=1"></n
      Vidalytics' own Facebook integration fires from the browser only. On cold traffic that is the
      half we most want and most often lose, so every milestone is ALSO sent from the server
      (/api/video-event) carrying the same event_id. Meta dedupes and keeps one.
-     Player API pattern is Vidalytics' own: getVidalyticsPlayer(id) resolves once the embed is up. -->
+     Player API pattern is Vidalytics' own: getVidalyticsPlayer(id) resolves once the embed is up.
+     Since the Vidonomics homepage test (13 Nov 2026) the VSL is either the Vidalytics homepage copy
+     (NczvERplPrJObEGH, 90% + failsafe) or the Vidonomics player (10%). Both feed the same milestones
+     below; the payload is unchanged (video_id still names the original VSL) so Meta sees one stream. -->
 <script>
 (function(){
-  var EMBED_ID = 'vidalytics_embed_jkiol1FheozZ11he';
+  var EMBED_ID = 'vidalytics_embed_jkiol1FheozZ11he';        // reported to Meta, unchanged
+  var WATCH_ID = window.wsVslHome ? 'vidalytics_embed_NczvERplPrJObEGH'   // homepage: the Vidalytics copy
+                                 : EMBED_ID;                              // /ads /free /cold: the original VSL
   var LABEL    = 'VSL - Free Course';
 
   !function(v,a,p,i){
@@ -1347,25 +1387,35 @@ src="https://www.facebook.com/tr?id=1744455720092654&ev=PageView&noscript=1"></n
     } catch (e) {}
   }
 
-  getVidalyticsPlayer(EMBED_ID).then(function(player){
+  // Milestones come off the furthest point REACHED (not the current position), so scrubbing
+  // backwards cannot un-fire a milestone, and scrubbing forward past one still counts it as seen.
+  var furthest = 0;
+  function reached(t, d){
+    if (!d || !isFinite(d) || d <= 0) return;
+    var pct = (t / d) * 100;
+    if (pct > furthest) furthest = pct;
+    if (furthest >= 25) fire('VideoWatched25', 25);
+    if (furthest >= 50) fire('VideoWatched50', 50);
+    if (furthest >= 75) fire('VideoWatched75', 75);
+    if (furthest >= 95) fire('VideoWatched95', 95);
+  }
+
+  // Vidalytics (90% of visitors, and the failsafe).
+  getVidalyticsPlayer(WATCH_ID).then(function(player){
     if (!player) return;
     player.on('play', function(){ fire('VideoPlay', 0); });
-    // Vidalytics has no percent-watched event, so milestones come off timeupdate. Tracking the
-    // furthest point REACHED (not the current position) means scrubbing backwards cannot un-fire a
-    // milestone, and scrubbing forward past one still counts it as seen.
-    var furthest = 0;
-    player.on('timeupdate', function(){
-      var d = player.duration, t = player.currentTime;
-      if (!d || !isFinite(d) || d <= 0) return;
-      var pct = (t / d) * 100;
-      if (pct > furthest) furthest = pct;
-      if (furthest >= 25) fire('VideoWatched25', 25);
-      if (furthest >= 50) fire('VideoWatched50', 50);
-      if (furthest >= 75) fire('VideoWatched75', 75);
-      if (furthest >= 95) fire('VideoWatched95', 95);
-    });
+    // Vidalytics has no percent-watched event, so milestones come off timeupdate.
+    player.on('timeupdate', function(){ reached(player.currentTime, player.duration); });
     player.on('ended', function(){ fire('VideoComplete', 100); });
   }).catch(function(){});
+
+  // Vidonomics (10%): its player dispatches bubbling vsl:* events with detail { id, at, dur }.
+  // Vidalytics reports its muted autoplay as 'play', so autoplay counts here too: same numbers both sides.
+  document.addEventListener('vsl:autoplay', function(){ fire('VideoPlay', 0); });
+  document.addEventListener('vsl:play', function(){ fire('VideoPlay', 0); });
+  document.addEventListener('vsl:progress', function(e){ var x = e.detail || {}; reached(x.at, x.dur); });
+  document.addEventListener('vsl:pause', function(e){ var x = e.detail || {}; reached(x.at, x.dur); });
+  document.addEventListener('vsl:ended', function(){ fire('VideoComplete', 100); });
 })();
 </script>
 
