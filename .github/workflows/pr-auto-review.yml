@@ -1,0 +1,129 @@
+name: PR Auto-Review
+
+# SECURITY: runs on pull_request_target so it has write access and secrets even for PRs opened
+# from a fork (kai-me-bit does not have push access to this repo, so his PRs always come from a
+# fork). This job NEVER checks out, builds, or executes anything from the PR branch - it only
+# reads file names and diff text through the GitHub API as data. Do not add actions/checkout with
+# a PR ref to this workflow, and do not pipe diff content into a shell/eval anywhere - that is the
+# exact pattern that turns pull_request_target into a secret-exfiltration hole.
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    if: github.repository == 'Sarhan41/ws-lander'
+    steps:
+      - name: Evaluate and act
+        id: review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            if (pr.draft) {
+              core.setOutput('outcome', 'skip');
+              return;
+            }
+
+            // Full file list - if GitHub says there's more than one page of files, this PR is
+            // too big to reason about safely. Flag, don't paginate into a false sense of safety.
+            const filesResp = await github.rest.pulls.listFiles({
+              owner, repo, pull_number: pr.number, per_page: 100,
+            });
+            const files = filesResp.data;
+            const truncated = files.length === 100;
+
+            const ALLOWED_PATH = /^([^\/]+\.html|styles\.css|assets\/[A-Za-z0-9_\-\/]+\.(jpe?g|png|webp|gif|ico))$/i;
+
+            const reasons = [];
+            if (truncated) reasons.push('too many files changed to evaluate safely');
+
+            let totalLines = 0;
+            for (const f of files) {
+              totalLines += (f.additions || 0) + (f.deletions || 0);
+              if (!ALLOWED_PATH.test(f.filename)) {
+                reasons.push(`touches a disallowed path: ${f.filename}`);
+              }
+            }
+            if (totalLines > 150) reasons.push(`${totalLines} lines changed (over 150)`);
+
+            // Content checks only make sense on text files with a patch (binaries have none).
+            // Scan ADDED lines only - removing a script/URL is never the dangerous direction.
+            const DANGEROUS = [
+              { re: /<script/i, label: 'new <script> tag' },
+              { re: /<form[^>]*action\s*=|action\s*=\s*["'][^"']*["']/i, label: 'form action changed' },
+              { re: /\bfetch\s*\(|XMLHttpRequest|axios\s*\(/i, label: 'new fetch/XHR call' },
+              { re: /\/api\//i, label: '/api path referenced' },
+              { re: /https?:\/\//i, label: 'new external URL/domain' },
+              { re: /fbq\s*\(|gtag\s*\(|_fbq|googletagmanager|google-analytics|facebook\.com\/tr/i, label: 'tracking pixel/script change' },
+              { re: /window\.location|location\.href\s*=|http-equiv\s*=\s*["']refresh["']/i, label: 'redirect-like change' },
+            ];
+            const hit = new Set();
+            for (const f of files) {
+              if (!f.patch) continue;
+              for (const line of f.patch.split('\n')) {
+                if (!line.startsWith('+') || line.startsWith('+++')) continue;
+                for (const d of DANGEROUS) if (d.re.test(line)) hit.add(d.label);
+              }
+            }
+            for (const label of hit) reasons.push(label);
+
+            const authorOk = pr.user.login === 'kai-me-bit';
+            if (!authorOk) reasons.push(`author is ${pr.user.login}, not kai-me-bit`);
+
+            const filesList = files.map((f) => f.filename).join(', ');
+            core.setOutput('pr_title', pr.title);
+            core.setOutput('pr_url', pr.html_url);
+            core.setOutput('files', filesList);
+
+            if (reasons.length === 0) {
+              await github.rest.pulls.createReview({
+                owner, repo, pull_number: pr.number, event: 'APPROVE',
+                body: 'Auto-approved: HTML/CSS/image-only edit, under 150 lines, no script/URL/form/api/tracking/redirect changes.',
+              });
+              await github.rest.pulls.merge({
+                owner, repo, pull_number: pr.number, merge_method: 'squash',
+              });
+              core.setOutput('outcome', 'merged');
+            } else {
+              const reasonText = reasons.join('; ');
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: pr.number,
+                body: `Flagged for manual review, not merged: ${reasonText}`,
+              });
+              core.setOutput('outcome', 'flagged');
+              core.setOutput('reason', reasonText);
+            }
+
+      - name: Notify Telegram
+        if: steps.review.outputs.outcome == 'merged' || steps.review.outputs.outcome == 'flagged'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          OUTCOME: ${{ steps.review.outputs.outcome }}
+          PR_TITLE: ${{ steps.review.outputs.pr_title }}
+          PR_URL: ${{ steps.review.outputs.pr_url }}
+          FILES: ${{ steps.review.outputs.files }}
+          REASON: ${{ steps.review.outputs.reason }}
+        run: |
+          if [ "$OUTCOME" = "merged" ]; then
+            TEXT="ws-lander: auto-merged
+Title: ${PR_TITLE}
+Files: ${FILES}
+Live: https://winningstreakecom.com/"
+          else
+            TEXT="ws-lander: PR flagged, needs review
+${PR_URL}
+Reason: ${REASON}"
+          fi
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=-1003921363540" \
+            -d "message_thread_id=2" \
+            --data-urlencode "text=${TEXT}" > /dev/null
