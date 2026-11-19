@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+/* Tracking runs on the live site only (added 17 Nov 2026).
+   On Vercel preview copies and local tests, Meta, Whop and Cortana are switched off,
+   so test visits and test form fills never land in the real ad data.
+   To test tracking on a preview (e.g. Meta Test Events), add ?ws_track=1 to the URL. */
+(function () {
+  var host = location.hostname.replace(/^www\./, '');
+  window.WS_TRACK = host === 'winningstreakecom.com' || /[?&]ws_track=1(&|$)/.test(location.search);
+  if (window.WS_TRACK) return;
+  var noop = function () {};
+  // Meta: the base code skips loading when fbq already exists, so every fbq() call does nothing.
+  var f = window.fbq = function () {}; f.loaded = true; f.version = '2.0'; f.queue = []; f.push = noop; window._fbq = f;
+  // Whop: same pattern, the loader skips when window.whop already exists.
+  window.whop = { q: [], track: noop, setScope: noop, scope: function () { return { track: noop }; } };
+})();
+</script>
+<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_DATDmisc1mzwau");whop.track("page");</script>
+<script>whop.track('view_content', { title: 'Free Course Landing Page', url: location.href });</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Winning Streak - Get My $5,000 E-Com Course Free</title>
+<!-- /go-v4: split-test copy of /go in Christian Sokolov's "Direction 4 - Streak" design (AI Store
+     Builder, 14 Nov 2026), rebuilt from his rendered page + compiled CSS (19 Nov 2026). Same VSL,
+     form, tracking and lead flow as /go50 (incl. the $50 checkbox his form has). Leads show in
+     Close with landing /go-v4. Built by build_v4.py from his live page, not hand-edited. -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Inter+Tight:wght@500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/v4/v4.css">
+<!-- Vercel Web Analytics (sessions/pageviews) + custom funnel events, and Speed Insights -->
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<script>
+/* Attribution capture. Runs on landing, stored for the session.
+   The ad parameters (fbclid, utm_*) only exist on the FIRST url someone arrives at - navigate,
+   refresh or scroll to the form via an anchor and they are gone. Reading them at submit time
+   would have attributed a chunk of paid traffic as "Direct". */
+(function () {
+  try {
+    var KEY = 'ws_attr';
+    if (sessionStorage.getItem(KEY)) return;      // first touch wins
+    var q = new URLSearchParams(location.search);
+    var get = function (k) { return (q.get(k) || '').slice(0, 120); };
+    var a = {
+      fbclid: get('fbclid'),
+      utm_source: get('utm_source'),
+      utm_medium: get('utm_medium'),
+      utm_campaign: get('utm_campaign'),
+      utm_content: get('utm_content'),
+      utm_term: get('utm_term'),
+      ref: (document.referrer || '').slice(0, 200),
+      landing: (location.origin + location.pathname).slice(0, 200)
+    };
+    sessionStorage.setItem(KEY, JSON.stringify(a));
+  } catch (e) {}
+})();
+</script>
+<script>window.WS_VARIANT = 'B';  /* v4 always asks first + last name: same shape as /go variant B */</script>
+<!-- Meta Pixel. Base code + PageView. The Lead event is fired from the form handler on a
+     successful submit, NOT from a thank-you pageview - a pageview event double-counts every
+     time someone refreshes or navigates back to that page. -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1066739512651852');   // paid-only dataset, replaces the two organic pixels - 22 Sep 2026
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1066739512651852&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel -->
+<!-- Cortana ad-attribution pixel -->
+<script>if (window.WS_TRACK) { var cs = document.createElement('script'); cs.async = true; cs.src = 'https://cdn.winningstreakecom.com/api/hub/v1/cmu7u6i7s00hkgm0asi32mj5h'; document.head.appendChild(cs); }</script>
+<style>
+  .field-error{min-height:0;margin:6px 2px 0;font:500 13px/1.4 var(--font-body,Inter,system-ui,sans-serif);color:#c62828}
+  .field-error:empty{display:none}
+  .field-error.field-ok{color:#1b7f3b}
+  #lead-form input.bad{border-color:#c62828!important}
+</style>
+</head>
+<body>
+<div class="page theme-v4"><header class="wrap flex h-[76px] items-center justify-between sm:h-[84px]"><a href="#top" class="inline-flex items-center gap-3 no-underline text-fg"><img alt="" width="44" height="44" class="h-11 w-11 rounded-[12px] border-2 border-[#111] shadow-[3px_3px_0_#111]" src="/assets/v4/ws-logo.png"><span class="whitespace-nowrap font-display text-[1.0625rem] font-extrabold uppercase tracking-[-0.01em]">Winning Streak</span></a><a href="#join" class="btn btn-primary btn-sm hidden sm:inline-flex">Get my free course</a></header><main id="top"><section class="relative pt-6 sm:pt-10 xl:pt-14"><div aria-hidden="true" class="v4-dots pointer-events-none absolute inset-0"></div><div class="wrap relative"><div class="grid grid-cols-1 gap-y-10 sm:gap-y-12 xl:grid-cols-2 xl:gap-x-16 xl:gap-y-10"><div class="xl:col-start-1 xl:row-start-1 xl:self-end"><span class="v4-label  rise max-w-full text-[11.5px] tracking-[0.02em] sm:text-[0.8125rem] sm:tracking-[0.04em]"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-exclamation-point lucide-alert-triangle lucide-triangle-alert flex-none" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg> Free while Base44 and Revolut cover it</span><h1 class="display rise d1 mt-7"><span class="xl:block">Get the course</span> <span class="xl:block">that made me</span> <span class="xl:block"><span class="v4-mark">$25M</span> <span class="v4-stamp">free.</span></span></h1><p class="lead rise d2 mt-7 max-w-[33rem]"><strong class="font-display font-extrabold tracking-[-0.02em] text-fg">$5,000 course. $0 today.</strong> The exact system, a personal onboarding call with my team and the private&nbsp;community.</p></div><div class="rise d3 xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:self-center"><div class="frame"><div class="frame-core"><div class="relative overflow-hidden bg-black "><div data-ws-video="jkiol1FheozZ11he" data-ws-main data-ws-pad="56.25%" style="aspect-ratio:16/9;background:#000"></div></div></div></div><div class="mt-5 flex items-center gap-2.5 text-[14px] font-semibold"><span class="grid h-[22px] w-[22px] flex-none place-items-center rounded-full border-2 border-[#111] bg-[#ffd60a]"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play translate-x-[1px]" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></span>Watch this first, then claim your&nbsp;spot.</div></div><div class="rise d4 xl:col-start-1 xl:row-start-2 xl:self-start"><div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-7"><a href="#join" class="btn btn-primary btn-lg w-full sm:w-auto">Get my free course</a><div class="flex items-center gap-3 "><span class="flex-none rounded-full border-2 border-[#111]"><img alt="Jake Bass" width="44" height="44" class="flex-none rounded-full object-cover " src="/assets/v4/jake-avatar.jpg" style="width: 44px; height: 44px;"></span><div class="leading-tight"><div class="flex items-center gap-1 text-[15px] font-semibold">Jake Bass <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check lucide-verified text-[#3b82f6]" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m16 9-5.5 5.5L8 12"></path></svg></div><div class="mt-0.5 whitespace-nowrap text-[13px] text-fg-subtle">@schmuckceo · Forbes 30 Under 30</div></div></div></div><ul class="m-0 mt-7 flex list-none flex-wrap gap-x-6 gap-y-3 p-0"><li class="flex items-center gap-2.5 text-[14.5px] font-semibold"><span class="grid h-[22px] w-[22px] flex-none place-items-center rounded-full border-2 border-[#111] bg-[#ffd60a]"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span> No card to apply</li><li class="flex items-center gap-2.5 text-[14.5px] font-semibold"><span class="grid h-[22px] w-[22px] flex-none place-items-center rounded-full border-2 border-[#111] bg-[#ffd60a]"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span> A real person calls you</li></ul></div></div><div class="mt-16 grid grid-cols-2 gap-4 sm:mt-20 sm:gap-5 lg:grid-cols-4"><div class="reveal in " style="transition-delay: 0ms;"><div class="v4-box h-full px-5 py-5 sm:px-6 sm:py-6 bg-white"><div class="font-display text-[clamp(2rem,1.6rem+1.2vw,2.75rem)] font-extrabold leading-none tracking-[-0.045em]">$25M</div><div class="mt-2.5 text-[12px] font-bold uppercase tracking-[0.06em] text-fg-muted sm:text-[12.5px]">Made from ecom</div></div></div><div class="reveal in " style="transition-delay: 50ms;"><div class="v4-box h-full px-5 py-5 sm:px-6 sm:py-6 bg-white"><div class="font-display text-[clamp(2rem,1.6rem+1.2vw,2.75rem)] font-extrabold leading-none tracking-[-0.045em]">8</div><div class="mt-2.5 text-[12px] font-bold uppercase tracking-[0.06em] text-fg-muted sm:text-[12.5px]">Businesses built</div></div></div><div class="reveal in " style="transition-delay: 100ms;"><div class="v4-box h-full px-5 py-5 sm:px-6 sm:py-6 bg-white"><div class="font-display text-[clamp(2rem,1.6rem+1.2vw,2.75rem)] font-extrabold leading-none tracking-[-0.045em]">7 yrs</div><div class="mt-2.5 text-[12px] font-bold uppercase tracking-[0.06em] text-fg-muted sm:text-[12.5px]">In the game</div></div></div><div class="reveal in " style="transition-delay: 150ms;"><div class="v4-box h-full px-5 py-5 sm:px-6 sm:py-6 bg-[#ffd60a]"><div class="font-display text-[clamp(2rem,1.6rem+1.2vw,2.75rem)] font-extrabold leading-none tracking-[-0.045em]">$0</div><div class="mt-2.5 text-[12px] font-bold uppercase tracking-[0.06em] text-fg-muted sm:text-[12.5px]">For the course</div></div></div></div></div></section><div class="py-16 sm:py-20"><div class="v4-ticker-wrap" aria-hidden="true"><div class="v4-ticker"><span class="flex items-center gap-7">Free course<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">$25M from ecom<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">Forbes 30 Under 30<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">Base44<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">Revolut<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">A real person calls you<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">25 lessons<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">Built for total beginners<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">Free course<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">$25M from ecom<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">Forbes 30 Under 30<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">Base44<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">Revolut<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">A real person calls you<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">25 lessons<span class="text-[#3fae2a]">★</span></span><span class="flex items-center gap-7">Built for total beginners<span class="text-[#3fae2a]">★</span></span></div></div></div><section class="section border-y-2 border-[#111] bg-[#ffd60a]"><div class="wrap"><div class="grid items-start gap-12 lg:grid-cols-[1fr_460px] lg:gap-16"><div class="order-2 lg:order-1"><div class="reveal in " style="transition-delay: 0ms;"><span class="v4-label  ">Everything included</span><h2 class="h2 mt-4 max-w-[12ch]">Your $10,000 stack. $0 today.</h2><p class="lead mt-5 max-w-[30rem] !text-[#111]/75">Everything I would give someone starting with $250 today, which is exactly where I&nbsp;started.</p></div><div class="mt-10 space-y-3"><div class="reveal in " style="transition-delay: 0ms;"><div class="v4-box flex items-start gap-4 bg-white p-5"><span class="grid h-8 w-8 flex-none place-items-center rounded-[9px] bg-[#111] text-[#ffd60a]"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><div class="min-w-0 flex-1"><div class="flex items-baseline justify-between gap-4"><span class="h3">The $25M Ecom Course</span><span class="struck tnum flex-none text-[15px] font-semibold">$5,000</span></div><p class="m-0 mt-1 text-[15px] text-fg-muted">Every strategy, framework and system behind $25 million over 7 years. Step by step, start to&nbsp;finish.</p></div></div></div><div class="reveal in " style="transition-delay: 60ms;"><div class="v4-box flex items-start gap-4 bg-white p-5"><span class="grid h-8 w-8 flex-none place-items-center rounded-[9px] bg-[#111] text-[#ffd60a]"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><div class="min-w-0 flex-1"><div class="flex items-baseline justify-between gap-4"><span class="h3">Personal onboarding call</span><span class="struck tnum flex-none text-[15px] font-semibold">$2,000</span></div><p class="m-0 mt-1 text-[15px] text-fg-muted">One on one with my team. They map out exactly what you do first, second and&nbsp;third.</p></div></div></div><div class="reveal in " style="transition-delay: 120ms;"><div class="v4-box flex items-start gap-4 bg-white p-5"><span class="grid h-8 w-8 flex-none place-items-center rounded-[9px] bg-[#111] text-[#ffd60a]"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><div class="min-w-0 flex-1"><div class="flex items-baseline justify-between gap-4"><span class="h3">Private community</span><span class="struck tnum flex-none text-[15px] font-semibold">$3,000</span></div><p class="m-0 mt-1 text-[15px] text-fg-muted">Everyone running the same playbook. Wins, product leads and answers when you are&nbsp;stuck.</p></div></div></div><div class="reveal in " style="transition-delay: 200ms;"><div class="flex items-center justify-between rounded-[var(--r-card)] border-2 border-[#111] bg-[#111] px-5 py-4 text-[#f4f2eb]"><div><div class="text-[13px] text-white/60">Total value <span class="tnum ml-1 line-through decoration-2">$10,000</span></div><div class="font-semibold">Your price today</div></div><div class="font-display text-[2.4rem] font-extrabold uppercase leading-none tracking-[-0.04em] text-[#ffd60a]">Free</div></div></div></div></div><div id="join" class="order-1 scroll-mt-[calc(var(--review-h,0px)+24px)] lg:order-2"><div class="reveal in " style="transition-delay: 0ms;"><div class="v4-box v4-box-lg overflow-hidden bg-white"><div class="flex items-center justify-between gap-3 bg-[#111] px-5 py-3.5 text-[#ffd60a] sm:px-7"><span class="inline-flex items-center gap-2 font-display text-[15px] font-extrabold uppercase tracking-[0.02em]"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-exclamation-point lucide-alert-triangle lucide-triangle-alert" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg> Claim your free spot</span><span class="text-[12.5px] font-semibold text-white/70">30 seconds</span></div><div class="p-5 sm:p-7"><div class="mb-5 flex items-center gap-3"><img alt="Jake Bass" width="40" height="40" class="flex-none rounded-full object-cover " src="/assets/v4/jake-avatar.jpg" style="width: 40px; height: 40px;"><p class="m-0 text-[14.5px] leading-snug text-fg-muted"><strong class="text-fg">My team calls you&nbsp;next.</strong> They set you up live, around your&nbsp;situation.</p></div><form id="lead-form" action="thank-you.html" method="get" class="text-left"><div class="mb-5 rounded-[14px] border border-line bg-bg-soft p-4 text-[14px]"><div class="flex items-center justify-between gap-3"><span class="font-medium">The $25M Ecom Course</span><span class="tnum text-fg-muted">$5,000</span></div><div class="mt-2 flex items-center justify-between gap-3"><span class="inline-flex items-center gap-2 text-fg-muted"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag text-accent-ink" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg><span class="rounded-md border border-dashed border-line-strong px-1.5 py-px font-mono text-[12px] tracking-wide text-fg">SPONSORED100</span><span class="text-[13px]">applied</span></span><span class="tnum text-accent-ink">−$5,000</span></div><div class="mt-3 flex items-center justify-between border-t border-line pt-3"><span class="font-semibold">Total today</span><span class="tnum text-[1.125rem] font-semibold">$0.00</span></div></div><div class="grid grid-cols-2 gap-3"><div><label class="field-label" for="_r_0_fn">First name</label><input id="_r_0_fn" class="field" autocomplete="given-name" placeholder="Jake" aria-invalid="false" name="first_name" required></div><div><label class="field-label" for="_r_0_ln">Last name</label><input id="_r_0_ln" class="field" autocomplete="family-name" placeholder="Smith" aria-invalid="false" name="last_name" required></div></div><div class="mt-3"><label class="field-label" for="_r_0_em">Email</label><input id="_r_0_em" inputmode="email" autocomplete="email" class="field" placeholder="you@email.com" aria-invalid="false" type="email" name="email" required></div><div class="mt-3"><label class="field-label" for="_r_0_ph">Mobile number</label><div class="flex gap-2"><select name="country_code" aria-label="Country code" class="field select w-[104px] flex-none pl-3">
+            <optgroup label="Most common">
+            <option value="+61" selected>🇦🇺 +61 Australia</option>
+            <option value="+1">🇺🇸 +1 United States</option>
+            </optgroup>
+            <optgroup label="Europe">
+            <option value="+355">🇦🇱 +355 Albania</option>
+            <option value="+376">🇦🇩 +376 Andorra</option>
+            <option value="+43">🇦🇹 +43 Austria</option>
+            <option value="+375">🇧🇾 +375 Belarus</option>
+            <option value="+32">🇧🇪 +32 Belgium</option>
+            <option value="+387">🇧🇦 +387 Bosnia & Herzegovina</option>
+            <option value="+359">🇧🇬 +359 Bulgaria</option>
+            <option value="+385">🇭🇷 +385 Croatia</option>
+            <option value="+357">🇨🇾 +357 Cyprus</option>
+            <option value="+420">🇨🇿 +420 Czechia</option>
+            <option value="+45">🇩🇰 +45 Denmark</option>
+            <option value="+372">🇪🇪 +372 Estonia</option>
+            <option value="+358">🇫🇮 +358 Finland</option>
+            <option value="+33">🇫🇷 +33 France</option>
+            <option value="+49">🇩🇪 +49 Germany</option>
+            <option value="+350">🇬🇮 +350 Gibraltar</option>
+            <option value="+30">🇬🇷 +30 Greece</option>
+            <option value="+299">🇬🇱 +299 Greenland</option>
+            <option value="+36">🇭🇺 +36 Hungary</option>
+            <option value="+354">🇮🇸 +354 Iceland</option>
+            <option value="+353">🇮🇪 +353 Ireland</option>
+            <option value="+39">🇮🇹 +39 Italy</option>
+            <option value="+371">🇱🇻 +371 Latvia</option>
+            <option value="+423">🇱🇮 +423 Liechtenstein</option>
+            <option value="+370">🇱🇹 +370 Lithuania</option>
+            <option value="+352">🇱🇺 +352 Luxembourg</option>
+            <option value="+356">🇲🇹 +356 Malta</option>
+            <option value="+373">🇲🇩 +373 Moldova</option>
+            <option value="+377">🇲🇨 +377 Monaco</option>
+            <option value="+382">🇲🇪 +382 Montenegro</option>
+            <option value="+31">🇳🇱 +31 Netherlands</option>
+            <option value="+389">🇲🇰 +389 North Macedonia</option>
+            <option value="+47">🇳🇴 +47 Norway</option>
+            <option value="+48">🇵🇱 +48 Poland</option>
+            <option value="+351">🇵🇹 +351 Portugal</option>
+            <option value="+40">🇷🇴 +40 Romania</option>
+            <option value="+7">🇷🇺 +7 Russia</option>
+            <option value="+381">🇷🇸 +381 Serbia</option>
+            <option value="+421">🇸🇰 +421 Slovakia</option>
+            <option value="+386">🇸🇮 +386 Slovenia</option>
+            <option value="+34">🇪🇸 +34 Spain</option>
+            <option value="+46">🇸🇪 +46 Sweden</option>
+            <option value="+41">🇨🇭 +41 Switzerland</option>
+            <option value="+90">🇹🇷 +90 Turkey</option>
+            <option value="+380">🇺🇦 +380 Ukraine</option>
+            <option value="+44">🇬🇧 +44 United Kingdom</option>
+            </optgroup>
+            <optgroup label="Rest of world">
+            <option value="+93">🇦🇫 +93 Afghanistan</option>
+            <option value="+213">🇩🇿 +213 Algeria</option>
+            <option value="+244">🇦🇴 +244 Angola</option>
+            <option value="+54">🇦🇷 +54 Argentina</option>
+            <option value="+374">🇦🇲 +374 Armenia</option>
+            <option value="+297">🇦🇼 +297 Aruba</option>
+            <option value="+994">🇦🇿 +994 Azerbaijan</option>
+            <option value="+1">🇧🇸 +1 Bahamas</option>
+            <option value="+973">🇧🇭 +973 Bahrain</option>
+            <option value="+880">🇧🇩 +880 Bangladesh</option>
+            <option value="+1">🇧🇧 +1 Barbados</option>
+            <option value="+501">🇧🇿 +501 Belize</option>
+            <option value="+229">🇧🇯 +229 Benin</option>
+            <option value="+1">🇧🇲 +1 Bermuda</option>
+            <option value="+975">🇧🇹 +975 Bhutan</option>
+            <option value="+591">🇧🇴 +591 Bolivia</option>
+            <option value="+267">🇧🇼 +267 Botswana</option>
+            <option value="+55">🇧🇷 +55 Brazil</option>
+            <option value="+673">🇧🇳 +673 Brunei</option>
+            <option value="+226">🇧🇫 +226 Burkina Faso</option>
+            <option value="+257">🇧🇮 +257 Burundi</option>
+            <option value="+855">🇰🇭 +855 Cambodia</option>
+            <option value="+237">🇨🇲 +237 Cameroon</option>
+            <option value="+1">🇨🇦 +1 Canada</option>
+            <option value="+238">🇨🇻 +238 Cape Verde</option>
+            <option value="+1">🇰🇾 +1 Cayman Islands</option>
+            <option value="+235">🇹🇩 +235 Chad</option>
+            <option value="+56">🇨🇱 +56 Chile</option>
+            <option value="+86">🇨🇳 +86 China</option>
+            <option value="+57">🇨🇴 +57 Colombia</option>
+            <option value="+242">🇨🇬 +242 Congo</option>
+            <option value="+243">🇨🇩 +243 Congo (DRC)</option>
+            <option value="+506">🇨🇷 +506 Costa Rica</option>
+            <option value="+225">🇨🇮 +225 Cote d'Ivoire</option>
+            <option value="+53">🇨🇺 +53 Cuba</option>
+            <option value="+253">🇩🇯 +253 Djibouti</option>
+            <option value="+1">🇩🇴 +1 Dominican Republic</option>
+            <option value="+593">🇪🇨 +593 Ecuador</option>
+            <option value="+20">🇪🇬 +20 Egypt</option>
+            <option value="+503">🇸🇻 +503 El Salvador</option>
+            <option value="+251">🇪🇹 +251 Ethiopia</option>
+            <option value="+679">🇫🇯 +679 Fiji</option>
+            <option value="+241">🇬🇦 +241 Gabon</option>
+            <option value="+220">🇬🇲 +220 Gambia</option>
+            <option value="+995">🇬🇪 +995 Georgia</option>
+            <option value="+233">🇬🇭 +233 Ghana</option>
+            <option value="+1">🇬🇩 +1 Grenada</option>
+            <option value="+502">🇬🇹 +502 Guatemala</option>
+            <option value="+224">🇬🇳 +224 Guinea</option>
+            <option value="+592">🇬🇾 +592 Guyana</option>
+            <option value="+509">🇭🇹 +509 Haiti</option>
+            <option value="+504">🇭🇳 +504 Honduras</option>
+            <option value="+852">🇭🇰 +852 Hong Kong</option>
+            <option value="+91">🇮🇳 +91 India</option>
+            <option value="+62">🇮🇩 +62 Indonesia</option>
+            <option value="+98">🇮🇷 +98 Iran</option>
+            <option value="+964">🇮🇶 +964 Iraq</option>
+            <option value="+972">🇮🇱 +972 Israel</option>
+            <option value="+1">🇯🇲 +1 Jamaica</option>
+            <option value="+81">🇯🇵 +81 Japan</option>
+            <option value="+962">🇯🇴 +962 Jordan</option>
+            <option value="+7">🇰🇿 +7 Kazakhstan</option>
+            <option value="+254">🇰🇪 +254 Kenya</option>
+            <option value="+965">🇰🇼 +965 Kuwait</option>
+            <option value="+996">🇰🇬 +996 Kyrgyzstan</option>
+            <option value="+856">🇱🇦 +856 Laos</option>
+            <option value="+961">🇱🇧 +961 Lebanon</option>
+            <option value="+266">🇱🇸 +266 Lesotho</option>
+            <option value="+231">🇱🇷 +231 Liberia</option>
+            <option value="+218">🇱🇾 +218 Libya</option>
+            <option value="+853">🇲🇴 +853 Macau</option>
+            <option value="+261">🇲🇬 +261 Madagascar</option>
+            <option value="+265">🇲🇼 +265 Malawi</option>
+            <option value="+60">🇲🇾 +60 Malaysia</option>
+            <option value="+960">🇲🇻 +960 Maldives</option>
+            <option value="+223">🇲🇱 +223 Mali</option>
+            <option value="+230">🇲🇺 +230 Mauritius</option>
+            <option value="+52">🇲🇽 +52 Mexico</option>
+            <option value="+976">🇲🇳 +976 Mongolia</option>
+            <option value="+212">🇲🇦 +212 Morocco</option>
+            <option value="+258">🇲🇿 +258 Mozambique</option>
+            <option value="+95">🇲🇲 +95 Myanmar</option>
+            <option value="+264">🇳🇦 +264 Namibia</option>
+            <option value="+977">🇳🇵 +977 Nepal</option>
+            <option value="+687">🇳🇨 +687 New Caledonia</option>
+            <option value="+64">🇳🇿 +64 New Zealand</option>
+            <option value="+505">🇳🇮 +505 Nicaragua</option>
+            <option value="+227">🇳🇪 +227 Niger</option>
+            <option value="+234">🇳🇬 +234 Nigeria</option>
+            <option value="+968">🇴🇲 +968 Oman</option>
+            <option value="+92">🇵🇰 +92 Pakistan</option>
+            <option value="+970">🇵🇸 +970 Palestine</option>
+            <option value="+507">🇵🇦 +507 Panama</option>
+            <option value="+675">🇵🇬 +675 Papua New Guinea</option>
+            <option value="+595">🇵🇾 +595 Paraguay</option>
+            <option value="+51">🇵🇪 +51 Peru</option>
+            <option value="+63">🇵🇭 +63 Philippines</option>
+            <option value="+1">🇵🇷 +1 Puerto Rico</option>
+            <option value="+974">🇶🇦 +974 Qatar</option>
+            <option value="+250">🇷🇼 +250 Rwanda</option>
+            <option value="+966">🇸🇦 +966 Saudi Arabia</option>
+            <option value="+221">🇸🇳 +221 Senegal</option>
+            <option value="+248">🇸🇨 +248 Seychelles</option>
+            <option value="+232">🇸🇱 +232 Sierra Leone</option>
+            <option value="+65">🇸🇬 +65 Singapore</option>
+            <option value="+677">🇸🇧 +677 Solomon Islands</option>
+            <option value="+252">🇸🇴 +252 Somalia</option>
+            <option value="+27">🇿🇦 +27 South Africa</option>
+            <option value="+82">🇰🇷 +82 South Korea</option>
+            <option value="+211">🇸🇸 +211 South Sudan</option>
+            <option value="+94">🇱🇰 +94 Sri Lanka</option>
+            <option value="+249">🇸🇩 +249 Sudan</option>
+            <option value="+597">🇸🇷 +597 Suriname</option>
+            <option value="+963">🇸🇾 +963 Syria</option>
+            <option value="+886">🇹🇼 +886 Taiwan</option>
+            <option value="+992">🇹🇯 +992 Tajikistan</option>
+            <option value="+255">🇹🇿 +255 Tanzania</option>
+            <option value="+66">🇹🇭 +66 Thailand</option>
+            <option value="+228">🇹🇬 +228 Togo</option>
+            <option value="+676">🇹🇴 +676 Tonga</option>
+            <option value="+1">🇹🇹 +1 Trinidad & Tobago</option>
+            <option value="+216">🇹🇳 +216 Tunisia</option>
+            <option value="+993">🇹🇲 +993 Turkmenistan</option>
+            <option value="+256">🇺🇬 +256 Uganda</option>
+            <option value="+971">🇦🇪 +971 United Arab Emirates</option>
+            <option value="+598">🇺🇾 +598 Uruguay</option>
+            <option value="+998">🇺🇿 +998 Uzbekistan</option>
+            <option value="+678">🇻🇺 +678 Vanuatu</option>
+            <option value="+58">🇻🇪 +58 Venezuela</option>
+            <option value="+84">🇻🇳 +84 Vietnam</option>
+            <option value="+967">🇾🇪 +967 Yemen</option>
+            <option value="+260">🇿🇲 +260 Zambia</option>
+            <option value="+263">🇿🇼 +263 Zimbabwe</option>
+            </optgroup>
+          </select><input id="_r_0_ph" inputmode="tel" autocomplete="tel-national" class="field" placeholder="412 345 678" aria-invalid="false" type="tel" name="phone" required></div></div><p id="phone-error" class="field-error" role="alert" aria-live="polite"></p><div class="mt-4 space-y-3"><label class="flex cursor-pointer items-start gap-3"><input class="check" aria-invalid="false" type="checkbox" name="sms_consent" value="Yes"><span class="text-[12.5px] leading-[1.5] text-fg-subtle ">I agree to receive transactional SMS messages from Winning Streak (Australian Online Ventures Pty Ltd). Message frequency varies. Msg and data rates may apply. Reply STOP to opt out, HELP for help.</span></label><label class="flex cursor-pointer items-start gap-3"><input class="check" aria-invalid="false" type="checkbox" name="has_50" value="Yes" required><span class="text-[12.5px] leading-[1.5] font-medium text-fg ">I understand I need at least $50 to start this business.</span></label></div><button type="submit" id="lead-submit" class="btn btn-primary btn-block mt-5">Claim my free course</button><p class="mt-3 text-center text-[13px] text-fg-subtle"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock mr-1.5 inline-block align-[-2px]" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>No card needed here. My team calls you&nbsp;next.</p></form></div></div></div></div></div></div></section><section class="section"><div class="wrap"><div class="reveal in section-head " style="transition-delay: 0ms;"><div class="eyebrow mb-4">How it works</div><h2 class="h2">Start your streak today</h2><p class="lead mt-5 mx-auto max-w-[36rem]">No surprises. Here is exactly what happens after you&nbsp;apply.</p></div><div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4"><div class="reveal in v4-box flex flex-col bg-white p-6" style="transition-delay: 0ms;"><div class="flex items-center justify-between gap-3"><span class="grid h-[52px] w-[52px] place-items-center rounded-[14px] border-2 border-[#111] bg-[#ffd60a] font-display text-[1.5rem] font-extrabold tracking-[-0.04em]">01</span><span class="v4-chip">30 seconds</span></div><div class="h3 mt-6 text-[1.375rem]">Apply in 30 seconds</div><p class="m-0 mt-2 text-[15px] text-fg-muted">Name, email and phone. That is the whole&nbsp;application.</p></div><div class="reveal in v4-box flex flex-col bg-white p-6" style="transition-delay: 70ms;"><div class="flex items-center justify-between gap-3"><span class="grid h-[52px] w-[52px] place-items-center rounded-[14px] border-2 border-[#111] bg-[#ffd60a] font-display text-[1.5rem] font-extrabold tracking-[-0.04em]">02</span><span class="v4-chip">About 10 minutes</span></div><div class="h3 mt-6 text-[1.375rem]">Pick up our call</div><p class="m-0 mt-2 text-[15px] text-fg-muted">My team calls you, usually within minutes, and maps out your first moves around your&nbsp;situation.</p></div><div class="reveal in v4-box flex flex-col bg-white p-6" style="transition-delay: 140ms;"><div class="flex items-center justify-between gap-3"><span class="grid h-[52px] w-[52px] place-items-center rounded-[14px] border-2 border-[#111] bg-[#ffd60a] font-display text-[1.5rem] font-extrabold tracking-[-0.04em]">03</span><span class="v4-chip">Same day</span></div><div class="h3 mt-6 text-[1.375rem]">Build, then learn</div><p class="m-0 mt-2 text-[15px] text-fg-muted">Your coach sets up Base44 with you live. You build your AI, and the full course&nbsp;opens.</p></div><div class="reveal in v4-box flex flex-col !bg-[#111] p-6 text-[#f4f2eb]" style="transition-delay: 210ms;"><div class="flex items-center justify-between gap-3"><span class="grid h-[52px] w-[52px] place-items-center rounded-[14px] border-2 border-[#ffd60a] bg-[#ffd60a] text-[#111]"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></span><span class="v4-chip !border-[#ffd60a] !text-[#ffd60a]">Every day</span></div><div class="mt-6 font-display text-[1.375rem] font-bold tracking-[-0.02em]">Keep the streak</div><p class="m-0 mt-2 text-[15px] text-white/70">Your AI texts you the next move, so you never lose a&nbsp;day.</p><div class="mt-auto flex gap-1.5 pt-6" aria-hidden="true"><span class="grid h-7 flex-1 place-items-center rounded-[7px] border-2 border-[#ffd60a] bg-[#ffd60a] text-[#111] text-[11px] font-bold"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="grid h-7 flex-1 place-items-center rounded-[7px] border-2 border-[#ffd60a] bg-[#ffd60a] text-[#111] text-[11px] font-bold"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="grid h-7 flex-1 place-items-center rounded-[7px] border-2 border-[#ffd60a] bg-[#ffd60a] text-[#111] text-[11px] font-bold"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="grid h-7 flex-1 place-items-center rounded-[7px] border-2 border-white/25 text-white/40 text-[11px] font-bold">4</span><span class="grid h-7 flex-1 place-items-center rounded-[7px] border-2 border-white/25 text-white/40 text-[11px] font-bold">5</span><span class="grid h-7 flex-1 place-items-center rounded-[7px] border-2 border-white/25 text-white/40 text-[11px] font-bold">6</span><span class="grid h-7 flex-1 place-items-center rounded-[7px] border-2 border-white/25 text-white/40 text-[11px] font-bold">7</span></div></div></div><div class="mt-12 flex justify-center sm:mt-14"><a href="#join" class="btn btn-primary btn-lg">Get my free course</a></div></div></section><section class="section border-y-2 border-[#111] bg-bg-soft"><div class="wrap"><div class="reveal in section-head " style="transition-delay: 0ms;"><div class="eyebrow mb-4">Inside the course</div><h2 class="h2">You do not just watch. <span class="mark">You build.</span></h2><p class="lead mt-5 mx-auto max-w-[36rem]">Every student builds three things on Base44, in this order. That is why people stay with&nbsp;it.</p></div><div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 "><div class="reveal in card flex flex-col overflow-hidden p-0 " style="transition-delay: 0ms;"><div class="flex h-[248px] items-center overflow-hidden border-b border-line bg-bg-soft px-5"><div class="w-full"><div class="flex w-full flex-col gap-2 text-[13px] leading-[1.4]"><div class="flex items-center gap-2 text-[12px] text-fg-subtle"><span class="grid h-6 w-6 place-items-center rounded-full bg-accent text-accent-fg"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot" aria-hidden="true"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg></span><span class="font-semibold text-fg">Rocky</span> · your AI · 7:02 am</div><div class="mr-8 rounded-[14px] rounded-tl-[6px] border border-line bg-bg px-3 py-2 shadow-[var(--shadow-sm)]">Morning Sam. Module 2 done yesterday. Today: shortlist three products.</div><div class="ml-auto rounded-[14px] rounded-tr-[6px] bg-accent px-3 py-1.5 font-medium text-accent-fg">On it</div><div class="mr-8 rounded-[14px] rounded-tl-[6px] border border-line bg-bg px-3 py-2 shadow-[var(--shadow-sm)]">Report back by 6pm and I will log your streak.</div></div></div></div><div class="p-6"><div class="mono-label">Day one</div><div class="h3 mt-2 text-[1.25rem]">Your own AI assistant</div><p class="m-0 mt-2 text-[15px] text-fg-muted">Before the course opens you build a personal AI in Base44. It learns your goals, keeps you accountable and texts you the next&nbsp;move.</p></div></div><div class="reveal in card flex flex-col overflow-hidden p-0 " style="transition-delay: 70ms;"><div class="flex h-[248px] items-center overflow-hidden border-b border-line bg-bg-soft px-5"><div class="w-full"><div class="overflow-hidden rounded-[14px] border border-line bg-bg text-[12px] shadow-[var(--shadow-sm)]"><div class="flex items-center justify-between border-b border-line px-3 py-2"><span class="font-display text-[13px] font-extrabold tracking-tight">STICKCAR</span><span class="inline-flex items-center gap-1 text-fg-subtle"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag" aria-hidden="true"><path d="M16 10a4 4 0 0 1-8 0"></path><path d="M3.103 6.034h17.794"></path><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path></svg> 0</span></div><div class="grid grid-cols-[1fr_1.1fr] gap-3 p-3"><div class="grid aspect-[5/4] place-items-center rounded-[10px] bg-[#16171a]"><div class="w-[78%] -rotate-[8deg] rounded-[4px] border-[3px] border-[#16171a] bg-[#ffd60a] px-1.5 py-1 text-center shadow-[0_0_0_2px_#ffd60a]"><div class="text-[9px] font-black tracking-wide text-[#16171a]">⚠ WARNING</div><div class="mt-0.5 text-[5.5px] font-bold leading-tight text-[#16171a]">REMOVE TIGHT FITTING CLOTHING</div></div></div><div class="flex min-w-0 flex-col"><div class="flex items-center gap-1 text-[#f5b301]"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg></div><div class="mt-1 font-semibold leading-tight">The Original Warning Sticker</div><div class="mt-1 font-semibold">$19.95</div><div class="mt-auto rounded-[8px] bg-fg py-1.5 text-center text-[11px] font-semibold text-bg">Add to cart</div></div></div><div class="flex items-center gap-1.5 border-t border-line px-3 py-2 text-fg-subtle"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg> 24hr dispatch from Australia</div></div></div></div><div class="p-6"><div class="mono-label">Week one</div><div class="h3 mt-2 text-[1.25rem]">Your branded store</div><p class="m-0 mt-2 text-[15px] text-fg-muted">Brand, product photos and a high converting storefront, built with AI in an afternoon. No code, no&nbsp;designer.</p></div></div><div class="reveal in card flex flex-col overflow-hidden p-0 md:col-span-2 lg:col-span-1" style="transition-delay: 140ms;"><div class="flex h-[248px] items-center overflow-hidden border-b border-line bg-bg-soft px-5"><div class="w-full"><div class="grid gap-2"><div class="flex items-center gap-3 rounded-[12px] border border-line bg-bg px-3 py-2.5 text-[13.5px] shadow-[var(--shadow-sm)]"><span class="grid h-7 w-7 place-items-center rounded-[8px] bg-accent-soft text-accent-ink"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg></span><span class="font-medium">Product research</span><span class="ml-auto text-[11.5px] font-medium text-accent-ink">Built</span></div><div class="flex items-center gap-3 rounded-[12px] border border-line bg-bg px-3 py-2.5 text-[13.5px] shadow-[var(--shadow-sm)]"><span class="grid h-7 w-7 place-items-center rounded-[8px] bg-accent-soft text-accent-ink"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image-plus" aria-hidden="true"><path d="M16 5h6"></path><path d="M19 2v6"></path><path d="M21 11.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7.5"></path><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path><circle cx="9" cy="9" r="2"></circle></svg></span><span class="font-medium">Ad creative maker</span><span class="ml-auto text-[11.5px] font-medium text-fg-subtle">Next</span></div><div class="flex items-center gap-3 rounded-[12px] border border-line bg-bg px-3 py-2.5 text-[13.5px] shadow-[var(--shadow-sm)]"><span class="grid h-7 w-7 place-items-center rounded-[8px] bg-accent-soft text-accent-ink"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-column lucide-bar-chart-3" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span><span class="font-medium">Profit tracker</span><span class="ml-auto text-[11.5px] font-medium text-fg-subtle">Next</span></div></div></div></div><div class="p-6"><div class="mono-label">Then</div><div class="h3 mt-2 text-[1.25rem]">Your growth tools</div><p class="m-0 mt-2 text-[15px] text-fg-muted">A product research tool, a marketing asset maker and more. The course brings you back to build what your store needs&nbsp;next.</p></div></div></div></div></section><section class="section"><div class="wrap"><div class="reveal in section-head " style="transition-delay: 0ms;"><div class="eyebrow mb-4">Student wins</div><h2 class="h2">Wins, taped to the wall</h2><p class="lead mt-5 mx-auto max-w-[36rem]">Screenshots posted by students in the community. No paid placements, just&nbsp;wins.</p></div><div class="grid grid-cols-2 gap-x-4 gap-y-9 sm:gap-x-5 sm:gap-y-10 lg:grid-cols-4"><div class="reveal in " style="transition-delay: 0ms;"><figure class="v4-stuck m-0"><div class="aspect-[4/5] overflow-hidden rounded-[8px]"><img alt="Student result: 27 orders and €300 in 48 hours" loading="lazy" class="h-full w-full object-cover object-top" src="https://winningstreakecom.com/assets/wins/dan-27orders.jpg"></div><figcaption class="min-h-[2.6em] px-1 pt-3 font-display text-[14px] font-bold leading-[1.3] tracking-[-0.01em]">27 orders and €300 in 48 hours</figcaption></figure></div><div class="reveal in " style="transition-delay: 0ms;"><figure class="v4-stuck m-0"><div class="aspect-[4/5] overflow-hidden rounded-[8px]"><img alt="Student result: 151k views overnight on a first post" loading="lazy" class="h-full w-full object-cover object-top" src="https://winningstreakecom.com/assets/wins/luke-151k.jpg"></div><figcaption class="min-h-[2.6em] px-1 pt-3 font-display text-[14px] font-bold leading-[1.3] tracking-[-0.01em]">151k views overnight on a first post</figcaption></figure></div><div class="reveal in " style="transition-delay: 0ms;"><figure class="v4-stuck m-0"><div class="aspect-[4/5] overflow-hidden rounded-[8px]"><img alt="Student result: First sales, first customer abroad" loading="lazy" class="h-full w-full object-cover object-top" src="https://winningstreakecom.com/assets/wins/japan-first.jpg"></div><figcaption class="min-h-[2.6em] px-1 pt-3 font-display text-[14px] font-bold leading-[1.3] tracking-[-0.01em]">First sales, first customer abroad</figcaption></figure></div><div class="reveal in " style="transition-delay: 0ms;"><figure class="v4-stuck m-0"><div class="aspect-[4/5] overflow-hidden rounded-[8px]"><img alt="Student result: 20 orders" loading="lazy" class="h-full w-full object-cover object-top" src="https://winningstreakecom.com/assets/wins/dan-20orders.jpg"></div><figcaption class="min-h-[2.6em] px-1 pt-3 font-display text-[14px] font-bold leading-[1.3] tracking-[-0.01em]">20 orders</figcaption></figure></div><div class="reveal in " style="transition-delay: 0ms;"><figure class="v4-stuck m-0"><div class="aspect-[4/5] overflow-hidden rounded-[8px]"><img alt="Student result: Built the whole business in one day" loading="lazy" class="h-full w-full object-cover object-top" src="https://winningstreakecom.com/assets/wins/jesse.jpg"></div><figcaption class="min-h-[2.6em] px-1 pt-3 font-display text-[14px] font-bold leading-[1.3] tracking-[-0.01em]">Built the whole business in one day</figcaption></figure></div><div class="reveal in " style="transition-delay: 0ms;"><figure class="v4-stuck m-0"><div class="aspect-[4/5] overflow-hidden rounded-[8px]"><img alt="Student result: 760k views" loading="lazy" class="h-full w-full object-cover object-top" src="https://winningstreakecom.com/assets/wins/dan-760k.jpg"></div><figcaption class="min-h-[2.6em] px-1 pt-3 font-display text-[14px] font-bold leading-[1.3] tracking-[-0.01em]">760k views</figcaption></figure></div><div class="reveal  hidden lg:block" style="transition-delay: 0ms;"><figure class="v4-stuck m-0"><div class="aspect-[4/5] overflow-hidden rounded-[8px]"><img alt="Student result: In depth training" loading="lazy" class="h-full w-full object-cover object-top" src="https://winningstreakecom.com/assets/wins/cooper-rogers.jpg"></div><figcaption class="min-h-[2.6em] px-1 pt-3 font-display text-[14px] font-bold leading-[1.3] tracking-[-0.01em]">In depth training</figcaption></figure></div><div class="reveal  hidden lg:block" style="transition-delay: 0ms;"><figure class="v4-stuck m-0"><div class="aspect-[4/5] overflow-hidden rounded-[8px]"><img alt="Student result: Easy to follow" loading="lazy" class="h-full w-full object-cover object-top" src="https://winningstreakecom.com/assets/wins/seajay.jpg"></div><figcaption class="min-h-[2.6em] px-1 pt-3 font-display text-[14px] font-bold leading-[1.3] tracking-[-0.01em]">Easy to follow</figcaption></figure></div></div><h3 class="m-0 mb-8 mt-20 text-center font-display text-[1.75rem] font-extrabold tracking-[-0.03em] sm:mt-24">Hear it from them</h3><div class="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 sm:mx-0 sm:grid sm:grid-cols-5 sm:overflow-visible sm:px-0 "><div class="w-[62%] flex-none snap-center sm:w-auto"><div class="frame"><div class="frame-core"><div class="relative overflow-hidden bg-black "><div data-ws-video="mdR2zIx711Fpu2hM" style="aspect-ratio:1/1.6;background:#000"></div></div></div></div></div><div class="w-[62%] flex-none snap-center sm:w-auto"><div class="frame"><div class="frame-core"><div class="relative overflow-hidden bg-black "><div data-ws-video="koaL6fxLhyl1kQeS" style="aspect-ratio:1/1.6;background:#000"></div></div></div></div></div><div class="w-[62%] flex-none snap-center sm:w-auto"><div class="frame"><div class="frame-core"><div class="relative overflow-hidden bg-black "><div data-ws-video="trcoeWifaraTa2hQ" style="aspect-ratio:1/1.6;background:#000"></div></div></div></div></div><div class="w-[62%] flex-none snap-center sm:w-auto"><div class="frame"><div class="frame-core"><div class="relative overflow-hidden bg-black "><div data-ws-video="4CTERLmU7kclipCW" style="aspect-ratio:1/1.6;background:#000"></div></div></div></div></div><div class="w-[62%] flex-none snap-center sm:w-auto"><div class="frame"><div class="frame-core"><div class="relative overflow-hidden bg-black "><div data-ws-video="12BbHGRWdWBXfH40" style="aspect-ratio:1/1.6;background:#000"></div></div></div></div></div></div></div></section><section class="section border-t-2 border-[#111] bg-bg-soft"><div class="wrap"><div class="grid items-start gap-10 lg:grid-cols-[5fr_7fr] lg:gap-16"><div class="reveal in lg:sticky lg:top-[calc(var(--review-h,0px)+40px)]" style="transition-delay: 0ms;"><span class="v4-label  ">The honest answer</span><h2 class="h2 mt-4 max-w-[10ch]">So what is the catch?</h2></div><div class="reveal in " style="transition-delay: 80ms;"><div class="v4-box v4-box-lg bg-white p-7 sm:p-10"><div class="space-y-4 text-[1.0625rem] leading-relaxed text-fg-muted"><p>We are partnered with Base44 and Revolut. They pay us to bring in people who actually build, because when you win you stay on their platforms. So they cover the course, the call and the&nbsp;community.</p><p>The one thing you pay for is your own Base44 plan, the AI builder you build your store with. That money goes straight to Base44, not to me. You would need a builder wherever you built a&nbsp;store.</p><p class="font-semibold text-fg">I had $250 in my account when I started, and nobody to show me what to do. I have made my money. I do not need&nbsp;yours.</p></div><div class="mt-8 flex items-center gap-3 border-t-2 border-dashed border-[#111]/20 pt-6"><img alt="Jake Bass" width="48" height="48" class="flex-none rounded-full object-cover " src="/assets/v4/jake-avatar.jpg" style="width: 48px; height: 48px;"><div><div class="serif-i text-[1.75rem] leading-none">Jake</div><div class="mt-1 text-[13px] text-fg-subtle">Co founder, Winning Streak</div></div></div></div></div></div></div></section><section class="section bg-[#111] text-[#f4f2eb]"><div class="wrap"><div class="reveal in mb-10 grid items-end gap-6 sm:mb-14 lg:grid-cols-[5fr_7fr] lg:gap-16" style="transition-delay: 0ms;"><div><span class="v4-label v4-label-yellow ">Where this leads</span><h2 class="h2 mt-4 max-w-[12ch]">Seven years ago I had $250</h2></div><p class="m-0 max-w-[30rem] text-[1.0625rem] leading-relaxed text-white/65 lg:justify-self-end">Same guy, same country, no degree, no connections. Just the framework that is in this&nbsp;course.</p></div><div class="v4-life"><div class="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-6 "><div class="reveal in w-[58%] flex-none snap-center sm:w-auto" style="transition-delay: 0ms;"><figure class="relative m-0 aspect-[3/4] overflow-hidden rounded-[var(--r-card)]"><img alt="Delivery day" loading="lazy" class="h-full w-full object-cover" src="https://winningstreakecom.com/assets/jake-lambo-delivery.jpg"><figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3.5 pb-3 pt-10 text-[12.5px] font-semibold uppercase tracking-[0.06em] text-white">Delivery day</figcaption></figure></div><div class="reveal in w-[58%] flex-none snap-center sm:w-auto" style="transition-delay: 50ms;"><figure class="relative m-0 aspect-[3/4] overflow-hidden rounded-[var(--r-card)]"><img alt="Still wash it myself" loading="lazy" class="h-full w-full object-cover" src="https://winningstreakecom.com/assets/jake-washing-lambo.jpg"><figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3.5 pb-3 pt-10 text-[12.5px] font-semibold uppercase tracking-[0.06em] text-white">Still wash it myself</figcaption></figure></div><div class="reveal  w-[58%] flex-none snap-center sm:w-auto" style="transition-delay: 100ms;"><figure class="relative m-0 aspect-[3/4] overflow-hidden rounded-[var(--r-card)]"><img alt="The daily drive" loading="lazy" class="h-full w-full object-cover" src="https://winningstreakecom.com/assets/lambo-interior-pov.jpg"><figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3.5 pb-3 pt-10 text-[12.5px] font-semibold uppercase tracking-[0.06em] text-white">The daily drive</figcaption></figure></div><div class="reveal  w-[58%] flex-none snap-center sm:w-auto" style="transition-delay: 150ms;"><figure class="relative m-0 aspect-[3/4] overflow-hidden rounded-[var(--r-card)]"><img alt="Gold Coast" loading="lazy" class="h-full w-full object-cover" src="https://winningstreakecom.com/assets/gc-lambos-bskt.jpg"><figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3.5 pb-3 pt-10 text-[12.5px] font-semibold uppercase tracking-[0.06em] text-white">Gold Coast</figcaption></figure></div><div class="reveal  w-[58%] flex-none snap-center sm:w-auto" style="transition-delay: 200ms;"><figure class="relative m-0 aspect-[3/4] overflow-hidden rounded-[var(--r-card)]"><img alt="Wherever I want" loading="lazy" class="h-full w-full object-cover" src="https://winningstreakecom.com/assets/jake-lake.jpg"><figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3.5 pb-3 pt-10 text-[12.5px] font-semibold uppercase tracking-[0.06em] text-white">Wherever I want</figcaption></figure></div><div class="reveal  w-[58%] flex-none snap-center sm:w-auto" style="transition-delay: 250ms;"><figure class="relative m-0 aspect-[3/4] overflow-hidden rounded-[var(--r-card)]"><img alt="Work from anywhere" loading="lazy" class="h-full w-full object-cover" src="https://winningstreakecom.com/assets/jake-velar-cabin.jpg"><figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3.5 pb-3 pt-10 text-[12.5px] font-semibold uppercase tracking-[0.06em] text-white">Work from anywhere</figcaption></figure></div></div></div></div></section><section class="section"><div class="wrap"><div class="grid items-start gap-10 lg:grid-cols-[5fr_7fr] lg:gap-16"><div class="reveal in lg:sticky lg:top-[calc(var(--review-h,0px)+40px)]" style="transition-delay: 0ms;"><span class="v4-label  ">The course</span><h2 class="h2 mt-4 max-w-[10ch]">Start to finish, in order</h2><p class="lead mt-5 max-w-[28rem]">Nothing held back for a paid tier, because there is not one. Your AI keeps you moving through&nbsp;it.</p><a href="#join" class="btn btn-primary mt-8 hidden lg:inline-flex">Get my free course</a></div><div class="reveal in " style="transition-delay: 80ms;"><div class="v4-box v4-box-lg overflow-hidden bg-white"><div class="flex items-center justify-between gap-3 bg-[#111] px-5 py-3.5 text-[#f4f2eb] sm:px-6"><span class="font-display text-[15px] font-extrabold uppercase tracking-[0.01em]">The $25M Ecom Course</span><span class="whitespace-nowrap text-[12.5px] font-semibold text-[#ffd60a]">7 modules<span class="hidden sm:inline"> · 25 lessons</span></span></div><ol class="m-0 list-none divide-y-2 divide-[#111]/10 p-0"><li class="flex items-center gap-4 px-5 py-4 sm:px-6"><span class="tnum grid h-10 w-10 flex-none place-items-center rounded-[10px] border-2 border-[#111] bg-[#ffd60a] font-display text-[15px] font-extrabold">01</span><div class="min-w-0"><div class="font-display text-[1.0625rem] font-bold leading-snug tracking-[-0.015em]">Introduction, start here</div><div class="text-[14px] text-fg-muted">How the system works and what you build first.</div></div></li><li class="flex items-center gap-4 px-5 py-4 sm:px-6"><span class="tnum grid h-10 w-10 flex-none place-items-center rounded-[10px] border-2 border-[#111] bg-[#ffd60a] font-display text-[15px] font-extrabold">02</span><div class="min-w-0"><div class="font-display text-[1.0625rem] font-bold leading-snug tracking-[-0.015em]">Foundations</div><div class="text-[14px] text-fg-muted">Your idea, your product and how to validate it.</div></div></li><li class="flex items-center gap-4 px-5 py-4 sm:px-6"><span class="tnum grid h-10 w-10 flex-none place-items-center rounded-[10px] border-2 border-[#111] bg-[#ffd60a] font-display text-[15px] font-extrabold">03</span><div class="min-w-0"><div class="font-display text-[1.0625rem] font-bold leading-snug tracking-[-0.015em]">AI store build groundwork</div><div class="text-[14px] text-fg-muted">Brand assets and product imagery made with AI.</div></div></li><li class="flex items-center gap-4 px-5 py-4 sm:px-6"><span class="tnum grid h-10 w-10 flex-none place-items-center rounded-[10px] border-2 border-[#111] bg-[#ffd60a] font-display text-[15px] font-extrabold">04</span><div class="min-w-0"><div class="font-display text-[1.0625rem] font-bold leading-snug tracking-[-0.015em]">Build your high converting store</div><div class="text-[14px] text-fg-muted">The full storefront on Base44, connected to checkout.</div></div></li><li class="flex items-center gap-4 px-5 py-4 sm:px-6"><span class="tnum grid h-10 w-10 flex-none place-items-center rounded-[10px] border-2 border-[#111] bg-[#ffd60a] font-display text-[15px] font-extrabold">05</span><div class="min-w-0"><div class="font-display text-[1.0625rem] font-bold leading-snug tracking-[-0.015em]">Fulfilment</div><div class="text-[14px] text-fg-muted">Getting every order out the door, fast.</div></div></li><li class="flex items-center gap-4 px-5 py-4 sm:px-6"><span class="tnum grid h-10 w-10 flex-none place-items-center rounded-[10px] border-2 border-[#111] bg-[#ffd60a] font-display text-[15px] font-extrabold">06</span><div class="min-w-0"><div class="font-display text-[1.0625rem] font-bold leading-snug tracking-[-0.015em]">Going live to market</div><div class="text-[14px] text-fg-muted">Organic content that gets you seen with no ad spend.</div></div></li><li class="flex items-center gap-4 px-5 py-4 sm:px-6"><span class="tnum grid h-10 w-10 flex-none place-items-center rounded-[10px] border-2 border-[#111] bg-[#ffd60a] font-display text-[15px] font-extrabold">07</span><div class="min-w-0"><div class="font-display text-[1.0625rem] font-bold leading-snug tracking-[-0.015em]">Final takeaway</div><div class="text-[14px] text-fg-muted">Your next moves and how to scale from here.</div></div></li></ol></div></div></div></div></section><section class="section border-t-2 border-[#111] bg-bg-soft"><div class="wrap"><div class="reveal in section-head " style="transition-delay: 0ms;"><div class="eyebrow mb-4">FAQ</div><h2 class="h2">Questions, answered</h2></div><div class="mx-auto max-w-[46rem] "><details class="faq-item border-b border-line" open=""><summary class="flex items-center justify-between gap-6 py-5 text-left"><span class="text-[1.0625rem] font-semibold tracking-[-0.01em]">What does it cost to get started?</span><span class="faq-icon grid h-8 w-8 flex-none place-items-center rounded-full border border-line text-fg-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="m-0 max-w-[40rem] pb-6 text-fg-muted">The course, the onboarding call and the community are free. The only thing you pay for is your own Base44 plan, the AI builder you build the store with, and that goes straight to Base44. You need at least $50 to start. No ad spend&nbsp;required.</p></details><details class="faq-item border-b border-line"><summary class="flex items-center justify-between gap-6 py-5 text-left"><span class="text-[1.0625rem] font-semibold tracking-[-0.01em]">How is this different from other free courses?</span><span class="faq-icon grid h-8 w-8 flex-none place-items-center rounded-full border border-line text-fg-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="m-0 max-w-[40rem] pb-6 text-fg-muted">Most free courses hand you a login and disappear. My team calls you after you apply and walks you through what to do first, second and third based on your situation. That is the difference between people who launch and people who watch a few videos and&nbsp;quit.</p></details><details class="faq-item border-b border-line"><summary class="flex items-center justify-between gap-6 py-5 text-left"><span class="text-[1.0625rem] font-semibold tracking-[-0.01em]">Do I need experience?</span><span class="faq-icon grid h-8 w-8 flex-none place-items-center rounded-full border border-line text-fg-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="m-0 max-w-[40rem] pb-6 text-fg-muted">No. Most students start from zero. The course goes in order, and your AI assistant keeps you moving through&nbsp;it.</p></details><details class="faq-item border-b border-line"><summary class="flex items-center justify-between gap-6 py-5 text-left"><span class="text-[1.0625rem] font-semibold tracking-[-0.01em]">What results can I expect?</span><span class="faq-icon grid h-8 w-8 flex-none place-items-center rounded-full border border-line text-fg-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="m-0 max-w-[40rem] pb-6 text-fg-muted">The process is built to take someone to $10K a month or more from ecom if they follow it. Some people will not get there, usually because they never launched. I cannot promise you numbers. I can give you the exact framework behind 8 businesses and $25&nbsp;million.</p></details><details class="faq-item border-b border-line"><summary class="flex items-center justify-between gap-6 py-5 text-left"><span class="text-[1.0625rem] font-semibold tracking-[-0.01em]">Can I do this with a full time job?</span><span class="faq-icon grid h-8 w-8 flex-none place-items-center rounded-full border border-line text-fg-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="m-0 max-w-[40rem] pb-6 text-fg-muted">Yes. Most people starting are working or studying. One focused hour a day is enough to get&nbsp;going.</p></details><details class="faq-item border-b border-line"><summary class="flex items-center justify-between gap-6 py-5 text-left"><span class="text-[1.0625rem] font-semibold tracking-[-0.01em]">Why are you giving this away?</span><span class="faq-icon grid h-8 w-8 flex-none place-items-center rounded-full border border-line text-fg-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="m-0 max-w-[40rem] pb-6 text-fg-muted">Because when I started, all I needed was someone to show me what to do without charging me thousands I did not have. That person did not exist for me. Base44 and Revolut cover the cost so it can exist for&nbsp;you.</p></details></div></div></section><section class="section"><div class="wrap"><div class="reveal in " style="transition-delay: 0ms;"><div class="v4-box v4-box-lg rounded-[28px] bg-[#ffd60a] px-6 py-16 text-center sm:px-12 sm:py-20"><span class="v4-label  "><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-exclamation-point lucide-alert-triangle lucide-triangle-alert" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg> Free while it lasts</span><h2 class="h2 mx-auto mt-5 max-w-[13ch]">Claim your free $5,000 course now</h2><p class="mx-auto mt-5 max-w-[32rem] text-[1.125rem] font-medium text-[#111]/75">Apply in 30 seconds, pick up the call, and start building&nbsp;today.</p><a href="#join" class="btn btn-ink btn-lg mt-9">Get my free course</a><p class="m-0 mt-4 text-[13px] font-semibold text-[#111]/60">No card to apply · No catch</p></div></div></div></section></main><footer class="border-t border-line py-12 !border-t-2 !border-[#111]"><div class="wrap"><div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center"><span class="inline-flex items-center gap-2.5 "><img alt="" width="30" height="30" class="rounded-[22%] shadow-sm" src="/assets/v4/ws-logo.png" style="width: 30px; height: 30px;"><span class="whitespace-nowrap font-sans text-[1.0625rem] font-semibold tracking-[-0.02em]">Winning Streak</span></span><nav class="flex gap-5 text-[14px] text-fg-muted"><a href="https://winningstreakecom.com/terms.html" class="hover:text-fg">Terms</a><a href="https://winningstreakecom.com/privacy.html" class="hover:text-fg">Privacy</a><a href="mailto:support@winningstreakecom.com" class="hover:text-fg">Contact</a></nav></div><div class="mt-8 space-y-3 text-[12.5px] leading-relaxed text-fg-subtle"><p class="max-w-[60rem]">Winning Streak provides education and tools only. We do not guarantee any income, sales or results. Your outcomes depend on your own effort, decisions and factors outside our control. Nothing here is financial or business advice. Results shown are individual and not typical.</p><p class="max-w-[60rem]">Not affiliated with or endorsed by Meta Platforms, Inc. Facebook and Instagram are trademarks of Meta Platforms, Inc. Base44 and Revolut are trademarks of their respective owners.</p><p class="max-w-[60rem]">Winning Streak is a trading name of Australian Online Ventures Pty Ltd (ABN 12 675 882 952).</p><p>© 2026 Winning Streak. All rights reserved.</p></div></div></footer><div class="dock "><a href="#join" class="btn btn-primary btn-block">Get my free course</a></div></div>
+
+<script>
+  // Lead capture: post to our own server, which forwards to Discord.
+  // The webhook is never exposed to the browser.
+  const form = document.getElementById('lead-form');
+  const submit = document.getElementById('lead-submit');
+
+  // --- A/B variant toggle ---------------------------------------------------------------
+  // window.WS_VARIANT was decided at the very top of the page (see the assignment script in
+  // <head>), before this modal markup even existed. Both variants' fields already sit in the
+  // DOM (see the opt-in modal HTML above) - this just shows one set and hides the other, and
+  // critically, drops `required` off whichever name field(s) are hidden. Leaving `required` on
+  // a display:none input silently blocks native form submission with no visible error, which
+  // is exactly the kind of bug that looks like "the button just doesn't work."
+  const VARIANT = window.WS_VARIANT === 'B' ? 'B' : 'A';
+  document.querySelectorAll('[data-variant]').forEach((el) => {
+    const show = el.getAttribute('data-variant').toUpperCase() === VARIANT;
+    el.style.display = show ? '' : 'none';
+    el.querySelectorAll('input').forEach((inp) => { inp.disabled = !show; });
+    if (el.matches('input')) el.disabled = !show;
+  });
+  // The full-name input (variant A) and first/last inputs (variant B) all still carry
+  // `required` from their HTML - disabling the hidden ones above is what stops the browser
+  // validating a field nobody can see or fill in.
+  const firstNameInput = form.querySelector('input[name="first_name"]');
+  const lastNameInput = form.querySelector('input[name="last_name"]');
+  if (VARIANT === 'B') { firstNameInput.required = true; lastNameInput.required = true; }
+  else { firstNameInput.required = false; lastNameInput.required = false; }
+
+  // --- phone validation ---------------------------------------------------------------
+  //
+  // A lead we cannot ring is not a lead. The rule here is simple: nothing leaves this page
+  // unless the number is valid FOR THE SELECTED COUNTRY, so every record lands with both a
+  // working number and a country we are sure about.
+  //
+  // What went wrong before: the picker defaulted to Australia, most of our traffic is not
+  // Australian, and people who never touched it typed their own full number. "+61" and
+  // "1 980 443 8363" got glued into +6119804438363. Roughly 12% of leads from 13 Aug 2026
+  // were undiallable. Three things stop it now:
+  //   1. the picker starts on the visitor's own country (/api/geo), so it is right by default
+  //   2. typing a number that begins with a different country's code switches the picker
+  //      instead of failing - people who type "+1 415..." get what they meant
+  //   3. length AND leading digits are checked, live, against the selected country
+  // api/lead.js repeats the check server-side. This copy is the good experience; that one is
+  // the guarantee, because a cached page can always be running older rules than these.
+  //
+  // dial code -> [min, max] national digits, leading-digit pattern (null = length only),
+  //              example number to show
+  const PHONE_RULES = {
+    // Rules tight enough to catch a wrong-country number, in the markets we actually sell to.
+    '+61':[9,9,/^[23478]/,'412 345 678'],
+    // NANP: area code and exchange both start 2-9, and neither is a reserved N11 code.
+    '+1':[10,10,/^[2-9]\d\d[2-9]/,'415 555 0123'],
+    '+44':[9,10,/^[1235789]/,'7700 900123'],
+    '+64':[8,10,/^[234679]/,'21 123 4567'],
+    '+353':[7,9,/^[1-9]/,'85 123 4567'],
+    '+49':[10,11,null,'151 23456789'], '+33':[9,9,/^[1-9]/,'6 12 34 56 78'],
+    '+31':[9,9,/^[1-9]/,'6 12345678'],  '+46':[7,9,null,'70 123 45 67'],
+    '+45':[8,8,null,'20 12 34 56'],     '+47':[8,8,/^[2-9]/,'406 12 345'],
+    '+358':[9,10,null,'50 123 4567'],   '+43':[10,11,null,'664 1234567'],
+    '+41':[9,9,null,'78 123 45 67'],    '+32':[9,9,null,'470 12 34 56'],
+    '+34':[9,9,/^[6-9]/,'612 34 56 78'],'+39':[9,10,null,'312 345 6789'],
+    '+351':[9,9,/^[29]/,'912 345 678'], '+48':[9,9,/^[1-9]/,'512 345 678'],
+    '+420':[9,9,/^[1-9]/,'601 123 456'],'+30':[10,10,/^[26]/,'691 234 5678'],
+    '+36':[9,9,null,'20 123 4567'],     '+40':[9,9,null,'712 345 678'],
+    '+372':[7,8,null,'5123 4567'],      '+380':[9,9,null,'50 123 4567'],
+    '+65':[8,8,/^[3689]/,'8123 4567'],  '+972':[9,9,/^[2-9]/,'50 123 4567'],
+    '+81':[10,10,null,'90 1234 5678'],  '+82':[9,10,null,'10 1234 5678'],
+    // Everything else: length only. A rule we are not sure of would cost real leads.
+    '+27':[9,9,null,'71 123 4567'],  '+91':[10,10,/^[6-9]/,'98450 12345'],
+    '+63':[10,10,null,'917 123 4567'], '+971':[8,9,null,'50 123 4567'],
+    '+60':[9,10,null,'12 345 6789'], '+234':[10,10,null,'802 123 4567'],
+    '+92':[10,10,null,'301 2345678'],'+62':[9,12,null,'812 3456 789'],
+    '+90':[10,10,null,'532 123 45 67'], '+7':[10,10,null,'912 345 6789'],
+    '+86':[11,11,null,'131 2345 6789'], '+55':[10,11,null,'11 91234 5678'],
+    '+52':[10,10,null,'55 1234 5678'],  '+254':[9,9,null,'712 123456'],
+    '+256':[9,9,null,'712 345678'],  '+233':[9,9,null,'24 123 4567'],
+    '+20':[10,10,null,'100 123 4567'],  '+212':[9,9,null,'650 123456'],
+    '+966':[9,9,null,'50 123 4567'],
+  };
+  // Fallback for a country we have no rule for. Length only - a rule we are not sure of costs
+  // real leads. It is NOT used when the picker has no value at all; see phoneError.
+  const DEFAULT_RULE = [6, 13, null, ''];
+  const ruleFor = (cc) => PHONE_RULES[cc] || DEFAULT_RULE;
+
+  const phoneInput = form.querySelector('input[name="phone"]');
+  const ccSelect = form.querySelector('select[name="country_code"]');
+  const phoneErr = document.getElementById('phone-error');
+
+  // The option label is "🇦🇺 +61 Australia": flag, dial code, then the name.
+  const fullLabel = (opt) => opt ? (opt.dataset.full || (opt.dataset.full = opt.text)) : '';
+  const labelOf = (opt) => fullLabel(opt).trim().split(/\s+/);
+  const countryName = (opt) => { const p = labelOf(opt); return p.length > 2 ? p.slice(2).join(' ') : ''; };
+  const countryFlag = (opt) => { const p = labelOf(opt); return p.length > 2 ? p[0] : ''; };
+  const selected = () => ccSelect.options[ccSelect.selectedIndex];
+  function shortSel() {
+    [...ccSelect.options].forEach((o) => { o.text = fullLabel(o); });
+    const o = selected(); if (o) o.text = labelOf(o).slice(0, 2).join(' ');
+  }
+  ccSelect.addEventListener('focus', () => { const o = selected(); if (o) o.text = fullLabel(o); });
+  ccSelect.addEventListener('blur', shortSel);
+
+  // Strip the country code off the front and drop the local trunk 0, leaving the national part.
+  function national(cc, raw) {
+    let d = String(raw || '').replace(/\D/g, '');
+    const ccd = String(cc || '').replace(/\D/g, '');
+    if (ccd && d.startsWith(ccd) && d.length > ccd.length) d = d.slice(ccd.length);
+    return d.replace(/^0+/, '');
+  }
+
+  // Obvious junk - "+61123456789" and "1111111111" both got through the old check. Only the two
+  // unambiguous shapes: every digit the same, or a straight count up. A descending run was in
+  // here too and it rejected a real Indian mobile, which is the wrong way to be wrong: a fake
+  // number costs one wasted dial, a rejected real one costs the lead.
+  const isFake = (d) => /^(\d)\1+$/.test(d) || '01234567890123'.includes(d);
+
+  function phoneError(cc, raw) {
+    const d = national(cc, raw);
+    if (!d) return 'Please enter your phone number.';
+    // An empty picker is a broken state, not an unknown country, and it must never fall through
+    // to the permissive default rule. That is how "8584329379" left here with no country code at
+    // all: a US number, accepted because 10 digits fits 6-13, then stamped +61 by Close's own
+    // default further down the line. Make them choose instead.
+    if (!cc) return 'Please choose your country from the dropdown.';
+    const [min, max, start] = ruleFor(cc);
+    if (d.length < min || d.length > max) {
+      return min === max
+        ? `A ${cc} number is ${min} digits - you've entered ${d.length}.`
+        : `A ${cc} number is ${min}-${max} digits - you've entered ${d.length}.`;
+    }
+    if (start && !start.test(d)) return `That isn't a valid ${cc} number - check the country is right.`;
+    if (isFake(d)) return 'Please enter your real phone number - we call you on it.';
+    return null;
+  }
+
+  // If someone types a number starting with a country code that is not the one selected, move
+  // the picker to match rather than rejecting them. Somebody typing "+1 415 555 0123" has told
+  // us exactly where they are; making them hunt through the dropdown to be allowed to say it is
+  // how you lose a lead. Longest code first so +1 never shadows +1-something.
+  const DIAL_CODES = [...new Set(Object.keys(PHONE_RULES))].sort((a, b) => b.length - a.length);
+  function adoptTypedCode(raw) {
+    if (!/^\s*\+/.test(raw)) return false;             // only when they actually typed a "+"
+    const d = raw.replace(/\D/g, '');
+    for (const cc of DIAL_CODES) {
+      const ccd = cc.slice(1);
+      if (!d.startsWith(ccd)) continue;
+      const rest = d.slice(ccd.length).replace(/^0+/, '');
+      const [min, max, start] = ruleFor(cc);
+      if (rest.length < min || rest.length > max) continue;
+      if (start && !start.test(rest)) continue;
+      if (cc === ccSelect.value) return false;
+      // Keep the country they typed; if several share the code (+1 is US, Canada, Jamaica...)
+      // the first is the one we sell to most.
+      const opt = [...ccSelect.options].find((o) => o.value === cc);
+      if (!opt) return false;
+      ccSelect.value = cc;
+      phoneInput.value = rest;
+      return true;
+    }
+    return false;
+  }
+
+  // Live feedback. The hint tells them the format up front so they get it right first time;
+  // the error only appears once they have stopped typing, because correcting someone
+  // mid-keystroke reads as the form arguing with them.
+  let touched = false;
+  function paint() {
+    shortSel();
+    const cc = ccSelect.value;
+    const opt = selected();
+    const [, , , example] = ruleFor(cc);
+    phoneInput.placeholder = example || 'Phone number';
+    const err = phoneError(cc, phoneInput.value);
+    const filled = national(cc, phoneInput.value).length > 0;
+    phoneInput.classList.toggle('bad', !!err && touched && filled);
+    phoneInput.classList.toggle('good', !err && filled);
+    if (err && touched && filled) {
+      phoneErr.className = 'field-error';
+      phoneErr.textContent = err;
+    } else if (!err && filled) {
+      phoneErr.className = 'field-error field-ok';
+      phoneErr.textContent = `✓ ${countryFlag(opt)} ${countryName(opt)} - we'll call you on ${cc} ${national(cc, phoneInput.value)}`;
+    } else {
+      phoneErr.className = 'field-error';
+      phoneErr.textContent = '';
+    }
+  }
+  phoneInput.addEventListener('input', () => { if (adoptTypedCode(phoneInput.value)) touched = true; paint(); });
+  phoneInput.addEventListener('blur', () => { touched = true; paint(); });
+  ccSelect.addEventListener('change', () => { touched = true; paint(); });
+
+  // Start the picker on the visitor's own country instead of Australia. Their flag is already
+  // in the option label - a flag emoji is just its two-letter country code in disguise - so the
+  // match needs no extra table. Fails silently: a blocked or slow lookup leaves the form exactly
+  // as it renders, so this can never stop someone applying.
+  const isoFromFlag = (s) => {
+    const cp = [...String(s || '')];
+    if (cp.length < 2) return '';
+    const a = cp[0].codePointAt(0) - 0x1F1E6, b = cp[1].codePointAt(0) - 0x1F1E6;
+    if (a < 0 || a > 25 || b < 0 || b > 25) return '';
+    return String.fromCharCode(65 + a, 65 + b);
+  };
+  fetch('/api/geo').then(r => r.json()).then(({ country }) => {
+    if (!country || phoneInput.value) return;   // never override something already typed
+    const opt = [...ccSelect.options].find(o => isoFromFlag(countryFlag(o)) === country);
+    if (opt) { ccSelect.value = opt.value; paint(); }
+  }).catch(() => {});
+  paint();
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (submit.disabled) return;
+
+    // Hard gate. Nothing reaches the CRM without a number that is valid for its country.
+    touched = true;
+    const err = phoneError(ccSelect.value, phoneInput.value);
+    if (err) {
+      paint();
+      phoneErr.textContent = err;
+      phoneInput.classList.add('bad');
+      phoneInput.focus();
+      // Blocking a submit is the one change here that could cost a real lead: if a rule above is
+      // too tight for some country, that person simply cannot apply and we would never find out.
+      // Count the blocks so it shows up instead. Dial code and digit count only - no number.
+      window.va && va('event', {
+        name: 'Phone Rejected',
+        cc: ccSelect.value,
+        digits: national(ccSelect.value, phoneInput.value).length,
+        variant: VARIANT,
+      });
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.phone = national(ccSelect.value, phoneInput.value); // send it clean
+    data.form_variant = VARIANT;
+    // This page only ever exists as a paid ad destination - every lead here is paid, full stop,
+    // no need to infer it from utm/fbclid like the organic page has to. api/lead.js treats this
+    // as the authoritative signal and skips the inference path entirely when it's present.
+    data.source = 'paid';
+    // Variant B collects first/last separately; api/lead.js and Close both still key off a
+    // single "name" field, so join it here rather than touching that logic. first_name/
+    // last_name travel too, unchanged, for the per-name handling further down.
+    if (VARIANT === 'B') data.name = `${data.first_name || ''} ${data.last_name || ''}`.trim();
+
+    // Send the country the way they picked it. Reading it from the selection beats guessing
+    // from the dial code, which is ambiguous (+1 is US, Canada and a dozen others).
+    const opt = selected();
+    if (countryName(opt)) {
+      data.country_flag = countryFlag(opt);
+      data.country = countryName(opt);
+    }
+    submit.disabled = true;
+    submit.textContent = 'Sending...';
+
+    // ---- Meta de-duplication ----
+    // The SAME event_id has to reach Meta from the browser AND from the server, or the
+    // Conversions API doubles every lead instead of backfilling the ones the browser loses to
+    // ad blockers and iOS. So it is minted BEFORE the POST and travels with it.
+    // _fbp / _fbc are the pixel's own cookies: _fbc carries the click id from the ad. Without
+    // them a server event has almost nothing to match on and the whole exercise is wasted.
+    const cookie = (k) => (document.cookie.match('(^|;)\\s*' + k + '=([^;]*)') || [])[2] || '';
+    data.event_id = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+    data.fbp = cookie('_fbp');
+    data.fbc = cookie('_fbc');
+    data.event_source_url = window.location.href;
+
+    // Attach whatever we captured on landing so the server can classify the lead.
+    try {
+      var attr = JSON.parse(sessionStorage.getItem('ws_attr') || '{}');
+      Object.keys(attr).forEach(function (k) { if (attr[k]) data['attr_' + k] = attr[k]; });
+    } catch (e) {}
+
+    try {
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+        keepalive: true,
+      });
+    } catch (err) {
+      // Swallow it. A failed notification must never cost us the lead -
+      // they still land on the thank-you page and the server logs the miss.
+      console.error('lead post failed', err);
+    }
+
+    window.va && va('event', { name: 'Application Submitted', variant: VARIANT });
+
+    // Meta Lead event. Fired HERE on a confirmed submit rather than from a thank-you pageview,
+    // which would re-count on every refresh or back-navigation.
+    // Advanced matching: fbq hashes em/ph in the browser (SHA-256) before anything leaves the
+    // page, so no raw email or phone is sent to Meta. It lifts match rate a long way on a
+    // low-ticket offer where attribution is otherwise thin.
+    // eventID matches the one the server sends, so Meta counts ONE lead, not two.
+    try {
+      if (window.fbq) {
+        const eventID = data.event_id;
+        // Variant B already has first/last split; variant A only has one "name" field, so
+        // split it on the first space the same way api/lead.js does for the CAPI fix below -
+        // keeping ln populated (it used to be sent as fn only) lifts advanced-match quality.
+        const fn = VARIANT === 'B' ? (data.first_name || '') : (data.name || '').split(' ')[0];
+        const ln = VARIANT === 'B' ? (data.last_name || '') : (data.name || '').split(' ').slice(1).join(' ');
+        const match = {
+          em: (data.email || '').trim().toLowerCase(),
+          ph: (data.phone || '').replace(/[^0-9]/g, ''),
+          fn: fn.trim().toLowerCase(),
+          ln: ln.trim().toLowerCase(),
+        };
+        fbq('init', '1066739512651852', match);
+        fbq('track', 'Lead', { content_name: 'Free Course Application', form_variant: VARIANT }, { eventID });
+      }
+      // Whop pixel - same event, same event_id, plain values (Whop's own API takes them
+      // unhashed, it isn't CAPI). Computed independently of the fbq block above rather than
+      // reusing its fn/ln - those are scoped inside `if (window.fbq)` and out of reach here, and
+      // this call must still fire even if fbq is ever blocked. event_id is the same per-submission
+      // id the Meta Lead event uses, never a constant, so Whop can dedupe correctly. 23 Sep 2026.
+      if (window.whop) {
+        const wFirst = VARIANT === 'B' ? (data.first_name || '') : (data.name || '').split(' ')[0];
+        const wLast = VARIANT === 'B' ? (data.last_name || '') : (data.name || '').split(' ').slice(1).join(' ');
+        whop.track('lead', {
+          event_id: data.event_id,
+          email: (data.email || '').trim().toLowerCase(),
+          first_name: wFirst,
+          last_name: wLast,
+          phone: data.phone || '',
+        });
+      }
+    } catch (err) {
+      // Never let a tracking failure block the redirect - the lead matters, the pixel does not.
+      console.error('pixel lead failed', err);
+    }
+
+    window.location.href = 'thank-you.html';
+  });
+  window.va && document.getElementById('lead-form').addEventListener('focusin', function once() { va('event', { name: 'Form Opened', variant: 'B' }); this.removeEventListener('focusin', once); });
+
+</script>
+<script>
+/* Sticky "Get my free course" button (phones): shows once the hero is scrolled past, hides while
+   the form is on screen. v4's own app did this in React; this is the same rule in plain JS. */
+(function () {
+  var dock = document.querySelector('.dock'), form = document.getElementById('join');
+  if (!dock || !form) return;
+  var formOn = false;
+  function paint() { dock.classList.toggle('on', window.scrollY > 600 && !formOn); }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { formOn = e[0].isIntersecting; paint(); }).observe(form);
+  window.addEventListener('scroll', paint, { passive: true });
+  paint();
+})();
+</script>
+
+<!-- Videos: Vidonomics first, Vidalytics as the fallback. See ws-video.js. -->
+<script src="/ws-video.js"></script>
+
+<!-- Vidalytics VSL -> Meta watch milestones.
+     Vidalytics' own Facebook integration fires from the browser only. On cold traffic that is the
+     half we most want and most often lose, so every milestone is ALSO sent from the server
+     (/api/video-event) carrying the same event_id. Meta dedupes and keeps one.
+     Player API pattern is Vidalytics' own: getVidalyticsPlayer(id) resolves once the embed is up. -->
+<script>
+(function(){
+  var EMBED_ID = 'vidalytics_embed_jkiol1FheozZ11he';
+  var LABEL    = 'VSL - Free Course';
+
+  !function(v,a,p,i){
+    v.getVidalyticsPlayer=function(n){v[a]=v[a]||{},v[a][p]=v[a][p]||{};var d=v[a][p][n]=v[a][p][n]||{};
+    return new Promise(function(e){if(d[i])return void e(d[i]);var t;
+    Object.defineProperty(d,i,{get:function(){return t},set:function(x){t=x,e(x)}})})}
+  }(window,'_vidalytics','embeds','player');
+
+  var cookie = function(n){
+    var m = document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)');
+    return m ? m.pop() : '';
+  };
+  // fbc is only in the cookie once Meta has seen an fbclid. On the first paid pageview it may not
+  // exist yet, so fall back to building it from the URL - that is the single strongest match key.
+  var fbc = function(){
+    var c = cookie('_fbc');
+    if (c) return c;
+    var id = new URLSearchParams(location.search).get('fbclid');
+    return id ? 'fb.1.' + Date.now() + '.' + id : '';
+  };
+
+  var sent = {};
+  function fire(name, percent){
+    if (sent[name]) return;            // once per pageview, so a rewind cannot double-count
+    sent[name] = 1;
+    var eventID = name + '-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+    var payload = {
+      event_name: name, event_id: eventID, source_url: location.href,
+      fbp: cookie('_fbp'), fbc: fbc(), content_name: LABEL, video_id: EMBED_ID, percent: percent
+    };
+    try {
+      if (window.fbq) fbq('trackCustom', name, { content_name: LABEL, video_id: EMBED_ID, percent: percent }, { eventID: eventID });
+    } catch (e) {}
+    try {
+      // keepalive so the send survives the viewer navigating away mid-video.
+      if (window.WS_TRACK) fetch('/api/video-event', { method:'POST', headers:{'Content-Type':'application/json'},
+                                  body: JSON.stringify(payload), keepalive: true }).catch(function(){});
+    } catch (e) {}
+  }
+
+  var WATCH_ID = window.wsVideoMain ? 'vidalytics_embed_' + window.wsVideoMain.embed : EMBED_ID;   // the Vidalytics embed this page shows, if any
+  getVidalyticsPlayer(WATCH_ID).then(function(player){
+    if (!player) return;
+    player.on('play', function(){ fire('VideoPlay', 0); });
+    // Vidalytics has no percent-watched event, so milestones come off timeupdate. Tracking the
+    // furthest point REACHED (not the current position) means scrubbing backwards cannot un-fire a
+    // milestone, and scrubbing forward past one still counts it as seen.
+    var furthest = 0;
+    player.on('timeupdate', function(){
+      var d = player.duration, t = player.currentTime;
+      if (!d || !isFinite(d) || d <= 0) return;
+      var pct = (t / d) * 100;
+      if (pct > furthest) furthest = pct;
+      if (furthest >= 25) fire('VideoWatched25', 25);
+      if (furthest >= 50) fire('VideoWatched50', 50);
+      if (furthest >= 75) fire('VideoWatched75', 75);
+      if (furthest >= 95) fire('VideoWatched95', 95);
+    });
+    player.on('ended', function(){ fire('VideoComplete', 100); });
+  }).catch(function(){});
+
+  // Vidonomics player: same milestones, same names, same payload. Its events bubble with
+  // detail { id, at, dur }; only the page's MAIN video counts (not the student videos).
+  // Vidalytics reports its muted autoplay as 'play', so autoplay counts here too.
+  var VX = window.wsVideoMain && window.wsVideoMain.vx, vxFurthest = 0;
+  function isMain(e){ return !!VX && !!e.detail && e.detail.id === VX; }
+  function vxReached(e){
+    var x = e.detail || {}, d = x.dur, t = x.at;
+    if (!d || !isFinite(d) || d <= 0) return;
+    var pct = (t / d) * 100;
+    if (pct > vxFurthest) vxFurthest = pct;
+    if (vxFurthest >= 25) fire('VideoWatched25', 25);
+    if (vxFurthest >= 50) fire('VideoWatched50', 50);
+    if (vxFurthest >= 75) fire('VideoWatched75', 75);
+    if (vxFurthest >= 95) fire('VideoWatched95', 95);
+  }
+  document.addEventListener('vsl:autoplay', function(e){ if (isMain(e)) fire('VideoPlay', 0); });
+  document.addEventListener('vsl:play', function(e){ if (isMain(e)) fire('VideoPlay', 0); });
+  document.addEventListener('vsl:progress', function(e){ if (isMain(e)) vxReached(e); });
+  document.addEventListener('vsl:pause', function(e){ if (isMain(e)) vxReached(e); });
+  document.addEventListener('vsl:ended', function(e){ if (isMain(e)) fire('VideoComplete', 100); });
+})();
+</script>
+</body>
+</html>
