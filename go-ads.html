@@ -2,6 +2,33 @@
 <html lang="en">
 <head>
 <script>
+/* /go SPLIT TEST (19 Nov 2026): current /go vs /go-v4 (Christian's "Streak" design, $50 box kept).
+   Each new visitor is given one page at random and keeps it on return visits (localStorage).
+   v4 visitors are sent on to /go-v4 with every utm/fbclid intact, BEFORE anything else on this
+   page runs: no Meta/Whop/Cortana/Vercel/video event ever fires for them on /go, so nothing is
+   double-counted. Close shows landing /go vs /go-v4; judge on sales per $ spent, not leads.
+   KILL SWITCH: set SHARE_V4 = 0 and everyone gets /go again (stored picks included).
+   QA: ?arm=go or ?arm=v4 forces a page and stores it. */
+(function () {
+  var SHARE_V4 = 0.5;
+  var KEY = 'ws_go_arm';
+  try {
+    var forced = (location.search.match(/[?&]arm=(go|v4)(?:&|$)/) || [])[1];
+    var arm = forced;
+    if (!arm) { try { arm = localStorage.getItem(KEY); } catch (e) {} }
+    if (arm !== 'go' && arm !== 'v4') arm = Math.random() < SHARE_V4 ? 'v4' : 'go';
+    if (!forced && SHARE_V4 <= 0) arm = 'go';
+    try { localStorage.setItem(KEY, arm); } catch (e) {}
+    window.WS_GO_ARM = arm;
+    if (arm === 'v4' && /^\/go\/?$/.test(location.pathname)) {
+      location.replace('/go-v4' + location.search + location.hash);
+      // Stop the rest of this page from running while the browser moves on.
+      document.write('<plaintext style="display:none">');
+    }
+  } catch (e) {}
+})();
+</script>
+<script>
 /* Tracking runs on the live site only (added 17 Nov 2026).
    On Vercel preview copies and local tests, Meta, Whop and Cortana are switched off,
    so test visits and test form fills never land in the real ad data.

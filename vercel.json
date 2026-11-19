@@ -12,6 +12,8 @@
     { "source": "/go", "destination": "/go-ads.html" },
     { "source": "/go50/", "destination": "/go-50.html" },
     { "source": "/go50", "destination": "/go-50.html" },
+    { "source": "/go-v4/", "destination": "/go-v4.html" },
+    { "source": "/go-v4", "destination": "/go-v4.html" },
     { "source": "/a", "destination": "/access.html" },
     { "source": "/ar", "destination": "/access.html" },
     { "source": "/access", "destination": "/access.html" },
