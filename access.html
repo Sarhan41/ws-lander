@@ -143,13 +143,21 @@
   var none = function(){ linkEl.textContent = 'This page is missing your personal link. Message the person who sent it to you and ask for your full link.'; btn.disabled = true; };
   var cm = location.pathname.match(/^\/access\/([A-Za-z0-9]{2,3})\/?$/), nm = location.pathname.match(/^\/ar?\/([A-Za-z0-9._-]+)\/?$/);
   var q = cm ? 'code=' + encodeURIComponent(cm[1]) : nm ? 'name=' + encodeURIComponent(nm[1]) : null;
+  // AI Store Builder's newer link (Nick, 17 Nov 2026): base44.affcon.io checks for a private window first,
+  // then forwards to the same re.aistorebuilder.com link, so subid + sharedid (the setter) carry through
+  // unchanged (tested 20 Nov: Impact still gets subId2=<setter>). Only that exact old prefix is swapped;
+  // anything else /api/go returns is shown as-is.
+  var affcon = function(u){
+    var old = 'https://re.aistorebuilder.com/base44?';
+    return u.indexOf(old) === 0 ? 'https://base44.affcon.io/?' + u.slice(old.length) : u;
+  };
   if (!q) none();
   else {
     var ctl = ('AbortController' in window) ? new AbortController() : null;
     if (ctl) setTimeout(function(){ ctl.abort(); }, 6000);
     fetch('/api/go?p=base44&' + q + '&format=json', ctl ? {signal: ctl.signal} : {})
       .then(function(r){ return r.json(); })
-      .then(function(d){ if (d && d.url && d.tracked) { linkEl.textContent = d.url; btn.disabled = false; } else none(); })
+      .then(function(d){ if (d && d.url && d.tracked) { linkEl.textContent = affcon(d.url); btn.disabled = false; } else none(); })
       .catch(function(){ linkEl.textContent = 'Could not load your link. Refresh the page to try again.'; btn.disabled = true; });
   }
   btn.onclick = function(){
