@@ -24,6 +24,22 @@
     '4CTERLmU7kclipCW': 'v_xgdjo3mubaxe',       // 4 Archie
     '12BbHGRWdWBXfH40': 'v_7h8l61h4vv43'        // 5 Seb
   };
+  // Full-screen fixes for the Vidonomics player on phones (24 Nov 2026).
+  // 1. The player leaves its thumbnail layer zoomed to fill the tall screen, so a cropped copy
+  //    of the picture showed above and below the real video. Hide the thumbnail in full screen.
+  // 2. On /go-v4 the video sits inside an animated, clipped frame. That pinned the full-screen
+  //    player to the frame, not the screen, so it opened out of view. While full screen is
+  //    open, switch those effects off on the boxes around the player. They come back on close.
+  (function () {
+    var css = document.createElement('style');
+    css.textContent =
+      '.vsl.vsl-focus{margin:0!important;border:0!important;max-width:none!important;border-radius:0!important;background:#000!important}' +
+      '.vsl.vsl-focus .vsl-poster{background-image:none!important;background-color:#000!important}' +
+      '.vsl.vsl-focus video{object-fit:contain!important}' +
+      '*:has(.vsl-focus){transform:none!important;animation:none!important;filter:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;perspective:none!important;clip-path:none!important;contain:none!important;will-change:auto!important}';
+    document.head.appendChild(css);
+  })();
+
   var ACCOUNT = 'jV0yyyR6';
   var path = location.pathname.replace(/\/+$/, '');
   var isHome = path === '' || path === '/index.html';
